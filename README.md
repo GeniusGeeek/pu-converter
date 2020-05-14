@@ -65,7 +65,7 @@ time_converter(360,'s','min'); // this converts 360 seconds to it equivalent min
 ```
 //returns 6 minutes
 
-**More Example**
+**More Examples**
 
 This example looks into working with forms and web apps
 ```
