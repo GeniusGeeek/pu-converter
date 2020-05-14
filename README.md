@@ -78,6 +78,7 @@ This example looks into working with forms and web apps
 <?php
 if(isset($_POST["submit"])){
  $x = $_POST["val"];
+$y = "cm";
 //$x is the value to convert, $y is the unit of the value to convert.
 echo length_converter($x,$y,"m");
  echo length_converter($x,$y,"mm");
@@ -89,7 +90,7 @@ echo length_converter($x,$y,"m");
 
 ```
 <form method="POST" action="file.php">
-<!-- converting length (user specified) -->
+<!-- converting SI unit (user specified) -->
 Convert :<input type="text" name="val">
 Convert from:<input type="text" name="unit1">
 convert to:<input type="text" name="unit2>
