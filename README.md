@@ -66,6 +66,7 @@ time_converter(360,'s','min'); // this converts 360 seconds to it equivalent min
 //returns 6 minutes
 
 **More Example**
+
 This example looks into working with forms and web apps
 ```
 <form method="POST" action="file.php">
@@ -75,11 +76,34 @@ This example looks into working with forms and web apps
 </form>
 
 <?php
-if(isset($_POST["val"])){
- $cm = _POST["centimeter"];
-echo length_converter($val,$cm,"m");
- echo length_converter($val,$cm,"mm");
- echo length_converter($val,$cm,"km");
+if(isset($_POST["submit"])){
+ $x = $_POST["val"];
+//$x is the value to convert, $y is the unit of the value to convert.
+echo length_converter($x,$y,"m");
+ echo length_converter($x,$y,"mm");
+ echo length_converter($x,$y,"km");
+  }
+
+?>
+```
+
+```
+<form method="POST" action="file.php">
+<!-- converting length (user specified) -->
+Convert :<input type="text" name="val">
+Convert from:<input type="text" name="unit1">
+convert to:<input type="text" name="unit2>
+<input type="submit" name="submit">
+</form>
+
+<?php
+if(isset($_POST["submit"])){
+ $x = $_POST["unit1"];
+$y = $_POST["unit2"];
+//$x is the value to convert, $y is the unit of the value to convert, $z is the unit to convert to
+echo length_converter($x,$y,$z);
+ echo length_converter($x,$y,$z);
+ echo length_converter($x,$y,$z);
   }
 
 ?>
