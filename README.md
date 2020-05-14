@@ -77,10 +77,10 @@ This example looks into working with forms and web apps
 
 <?php
 if(isset($_POST["submit"])){
- $x = $_POST["val"];
+$x = $_POST["val"];
 $y = "cm";
 //$x is the value to convert, $y is the unit of the value to convert.
-echo length_converter($x,$y,"m");
+ echo length_converter($x,$y,"m");
  echo length_converter($x,$y,"mm");
  echo length_converter($x,$y,"km");
   }
@@ -99,10 +99,11 @@ convert to:<input type="text" name="unit2>
 
 <?php
 if(isset($_POST["submit"])){
- $x = $_POST["unit1"];
-$y = $_POST["unit2"];
+$x = $_POST["val"];
+$y = $_POST["unit1"];
+$z = $_POST["unit2"];
 //$x is the value to convert, $y is the unit of the value to convert, $z is the unit to convert to
-echo length_converter($x,$y,$z);
+ echo length_converter($x,$y,$z);
  echo length_converter($x,$y,$z);
  echo length_converter($x,$y,$z);
   }
