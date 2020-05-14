@@ -65,6 +65,26 @@ time_converter(360,'s','min'); // this converts 360 seconds to it equivalent min
 ```
 //returns 6 minutes
 
+**More Example**
+This example looks into working with forms and web apps
+```
+<form method="POST" action="file.php">
+<!-- converting cm to other length units -->
+<input type="text" name="val">
+<input type="submit" name="submit">
+</form>
+
+<?php
+if(isset($_POST["val"])){
+ $cm = _POST["centimeter"];
+echo length_converter($val,$cm,"m");
+ echo length_converter($val,$cm,"mm");
+ echo length_converter($val,$cm,"km");
+  }
+
+?>
+```
+
 ## Valid Units
 
  **Temperature** 
