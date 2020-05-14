@@ -90,7 +90,7 @@ $y = "cm";
 
 ```
 <form method="POST" action="file.php">
-<!-- converting SI unit (user specified) -->
+<!-- converting length unit (user specified) -->
 Convert :<input type="text" name="val">
 Convert from:<input type="text" name="unit1">
 convert to:<input type="text" name="unit2>
