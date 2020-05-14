@@ -169,7 +169,7 @@ mi - Mile
 ## Author
 *Initial work- Gracious Emmanuel
 
-##Contributing
+## Contributing
 Please Read the **contributing.md** to see contributing process, code of conduct and pull request process
 
 
