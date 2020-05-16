@@ -77,12 +77,12 @@ This example looks into working with forms and web apps
 
 <?php
 if(isset($_POST["submit"])) {
-    $x = $_POST["val"];
-    $y = "cm";
-    //$x is the value to convert, $y is the unit of the value to convert.
-    echo length_converter($x, $y, "m");
-    echo length_converter($x, $y, "mm");
-    echo length_converter($x, $y, "km");
+    $value = $_POST["val"];
+    $fromUnit = "cm";
+    //$value is the value to convert, $fromUnit is the unit of the value to convert.
+    echo length_converter($value, $fromUnit, "m");
+    echo length_converter($value, $fromUnit, "mm");
+    echo length_converter($value, $fromUnit, "km");
 }
 
 ?>
@@ -99,13 +99,13 @@ convert to:<input type="text" name="unit2>
 
 <?php
 if(isset($_POST["submit"])) {
-    $x = $_POST["val"];
-    $y = $_POST["unit1"];
-    $z = $_POST["unit2"];
-    //$x is the value to convert, $y is the unit of the value to convert, $z is the unit to convert to
-    echo length_converter($x, $y, $z);
-    echo length_converter($x, $y, $z);
-    echo length_converter($x, $y, $z);
+    $value = $_POST["val"];
+    $fromUnit = $_POST["unit1"];
+    $toUnit = $_POST["unit2"];
+    //$value is the value to convert, $fromUnit is the unit of the value to convert, $toUnit is the unit to convert to
+    echo length_converter($value, $fromUnit, $toUnit);
+    echo length_converter($value, $fromUnit, $toUnit);
+    echo length_converter($value, $fromUnit, $toUnit);
 }
 
 ?>
