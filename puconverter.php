@@ -19,17 +19,17 @@ function temperature_converter($value, $fromUnit, $toUnit)
             $convert = ($value - 32) * 5 / 9 + 273;
             return $convert;
          } else if ($toUnit == 'c') {
-            //to celcius
+            //to celsius
             $convert = ($value - 32) * 5 / 9;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       case 'k': //from kelvin
          if ($toUnit == 'c') {
-            //to celcius
+            //to celsius
             $convert = $value - 273;
             return $convert;
          } else if ($toUnit == 'f') {
@@ -37,13 +37,13 @@ function temperature_converter($value, $fromUnit, $toUnit)
             $convert = ($value - 273) * 9 / 5 + 32;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
-      case 'c': //from celius
+      case 'c': //from celsius
          if ($toUnit == 'f') {
-            //to fahrenheir
+            //to fahrenheit
             $convert = ($value * 9 / 5) + 32;
             return $convert;
          } else if ($toUnit == 'k') {
@@ -51,12 +51,12 @@ function temperature_converter($value, $fromUnit, $toUnit)
             $convert = $value + 273;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       default:
-         return "Arguement Error";
+         return "Argument Error";
          break;
    }
 }
@@ -97,7 +97,7 @@ function area_converter($value, $fromUnit, $toUnit)
             $convert = $value / 4047;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -132,7 +132,7 @@ function area_converter($value, $fromUnit, $toUnit)
             $convert = $value * 247;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -150,11 +150,11 @@ function area_converter($value, $fromUnit, $toUnit)
             $convert = $value / 247;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
-      case 'ha': //from hactare
+      case 'ha': //from hectare
          if ($toUnit == 'ac') {
             //to acre
             $convert = $value * 2.471;
@@ -168,12 +168,12 @@ function area_converter($value, $fromUnit, $toUnit)
             $convert = $value / 100;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       default:
-         return 'Arguement Error';
+         return 'Argument Error';
          break;
    }
 }
@@ -195,7 +195,7 @@ function angles_converter($value, $fromUnit, $toUnit)
             return $convert;
 
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
 
          }
          break;
@@ -211,7 +211,7 @@ function angles_converter($value, $fromUnit, $toUnit)
             return $convert;
 
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
 
          }
          break;
@@ -227,13 +227,13 @@ function angles_converter($value, $fromUnit, $toUnit)
             return $convert;
 
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
 
          }
          break;
 
       default:
-         return 'Arguement Error';
+         return 'Argument Error';
          break;
    }
 
@@ -282,7 +282,7 @@ function time_converter($value, $fromUnit, $toUnit)
             $convert = $value / 3154000000000;
             return $convert;
          } else {
-            return "Arguement Error";
+            return "Argument Error";
          }
          break;
 
@@ -326,7 +326,7 @@ function time_converter($value, $fromUnit, $toUnit)
             $convert = $value / 315400000;
             return $convert;
          } else {
-            return "Arguement Error";
+            return "Argument Error";
          }
 
          break;
@@ -371,7 +371,7 @@ function time_converter($value, $fromUnit, $toUnit)
             $convert = $value / 5256000;
             return $convert;
          } else {
-            return "Arguement Error";
+            return "Argument Error";
          }
 
          break;
@@ -414,7 +414,7 @@ function time_converter($value, $fromUnit, $toUnit)
             $convert = $value / 876000;
             return $convert;
          } else {
-            return "Arguement Error";
+            return "Argument Error";
          }
          break;
 
@@ -456,7 +456,7 @@ function time_converter($value, $fromUnit, $toUnit)
             $convert = $value / 36500;
             return $convert;
          } else {
-            return "Arguement Error";
+            return "Argument Error";
          }
          break;
 
@@ -498,7 +498,7 @@ function time_converter($value, $fromUnit, $toUnit)
             $convert = $value / 5214;
             return $convert;
          } else {
-            return "Arguement Error";
+            return "Argument Error";
          }
          break;
 
@@ -541,7 +541,7 @@ function time_converter($value, $fromUnit, $toUnit)
             $convert = $value / 1200;
             return $convert;
          } else {
-            return "Arguement Error";
+            return "Argument Error";
          }
          break;
 
@@ -583,7 +583,7 @@ function time_converter($value, $fromUnit, $toUnit)
             $convert = $value / 100;
             return $convert;
          } else {
-            return "Arguement Error";
+            return "Argument Error";
          }
          break;
 
@@ -625,11 +625,11 @@ function time_converter($value, $fromUnit, $toUnit)
             $convert = $value / 10;
             return $convert;
          } else {
-            return "Arguement Error";
+            return "Argument Error";
          }
          break;
 
-      case 'cen': //from centuary
+      case 'cen': //from century
          if ($toUnit == 's') {
             //to seconds
             $convert = $value * 3154000000;
@@ -667,12 +667,12 @@ function time_converter($value, $fromUnit, $toUnit)
             $convert = $value * 100;
             return $convert;
          } else {
-            return "Arguement Error";
+            return "Argument Error";
          }
          break;
 
       default:
-         return 'Arguement Error';
+         return 'Argument Error';
          break;
    }
 
@@ -684,7 +684,7 @@ function volume_converter($value, $fromUnit, $toUnit)
    switch ($fromUnit) {
       case 'l': //from litres
          if ($toUnit == 'oz') {
-            //to fliud ounces
+            //to fluid ounces
             $convert = $value / 1.137;
             return $convert;
          } else if ($toUnit == 'ml') {
@@ -712,14 +712,14 @@ function volume_converter($value, $fromUnit, $toUnit)
             $convert = $value * 1000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
 
          break;
 
       case 'm3': //from cubic meters
          if ($toUnit == 'oz') {
-            //to fliud ounces
+            //to fluid ounces
             $convert = $value * 33814;
             return $convert;
          } else if ($toUnit == 'ml') {
@@ -747,13 +747,13 @@ function volume_converter($value, $fromUnit, $toUnit)
             $convert = $value * 1000000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       case 'ml': //from milli litres
          if ($toUnit == 'oz') {
-            //to fliud ounces
+            //to fluid ounces
             $convert = $value / 29.574;
             return $convert;
          } else if ($toUnit == 'ml') {
@@ -781,13 +781,13 @@ function volume_converter($value, $fromUnit, $toUnit)
             $convert = $value * 1;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       case 'gal': //from gallons
          if ($toUnit == 'oz') {
-            //to fliud ounces
+            //to fluid ounces
             $convert = $value * 154;
             return $convert;
          } else if ($toUnit == 'ml') {
@@ -815,11 +815,11 @@ function volume_converter($value, $fromUnit, $toUnit)
             $convert = $value * 4546;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
-      case 'oz': //from fliud ounces
+      case 'oz': //from fluid ounces
          if ($toUnit == 'm3') {
             //to cubic meters
             $convert = $value / 33814;
@@ -849,13 +849,13 @@ function volume_converter($value, $fromUnit, $toUnit)
             $convert = $value * 29.574;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       case 'in3': //from cubic inch
          if ($toUnit == 'oz') {
-            //to fliud ounces
+            //to fluid ounces
             $convert = $value / 1.805;
             return $convert;
          } else if ($toUnit == 'ml') {
@@ -883,13 +883,13 @@ function volume_converter($value, $fromUnit, $toUnit)
             $convert = $value * 16.387;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       case 'ft3': //from cubic foot
          if ($toUnit == 'oz') {
-            //to fliud ounces
+            //to fluid ounces
             $convert = $value * 958;
             return $convert;
          } else if ($toUnit == 'ml') {
@@ -913,13 +913,13 @@ function volume_converter($value, $fromUnit, $toUnit)
             $convert = $value * 28.317;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       case 'cm3': //from cubic centimetres
          if ($toUnit == 'oz') {
-            //to fliud ounces
+            //to fluid ounces
             $convert = $value / 29.574;
             return $convert;
          } else if ($toUnit == 'ml') {
@@ -947,12 +947,12 @@ function volume_converter($value, $fromUnit, $toUnit)
             $convert = $value / 283317;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       default:
-         return 'Arguement Error';
+         return 'Argument Error';
          break;
    }
 }
@@ -977,7 +977,7 @@ function speed_converter($value, $fromUnit, $toUnit)
             $convert = $value * 2.237;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
 
          break;
@@ -996,7 +996,7 @@ function speed_converter($value, $fromUnit, $toUnit)
             $convert = $value / 1.609;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1014,7 +1014,7 @@ function speed_converter($value, $fromUnit, $toUnit)
             $convert = $value / 2.237;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1032,7 +1032,7 @@ function speed_converter($value, $fromUnit, $toUnit)
             $convert = $value * 1.151;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1046,7 +1046,7 @@ function speed_converter($value, $fromUnit, $toUnit)
 function length_converter($value, $fromUnit, $toUnit)
 {
    switch ($fromUnit) {
-      case 'km': //from kili metre
+      case 'km': //from kilometre
          if ($toUnit == 'm') {
             //to metres
             $convert = $value * 1000;
@@ -1056,7 +1056,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value * 100000;
             return $convert;
          } else if ($toUnit == 'mm') {
-            //to mili metres
+            //to millimetres
             $convert = $value * 1000000;
             return $convert;
          } else if ($toUnit == 'um') {
@@ -1084,7 +1084,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value * 39370;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
 
          break;
@@ -1099,7 +1099,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value * 100;
             return $convert;
          } else if ($toUnit == 'mm') {
-            //to mili metres
+            //to millimetres
             $convert = $value * 1000;
             return $convert;
          } else if ($toUnit == 'um') {
@@ -1127,7 +1127,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value * 39.37;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1141,7 +1141,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value / 100000;
             return $convert;
          } else if ($toUnit == 'mm') {
-            //to mili metres
+            //to millimetres
             $convert = $value / 10;
             return $convert;
          } else if ($toUnit == 'um') {
@@ -1169,7 +1169,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value / 2.54;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1211,7 +1211,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value / 25.4;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1225,7 +1225,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value / 10000;
             return $convert;
          } else if ($toUnit == 'mm') {
-            //to mili metres
+            //to millimetres
             $convert = $value / 1000;
             return $convert;
          } else if ($toUnit == 'km') {
@@ -1253,7 +1253,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value / 25400;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1267,7 +1267,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value / 10000000;
             return $convert;
          } else if ($toUnit == 'mm') {
-            //to mili metres
+            //to millimetres
             $convert = $value / 1000000;
             return $convert;
          } else if ($toUnit == 'um') {
@@ -1295,7 +1295,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value / 25400000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1309,7 +1309,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value * 160934;
             return $convert;
          } else if ($toUnit == 'mm') {
-            //to mili metres
+            //to millimetres
             $convert = $value * 1609000;
             return $convert;
          } else if ($toUnit == 'um') {
@@ -1337,7 +1337,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value * 63360;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1351,7 +1351,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value * 91.44;
             return $convert;
          } else if ($toUnit == 'mm') {
-            //to mili metres
+            //to millimetres
             $convert = $value * 914;
             return $convert;
          } else if ($toUnit == 'um') {
@@ -1379,7 +1379,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value * 36;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1393,7 +1393,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value * 30.40;
             return $convert;
          } else if ($toUnit == 'mm') {
-            //to mili metres
+            //to millimetres
             $convert = $value * 305;
             return $convert;
          } else if ($toUnit == 'um') {
@@ -1421,7 +1421,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value * 12;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1435,7 +1435,7 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value * 2.54;
             return $convert;
          } else if ($toUnit == 'mm') {
-            //to mili metres
+            //to millimetres
             $convert = $value * 25.4;
             return $convert;
          } else if ($toUnit == 'um') {
@@ -1463,12 +1463,12 @@ function length_converter($value, $fromUnit, $toUnit)
             $convert = $value / 39370;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       default:
-         return 'Arguement Error';
+         return 'Argument Error';
          break;
    }
 
@@ -1499,7 +1499,7 @@ function pressure_converter($value, $fromUnit, $toUnit)
             $convert = $value / 6895;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
 
          break;
@@ -1526,7 +1526,7 @@ function pressure_converter($value, $fromUnit, $toUnit)
             $convert = $value / 6.895;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
 
          break;
@@ -1537,7 +1537,7 @@ function pressure_converter($value, $fromUnit, $toUnit)
             $convert = $value / 1000;
             return $convert;
          } else if ($toUnit == 'kpa') {
-            //to killo paacal
+            //to kilopascal
             $convert = $value / 1000000;
             return $convert;
          } else if ($toUnit == 'bar') {
@@ -1553,7 +1553,7 @@ function pressure_converter($value, $fromUnit, $toUnit)
             $convert = $value * 145.0377;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1563,7 +1563,7 @@ function pressure_converter($value, $fromUnit, $toUnit)
             $convert = $value * 100000;
             return $convert;
          } else if ($toUnit == 'kpa') {
-            //to killo paacal
+            //to kilopascal
             $convert = $value * 100;
             return $convert;
          } else if ($toUnit == 'mpa') {
@@ -1579,7 +1579,7 @@ function pressure_converter($value, $fromUnit, $toUnit)
             $convert = $value * 14.504;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1589,7 +1589,7 @@ function pressure_converter($value, $fromUnit, $toUnit)
             $convert = $value * 100;
             return $convert;
          } else if ($toUnit == 'kpa') {
-            //to killo paacal
+            //to kilopascal
             $convert = $value / 10;
             return $convert;
          } else if ($toUnit == 'mpa') {
@@ -1605,7 +1605,7 @@ function pressure_converter($value, $fromUnit, $toUnit)
             $convert = $value / 68.948;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1615,7 +1615,7 @@ function pressure_converter($value, $fromUnit, $toUnit)
             $convert = $value * 6.895;
             return $convert;
          } else if ($toUnit == 'kpa') {
-            //to killo paacal
+            //to kilopascal
             $convert = $value / 6.895;
             return $convert;
          } else if ($toUnit == 'mpa') {
@@ -1631,12 +1631,12 @@ function pressure_converter($value, $fromUnit, $toUnit)
             $convert = $value / 14.504;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       default:
-         return 'Arguement Error';
+         return 'Argument Error';
          break;
    }
 
@@ -1655,7 +1655,7 @@ function mass_converter($value, $fromUnit, $toUnit)
             $convert = $value * 2.205;
             return $convert;
          } else if ($toUnit == 'mg') {
-            //to millli grams
+            //to milligrams
             $convert = $value * 1000000;
             return $convert;
          } else if ($toUnit == 't') {
@@ -1663,13 +1663,13 @@ function mass_converter($value, $fromUnit, $toUnit)
             $convert = $value / 1000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       case 'g': //from grams
          if ($toUnit == 'kg') {
-            //to killo gram
+            //to kilogram
             $convert = $value / 1000;
             return $convert;
          } else if ($toUnit == 'lb') {
@@ -1677,7 +1677,7 @@ function mass_converter($value, $fromUnit, $toUnit)
             $convert = $value / 454;
             return $convert;
          } else if ($toUnit == 'mg') {
-            //to millli grams
+            //to milligrams
             $convert = $value * 1000;
             return $convert;
          } else if ($toUnit == 't') {
@@ -1685,7 +1685,7 @@ function mass_converter($value, $fromUnit, $toUnit)
             $convert = $value / 1000000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1695,11 +1695,11 @@ function mass_converter($value, $fromUnit, $toUnit)
             $convert = $value * 454;
             return $convert;
          } else if ($toUnit == 'kg') {
-            //to killo gram
+            //to kilogram
             $convert = $value / 2.205;
             return $convert;
          } else if ($toUnit == 'mg') {
-            //to millli grams
+            //to milligrams
             $convert = $value * 453592;
             return $convert;
          } else if ($toUnit == 't') {
@@ -1707,7 +1707,7 @@ function mass_converter($value, $fromUnit, $toUnit)
             $convert = $value / 2205;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1721,7 +1721,7 @@ function mass_converter($value, $fromUnit, $toUnit)
             $convert = $value / 453592;
             return $convert;
          } else if ($toUnit == 'kg') {
-            //to killo grams
+            //to kilograms
             $convert = $value / 1000000;
             return $convert;
          } else if ($toUnit == 't') {
@@ -1729,7 +1729,7 @@ function mass_converter($value, $fromUnit, $toUnit)
             $convert = $value / 1000000000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1743,7 +1743,7 @@ function mass_converter($value, $fromUnit, $toUnit)
             $convert = $value * 2205;
             return $convert;
          } else if ($toUnit == 'mg') {
-            //to millli grams
+            //to milligrams
             $convert = $value * 1000000000;
             return $convert;
          } else if ($toUnit == 'kg') {
@@ -1751,12 +1751,12 @@ function mass_converter($value, $fromUnit, $toUnit)
             $convert = $value * 1000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       default:
-         return 'Arguement Error';
+         return 'Argument Error';
          break;
    }
 
@@ -1781,7 +1781,7 @@ function frequency_converter($value, $fromUnit, $toUnit)
             $convert = $value / 1000000000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1799,7 +1799,7 @@ function frequency_converter($value, $fromUnit, $toUnit)
             $convert = $value / 100000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1817,7 +1817,7 @@ function frequency_converter($value, $fromUnit, $toUnit)
             $convert = $value / 1000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1835,12 +1835,12 @@ function frequency_converter($value, $fromUnit, $toUnit)
             $convert = $value * 1000000000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       default:
-         return 'Arguement Error';
+         return 'Argument Error';
          break;
    }
 }
@@ -1872,11 +1872,11 @@ function energy_converter($value, $fromUnit, $toUnit)
             $convert = $value * 6242000000000000000;
             return $convert;
          } else if ($toUnit == 'kcal') {
-            //to killo calorie
+            //to kilo calorie
             $convert = $value / 4184;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1902,11 +1902,11 @@ function energy_converter($value, $fromUnit, $toUnit)
             $convert = $value * 6241500000000000000000;
             return $convert;
          } else if ($toUnit == 'kcal') {
-            //to killo calorie
+            //to kilo calorie
             $convert = $value / 4.184;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1932,11 +1932,11 @@ function energy_converter($value, $fromUnit, $toUnit)
             $convert = $value * 26130000000000000000;
             return $convert;
          } else if ($toUnit == 'kcal') {
-            //to killo calorie
+            //to kilo calorie
             $convert = $value / 1000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1962,11 +1962,11 @@ function energy_converter($value, $fromUnit, $toUnit)
             $convert = $value * 22469000000000000000000;
             return $convert;
          } else if ($toUnit == 'kcal') {
-            //to killo calorie
+            //to kilo calorie
             $convert = $value / 1.162;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -1992,11 +1992,11 @@ function energy_converter($value, $fromUnit, $toUnit)
             $convert = $value * 22469000000000000000000000;
             return $convert;
          } else if ($toUnit == 'kcal') {
-            //to killo calorie
+            //to kilo calorie
             $convert = $value * 860;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -2022,11 +2022,11 @@ function energy_converter($value, $fromUnit, $toUnit)
             $convert = $value / 0.0000000000000000062415;
             return $convert;
          } else if ($toUnit == 'kcal') {
-            //to killo calorie
+            //to kilo calorie
             $convert = $value * 0.000000000000000000000038293;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -2056,12 +2056,12 @@ function energy_converter($value, $fromUnit, $toUnit)
             $convert = $value * 4184;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       default:
-         return 'Arguement Error';
+         return 'Argument Error';
          break;
    }
 }
@@ -2097,7 +2097,7 @@ function disk_storage($value, $fromUnit, $toUnit)
             $convert = $value / 8000000000000000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
 
          break;
@@ -2128,7 +2128,7 @@ function disk_storage($value, $fromUnit, $toUnit)
             $convert = $value / 1000000000000000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -2158,7 +2158,7 @@ function disk_storage($value, $fromUnit, $toUnit)
             $convert = $value / 1000000000000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -2188,7 +2188,7 @@ function disk_storage($value, $fromUnit, $toUnit)
             $convert = $value / 1000000000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -2218,7 +2218,7 @@ function disk_storage($value, $fromUnit, $toUnit)
             $convert = $value / 1000000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -2248,7 +2248,7 @@ function disk_storage($value, $fromUnit, $toUnit)
             $convert = $value / 1000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
@@ -2278,12 +2278,12 @@ function disk_storage($value, $fromUnit, $toUnit)
             $convert = $value * 8000000000000000;
             return $convert;
          } else {
-            return 'Arguement Error';
+            return 'Argument Error';
          }
          break;
 
       default:
-         return 'Arguement Error';
+         return 'Argument Error';
          break;
    }
 
