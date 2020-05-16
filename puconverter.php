@@ -8,2283 +8,1839 @@
 
 #############################################
 
-/*TEMPERATUR CONVERTER*/
+/*TEMPERATURE CONVERTER*/
 
-function temperature_converter($x, $y, $z)
+function temperature_converter($value, $fromUnit, $toUnit)
 {
-   switch ($y) {
-      case 'f': //from fahrenheit
-         if ($z == 'k') {
-            //to kelvin
-            $convert = ($x - 32) * 5 / 9 + 273;
-            return $convert;
-         } else if ($z == 'c') {
-            //to celcius
-            $convert = ($x - 32) * 5 / 9;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+    switch ($fromUnit) {
+        case 'f': //from fahrenheit
+            if ($toUnit === 'k') {
+                //to kelvin
+                return ($value - 32) * 5 / 9 + 273;
+            } elseif ($toUnit === 'c') {
+                //to celsius
+                return ($value - 32) * 5 / 9;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'k': //from kelvin
-         if ($z == 'c') {
-            //to celcius
-            $convert = $x - 273;
-            return $convert;
-         } else if ($z == 'f') {
-            //to fahrenheit
-            $convert = ($x - 273) * 9 / 5 + 32;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'k': //from kelvin
+            if ($toUnit === 'c') {
+                //to celsius
+                return $value - 273;
+            } elseif ($toUnit === 'f') {
+                //to fahrenheit
+                return ($value - 273) * 9 / 5 + 32;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'c': //from celius
-         if ($z == 'f') {
-            //to fahrenheir
-            $convert = ($x * 9 / 5) + 32;
-            return $convert;
-         } else if ($z == 'k') {
+        case 'c': //from celsius
+            if ($toUnit === 'f') {
+                //to fahrenheit
+                return ($value * 9 / 5) + 32;
+            } elseif ($toUnit === 'k') {
 //to kelvin
-            $convert = $x + 273;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+                return $value + 273;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      default:
-         return "Arguement Error";
-         break;
-   }
+        default:
+            return "Argument Error";
+            break;
+    }
 }
 
 /* Area Converter*/
 
-function area_converter($x, $y, $z)
+function area_converter($value, $fromUnit, $toUnit)
 {
-   switch ($y) {
-      case 'm2': //from sqr meter
-         if ($z == 'km2') {
-            //to sqr km
-            $convert = $x / 1000000;
-            return $convert;
+    switch ($fromUnit) {
+        case 'm2': //from sqr meter
+            if ($toUnit === 'km2') {
+                //to sqr km
+                return $value / 1000000;
+            } elseif ($toUnit === 'mi2') {
+                //to sqr miles
+                return $value / 2590000;
+            } elseif ($toUnit === 'yd2') {
+                //to sqr yard
+                return $value * 1.196;
+            } elseif ($toUnit === 'ft2') {
+                //to sqr ft
+                return $value * 10.764;
+            } elseif ($toUnit === 'in2') {
+                //to sqr inch
+                return $value * 1550;
+            } elseif ($toUnit === 'ha') {
+                //to sqr hectare
+                return $value * 10000;
+            } elseif ($toUnit === 'ac') {
+                //to sqr acre
+                return $value / 4047;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-         } else if ($z == 'mi2') {
-            //to sqr miles
-            $convert = $x / 2590000;
-            return $convert;
-         } else if ($z == 'yd2') {
-            //to sqr yard
-            $convert = $x * 1.196;
-            return $convert;
-         } else if ($z == 'ft2') {
-            //to sqr ft
-            $convert = $x * 10.764;
-            return $convert;
-         } else if ($z == 'in2') {
-            //to sqr inch
-            $convert = $x * 1550;
-            return $convert;
-         } else if ($z == 'ha') {
-            //to sqr hectare
-            $convert = $x * 10000;
-            return $convert;
-         } else if ($z == 'ac') {
-            //to sqr acre
-            $convert = $x / 4047;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'km2': //from km2
+            if ($toUnit === 'sM') {
+                //to sqr m
+                return $value * 1000000;
+            } elseif ($toUnit === 'mi2') {
+                //to sqr miles
+                return $value / 2.59;
+            } elseif ($toUnit === 'yd2') {
+                //to sqr yard
+                return $value * 1.196000;
+            } elseif ($toUnit === 'ft2') {
+                //to sqr ft
+                return $value * 1.0760000;
+            } elseif ($toUnit === 'in2') {
+                //to sqr inch
+                return $value * 1.550000000;
+            } elseif ($toUnit === 'ha') {
+                // to hectare
+                return $value * 100;
+            } elseif ($toUnit === 'ac') {
+                // to acre
+                return $value * 247;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'km2': //from km2
-         if ($z == 'sM') {
-            //to sqr m
-            $convert = $x * 1000000;
-            return $convert;
+        case 'ac': //from acre
+            if ($toUnit === 'ha') {
+                //to hectare
+                return $value / 2.471;
+            } elseif ($toUnit === 'm2') {
+                //to sqr m
+                return $value * 4047;
+            } elseif ($toUnit === 'km2') {
+                //to sqr km
+                return $value / 247;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-         } else if ($z == 'mi2') {
-            //to sqr miles
-            $convert = $x / 2.59;
-            return $convert;
-         } else if ($z == 'yd2') {
-            //to sqr yard
-            $convert = $x * 1.196000;
-            return $convert;
-         } else if ($z == 'ft2') {
-            //to sqr ft
-            $convert = $x * 1.0760000;
-            return $convert;
-         } else if ($z == 'in2') {
-            //to sqr inch
-            $convert = $x * 1.550000000;
-            return $convert;
-         } else if ($z == 'ha') {
-            // to hectare
-            $convert = $x * 100;
-            return $convert;
-         } else if ($z == 'ac') {
-            // to acre
-            $convert = $x * 247;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'ha': //from hectare
+            if ($toUnit === 'ac') {
+                //to acre
+                return $value * 2.471;
+            } elseif ($toUnit === 'm2') {
+                //to sqr m
+                return $value * 10000;
+            } elseif ($toUnit === 'km2') {
+                //to sqr km
+                return $value / 100;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'ac': //from acre
-         if ($z == 'ha') {
-            //to hectare
-            $convert = $x / 2.471;
-            return $convert;
-         } else if ($z == 'm2') {
-            //to sqr m
-            $convert = $x * 4047;
-            return $convert;
-         } else if ($z == 'km2') {
-            //to sqr km
-            $convert = $x / 247;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
-
-      case 'ha': //from hactare
-         if ($z == 'ac') {
-            //to acre
-            $convert = $x * 2.471;
-            return $convert;
-         } else if ($z == 'm2') {
-            //to sqr m
-            $convert = $x * 10000;
-            return $convert;
-         } else if ($z == 'km2') {
-            //to sqr km
-            $convert = $x / 100;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
-
-      default:
-         return 'Arguement Error';
-         break;
-   }
+        default:
+            return 'Argument Error';
+            break;
+    }
 }
 
 /* PLANE ANGLES CONVERTER*/
 
-function angles_converter($x, $y, $z)
+function angles_converter($value, $fromUnit, $toUnit)
 {
-   switch ($y) {
-      case 'deg': //from degree
-         if ($z == 'rad') {
-            //to radian
-            $convert = $x * (3.142 / 180);
-            return $convert;
+    switch ($fromUnit) {
+        case 'deg': //from degree
+            if ($toUnit === 'rad') {
+                //to radian
+                return $value * (3.142 / 180);
+            } elseif ($toUnit === 'grad') {
+                //to gradian
+                return $value * (200 / 180);
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-         } else if ($z == 'grad') {
-            //to gradian
-            $convert = $x * (200 / 180);
-            return $convert;
-
-         } else {
-            return 'Arguement Error';
-
-         }
-         break;
-
-      case 'rad': //from radian
-         if ($z == 'deg') {
+        case 'rad': //from radian
+            if ($toUnit === 'deg') {
 //to degree
-            $convert = $x * (180 / 3.142);
-            return $convert;
-         } else if ($z == 'grad') {
-            //gradian
-            $convert = $x * (200 / 3.142);
-            return $convert;
+                return $value * (180 / 3.142);
+            } elseif ($toUnit === 'grad') {
+                //gradian
+                return $value * (200 / 3.142);
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-         } else {
-            return 'Arguement Error';
-
-         }
-         break;
-
-      case 'grad': //from gradian
-         if ($z == 'deg') {
+        case 'grad': //from gradian
+            if ($toUnit === 'deg') {
 //to degree
-            $convert = $x * (180 / 200);
-            return $convert;
-         } else if ($z == 'rad') {
-            //to rad
-            $convert = $x * (3.142 / 200);
-            return $convert;
+                return $value * (180 / 200);
+            } elseif ($toUnit === 'rad') {
+                //to rad
+                return $value * (3.142 / 200);
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-         } else {
-            return 'Arguement Error';
-
-         }
-         break;
-
-      default:
-         return 'Arguement Error';
-         break;
-   }
-
+        default:
+            return 'Argument Error';
+            break;
+    }
 }
 
 /*TIME CONVERTER*/
 
-function time_converter($x, $y, $z)
+function time_converter($value, $fromUnit, $toUnit)
 {
-   switch ($y) {
-      case 'ms': //from milli seconds
-         if ($z == 's') {
-            //to seconds
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'min') {
-            //to minutes
-            $convert = $x / 60000;
-            return $convert;
-         } else if ($z == 'hr') {
-            //to hours
-            $convert = $x / 3600000;
-            return $convert;
-         } else if ($z == 'day') {
+    switch ($fromUnit) {
+        case 'ms': //from milli seconds
+            if ($toUnit === 's') {
+                //to seconds
+                return $value / 1000;
+            } elseif ($toUnit === 'min') {
+                //to minutes
+                return $value / 60000;
+            } elseif ($toUnit === 'hr') {
+                //to hours
+                return $value / 3600000;
+            } elseif ($toUnit === 'day') {
 //to days
-            $convert = $x / 86400000;
-            return $convert;
-         } else if ($z == 'week') {
+                return $value / 86400000;
+            } elseif ($toUnit === 'week') {
 //to weeks
-            $convert = $x / 604800000;
-            return $convert;
-         } else if ($z == 'month') {
+                return $value / 604800000;
+            } elseif ($toUnit === 'month') {
 //to month
-            $convert = $x / 2628000000;
-            return $convert;
-         } else if ($z == 'yr') {
+                return $value / 2628000000;
+            } elseif ($toUnit === 'yr') {
 //to year
-            $convert = $x / 31540000000;
-            return $convert;
-         } else if ($z == 'dec') {
+                return $value / 31540000000;
+            } elseif ($toUnit === 'dec') {
 //to decade
-            $convert = $x / 315400000000;
-            return $convert;
-         } else if ($z == 'cen') {
+                return $value / 315400000000;
+            } elseif ($toUnit === 'cen') {
 //to century
-            $convert = $x / 3154000000000;
-            return $convert;
-         } else {
-            return "Arguement Error";
-         }
-         break;
+                return $value / 3154000000000;
+            } else {
+                return "Argument Error";
+            }
+            break;
 
-      case 's': //from seconds
-         if ($z == 'ms') {
-            //to milli seconds
-            $convert = $x * 1000;
-            return $convert;
-         }
+        case 's': //from seconds
+            if ($toUnit === 'ms') {
+                //to milli seconds
+                return $value * 1000;
+            }
 
-         if ($z == 'week') {
-            //to weeks
-            $convert = $x / 604800;
-            return $convert;
-         } else if ($z == 'm') {
-            //to minutes
-            $convert = $x / 60;
-            return $convert;
-         } else if ($z == 'hr') {
-            //to hours
-            $convert = $x / 3600;
-            return $convert;
-         } else if ($z == 'month') {
-            //to months
-            $convert = $x / 2628000;
-            return $convert;
-         } else if ($z == 'day') {
-            //to days
-            $convert = $x / 86400;
-            return $convert;
-         } else if ($z == 'yr') {
-            //to years
-            $convert = $x / 31540000;
-            return $convert;
-         } else if ($z == 'dec') {
-            //to decade
-            $convert = $x / 315400000;
-            return $convert;
-         } else if ($z == 'cen') {
-            //to century
-            $convert = $x / 315400000;
-            return $convert;
-         } else {
-            return "Arguement Error";
-         }
+            if ($toUnit === 'week') {
+                //to weeks
+                return $value / 604800;
+            } elseif ($toUnit === 'm') {
+                //to minutes
+                return $value / 60;
+            } elseif ($toUnit === 'hr') {
+                //to hours
+                return $value / 3600;
+            } elseif ($toUnit === 'month') {
+                //to months
+                return $value / 2628000;
+            } elseif ($toUnit === 'day') {
+                //to days
+                return $value / 86400;
+            } elseif ($toUnit === 'yr') {
+                //to years
+                return $value / 31540000;
+            } elseif ($toUnit === 'dec') {
+                //to decade
+                return $value / 315400000;
+            } elseif ($toUnit === 'cen') {
+                //to century
+                return $value / 315400000;
+            } else {
+                return "Argument Error";
+            }
 
-         break;
+            break;
 
-      case 'min': //from minute
-         if ($z == 'ms') {
-            //to weeks
-            $convert = $x * 60000;
-            return $convert;
-         }
+        case 'min': //from minute
+            if ($toUnit === 'ms') {
+                //to weeks
+                return $value * 60000;
+            }
 
-         if ($z == 'week') {
-            //to weeks
-            $convert = $x / 10080;
-            return $convert;
-         } else if ($z == 's') {
-            //to seconds
-            $convert = $x * 60;
-            return $convert;
-         } else if ($z == 'hr') {
-            //to hours
-            $convert = $x / 60;
-            return $convert;
-         } else if ($z == 'month') {
-            //to months
-            $convert = $x / 43800;
-            return $convert;
-         } else if ($z == 'day') {
-            //to days
-            $convert = $x / 1440;
-            return $convert;
-         } else if ($z == 'yr') {
-            //years
-            $convert = $x / 525600;
-            return $convert;
-         } else if ($z == 'dec') {
-            //to decade
-            $convert = $x / 5256000;
-            return $convert;
-         } else if ($z == 'cen') {
-            //to century
-            $convert = $x / 5256000;
-            return $convert;
-         } else {
-            return "Arguement Error";
-         }
+            if ($toUnit === 'week') {
+                //to weeks
+                return $value / 10080;
+            } elseif ($toUnit === 's') {
+                //to seconds
+                return $value * 60;
+            } elseif ($toUnit === 'hr') {
+                //to hours
+                return $value / 60;
+            } elseif ($toUnit === 'month') {
+                //to months
+                return $value / 43800;
+            } elseif ($toUnit === 'day') {
+                //to days
+                return $value / 1440;
+            } elseif ($toUnit === 'yr') {
+                //years
+                return $value / 525600;
+            } elseif ($toUnit === 'dec') {
+                //to decade
+                return $value / 5256000;
+            } elseif ($toUnit === 'cen') {
+                //to century
+                return $value / 5256000;
+            } else {
+                return "Argument Error";
+            }
 
-         break;
+            break;
 
-      case 'hr':
-         if ($z == 's') {
-            //to seconds
-            $convert = $x / 3600;
-            return $convert;
-         } else if ($z == 'month') {
-            //to minutes
-            $convert = $x / 60;
-            return $convert;
-         } else if ($z == 'ms') {
-            //to milli sec
-            $convert = $x / 3600000;
-            return $convert;
-         } else if ($z == 'day') {
+        case 'hr':
+            if ($toUnit === 's') {
+                //to seconds
+                return $value / 3600;
+            } elseif ($toUnit === 'month') {
+                //to minutes
+                return $value / 60;
+            } elseif ($toUnit === 'ms') {
+                //to milli sec
+                return $value / 3600000;
+            } elseif ($toUnit === 'day') {
 //days
-            $convert = $x / 24;
-            return $convert;
-         } else if ($z == 'w') {
+                return $value / 24;
+            } elseif ($toUnit === 'w') {
 //to weeks
-            $convert = $x / 168;
-            return $convert;
-         } else if ($z == 'month') {
+                return $value / 168;
+            } elseif ($toUnit === 'month') {
 //to month
-            $convert = $x / 730;
-            return $convert;
-         } else if ($z == 'yr') {
+                return $value / 730;
+            } elseif ($toUnit === 'yr') {
 //to year
-            $convert = $x / 8760;
-            return $convert;
-         } else if ($z == 'dec') {
+                return $value / 8760;
+            } elseif ($toUnit === 'dec') {
 //to decade
-            $convert = $x / 87600;
-            return $convert;
-         } else if ($z == 'cen') {
+                return $value / 87600;
+            } elseif ($toUnit === 'cen') {
 //to century
-            $convert = $x / 876000;
-            return $convert;
-         } else {
-            return "Arguement Error";
-         }
-         break;
+                return $value / 876000;
+            } else {
+                return "Argument Error";
+            }
+            break;
 
-      case 'day': //from day
-         if ($z == 's') {
-            //to seconds
-            $convert = $x * 86400;
-            return $convert;
-         } else if ($z == 'min') {
-            //to minutes
-            $convert = $x * 1440;
-            return $convert;
-         } else if ($z == 'ms') {
-            //to milli sec
-            $convert = $x * 86400000;
-            return $convert;
-         } else if ($z == 'hr') {
+        case 'day': //from day
+            if ($toUnit === 's') {
+                //to seconds
+                return $value * 86400;
+            } elseif ($toUnit === 'min') {
+                //to minutes
+                return $value * 1440;
+            } elseif ($toUnit === 'ms') {
+                //to milli sec
+                return $value * 86400000;
+            } elseif ($toUnit === 'hr') {
 //to hour
-            $convert = $x / 24;
-            return $convert;
-         } else if ($z == 'week') {
+                return $value / 24;
+            } elseif ($toUnit === 'week') {
 //to weeks
-            $convert = $x / 7;
-            return $convert;
-         } else if ($z == 'month') {
+                return $value / 7;
+            } elseif ($toUnit === 'month') {
 //to month
-            $convert = $x / 30.417;
-            return $convert;
-         } else if ($z == 'yr') {
+                return $value / 30.417;
+            } elseif ($toUnit === 'yr') {
 //to year
-            $convert = $x / 365;
-            return $convert;
-         } else if ($z == 'dec') {
+                return $value / 365;
+            } elseif ($toUnit === 'dec') {
 //to decade
-            $convert = $x / 3650;
-            return $convert;
-         } else if ($y == 'cen') {
+                return $value / 3650;
+            } elseif ($fromUnit === 'cen') {
 //to century
-            $convert = $x / 36500;
-            return $convert;
-         } else {
-            return "Arguement Error";
-         }
-         break;
+                return $value / 36500;
+            } else {
+                return "Argument Error";
+            }
+            break;
 
-      case 'week': //from week
-         if ($z == 's') {
-            // to seconds
-            $convert = $x * 604800;
-            return $convert;
-         } else if ($z == 'min') {
-            //to minutes
-            $convert = $x * 10080;
-            return $convert;
-         } else if ($z == 'hr') {
-            //to hours
-            $convert = $x * 168;
-            return $convert;
-         } else if ($z == 'day') {
+        case 'week': //from week
+            if ($toUnit === 's') {
+                // to seconds
+                return $value * 604800;
+            } elseif ($toUnit === 'min') {
+                //to minutes
+                return $value * 10080;
+            } elseif ($toUnit === 'hr') {
+                //to hours
+                return $value * 168;
+            } elseif ($toUnit === 'day') {
 //to days
-            $convert = $x * 7;
-            return $convert;
-         } else if ($z == 'ms') {
+                return $value * 7;
+            } elseif ($toUnit === 'ms') {
 //to milli sec
-            $convert = $x * 604800000;
-            return $convert;
-         } else if ($z == 'month') {
+                return $value * 604800000;
+            } elseif ($toUnit === 'month') {
 //to month
-            $convert = $x / 4.345;
-            return $convert;
-         } else if ($z == 'yr') {
+                return $value / 4.345;
+            } elseif ($toUnit === 'yr') {
 //to year
-            $convert = $x / 52.143;
-            return $convert;
-         } else if ($z == 'dec') {
+                return $value / 52.143;
+            } elseif ($toUnit === 'dec') {
 //to decade
-            $convert = $x / 521;
-            return $convert;
-         } else if ($z == 'cen') {
+                return $value / 521;
+            } elseif ($toUnit === 'cen') {
 //to century
-            $convert = $x / 5214;
-            return $convert;
-         } else {
-            return "Arguement Error";
-         }
-         break;
+                return $value / 5214;
+            } else {
+                return "Argument Error";
+            }
+            break;
 
-      case 'month': //from month
-         if ($z == 's') {
-            //to seconds
-            $convert = $x * 2628000;
-            return $convert;
-         } else if ($z == 'min') {
-            //to minutes
-            $convert = $x * 43800;
-            return $convert;
-         } else if ($z == 'hr') {
-            //to hours
-            $convert = $x * 730;
-            return $convert;
-
-         } else if ($z == 'day') {
+        case 'month': //from month
+            if ($toUnit === 's') {
+                //to seconds
+                return $value * 2628000;
+            } elseif ($toUnit === 'min') {
+                //to minutes
+                return $value * 43800;
+            } elseif ($toUnit === 'hr') {
+                //to hours
+                return $value * 730;
+            } elseif ($toUnit === 'day') {
 //to days
-            $convert = $x * 30.417;
-            return $convert;
-         } else if ($z == 'week') {
+                return $value * 30.417;
+            } elseif ($toUnit === 'week') {
 //to weeks
-            $convert = $x * 4.345;
-            return $convert;
-         } else if ($z == 'ms') {
+                return $value * 4.345;
+            } elseif ($toUnit === 'ms') {
 //to milli sec
-            $convert = $x * 2628000000;
-            return $convert;
-         } else if ($z == 'yr') {
+                return $value * 2628000000;
+            } elseif ($toUnit === 'yr') {
 //to yr
-            $convert = $x / 12;
-            return $convert;
-         } else if ($z == 'dec') {
+                return $value / 12;
+            } elseif ($toUnit === 'dec') {
 // to decade
-            $convert = $x / 120;
-            return $convert;
-         } else if ($z == 'cen') {
+                return $value / 120;
+            } elseif ($toUnit === 'cen') {
 //to century
-            $convert = $x / 1200;
-            return $convert;
-         } else {
-            return "Arguement Error";
-         }
-         break;
+                return $value / 1200;
+            } else {
+                return "Argument Error";
+            }
+            break;
 
-      case 'yr': //from year
-         if ($z == 's') {
-            //seconds
-            $convert = $x * 31540000;
-            return $convert;
-         } else if ($z == 'min') {
-            //to minutes
-            $convert = $x * 525600;
-            return $convert;
-         } else if ($z == 'hr') {
-            //to hours
-            $convert = $x * 8760;
-            return $convert;
-         } else if ($z == 'day') {
+        case 'yr': //from year
+            if ($toUnit === 's') {
+                //seconds
+                return $value * 31540000;
+            } elseif ($toUnit === 'min') {
+                //to minutes
+                return $value * 525600;
+            } elseif ($toUnit === 'hr') {
+                //to hours
+                return $value * 8760;
+            } elseif ($toUnit === 'day') {
 //to days
-            $convert = $x * 365;
-            return $convert;
-         } else if ($z == 'week') {
+                return $value * 365;
+            } elseif ($toUnit === 'week') {
 //to weeks
-            $convert = $x * 52.143;
-            return $convert;
-         } else if ($z == 'month') {
+                return $value * 52.143;
+            } elseif ($toUnit === 'month') {
 //to month
-            $convert = $x * 12;
-            return $convert;
-         } else if ($z == 'ms') {
+                return $value * 12;
+            } elseif ($toUnit === 'ms') {
 //to milli sec
-            $convert = $x * 31540000000;
-            return $convert;
-         } else if ($z == 'dec') {
+                return $value * 31540000000;
+            } elseif ($toUnit === 'dec') {
 //to decade
-            $todec = $x / 10;
-            return $todec;
-         } else if ($z == 'c') {
+                return $value / 10;
+            } elseif ($toUnit === 'c') {
 //to century
-            $convert = $x / 100;
-            return $convert;
-         } else {
-            return "Arguement Error";
-         }
-         break;
+                return $value / 100;
+            } else {
+                return "Argument Error";
+            }
+            break;
 
-      case 'dec': // from decade
-         if ($z == 's') {
-            //to seconds
-            $convert = $x * 315400000;
-            return $convert;
-         } else if ($z == 'min') {
-            //to minutes
-            $convert = $x * 5256000;
-            return $convert;
-         } else if ($z == 'hr') {
-            //to hours
-            $convert = $x * 87600;
-            return $convert;
-         } else if ($z == 'day') {
+        case 'dec': // from decade
+            if ($toUnit === 's') {
+                //to seconds
+                return $value * 315400000;
+            } elseif ($toUnit === 'min') {
+                //to minutes
+                return $value * 5256000;
+            } elseif ($toUnit === 'hr') {
+                //to hours
+                return $value * 87600;
+            } elseif ($toUnit === 'day') {
 //to days
-            $convert = $x * 3650;
-            return $convert;
-         } else if ($z == 'week') {
+                return $value * 3650;
+            } elseif ($toUnit === 'week') {
 //to weeks
-            $convert = $x * 521;
-            return $convert;
-         } else if ($z == 'month') {
+                return $value * 521;
+            } elseif ($toUnit === 'month') {
 //to month
-            $convert = $x * 120;
-            return $convert;
-         } else if ($z == 'ms') {
+                return $value * 120;
+            } elseif ($toUnit === 'ms') {
 //to milli sec
-            $convert = $x * 315400000000;
-            return $convert;
-         } else if ($z == 'yr') {
+                return $value * 315400000000;
+            } elseif ($toUnit === 'yr') {
 //to yr
-            $todec = $x * 10;
-            return $todec;
-         } else if ($z == 'c') {
+                return $value * 10;
+            } elseif ($toUnit === 'c') {
 //to century
-            $convert = $x / 10;
-            return $convert;
-         } else {
-            return "Arguement Error";
-         }
-         break;
+                return $value / 10;
+            } else {
+                return "Argument Error";
+            }
+            break;
 
-      case 'cen': //from centuary
-         if ($z == 's') {
-            //to seconds
-            $convert = $x * 3154000000;
-            return $convert;
-         } else if ($z == 'min') {
-            //to minutes
-            $convert = $x * 52560000;
-            return $convert;
-         } else if ($z == 'hr') {
-            //to hours
-            $convert = $x * 876000;
-            return $convert;
-         } else if ($z == 'day') {
+        case 'cen': //from century
+            if ($toUnit === 's') {
+                //to seconds
+                return $value * 3154000000;
+            } elseif ($toUnit === 'min') {
+                //to minutes
+                return $value * 52560000;
+            } elseif ($toUnit === 'hr') {
+                //to hours
+                return $value * 876000;
+            } elseif ($toUnit === 'day') {
 //to days
-            $convert = $x * 36500;
-            return $convert;
-         } else if ($z == 'week') {
+                return $value * 36500;
+            } elseif ($toUnit === 'week') {
 //to weeks
-            $convert = $x * 5214;
-            return $convert;
-         } else if ($z == 'month') {
+                return $value * 5214;
+            } elseif ($toUnit === 'month') {
 //to month
-            $convert = $x * 1200;
-            return $convert;
-         } else if ($z == 'ms') {
+                return $value * 1200;
+            } elseif ($toUnit === 'ms') {
 //to milli sec
-            $convert = $x * 3154000000000;
-            return $convert;
-         } else if ($z == 'yr') {
+                return $value * 3154000000000;
+            } elseif ($toUnit === 'yr') {
 //to yr
-            $todec = $x * 1200;
-            return $todec;
-         } else if ($z == 'dec') {
+                return $value * 1200;
+            } elseif ($toUnit === 'dec') {
 //to decade
-            $convert = $x * 100;
-            return $convert;
-         } else {
-            return "Arguement Error";
-         }
-         break;
+                return $value * 100;
+            } else {
+                return "Argument Error";
+            }
+            break;
 
-      default:
-         return 'Arguement Error';
-         break;
-   }
-
+        default:
+            return 'Argument Error';
+            break;
+    }
 }
 
-function volume_converter($x, $y, $z)
+function volume_converter($value, $fromUnit, $toUnit)
 {
+    switch ($fromUnit) {
+        case 'l': //from litres
+            if ($toUnit === 'oz') {
+                //to fluid ounces
+                return $value / 1.137;
+            } elseif ($toUnit === 'ml') {
+                //to milli litre
+                return $value * 1000;
+            } elseif ($toUnit === 'gal') {
+                //to gallons
+                return $value / 4.546;
+            } elseif ($toUnit === 'ft3') {
+                //to cubic ft
+                return $value * 61.024;
+            } elseif ($toUnit === 'in3') {
+                //to cubic inch
+                return $value / 10000;
+            } elseif ($toUnit === 'm3') {
+                //to cubic meters
+                return $value / 1000;
+            } elseif ($toUnit === 'cm3') {
+                //to  cubic centimetre
+                return $value * 1000;
+            } else {
+                return 'Argument Error';
+            }
 
-   switch ($y) {
-      case 'l': //from litres
-         if ($z == 'oz') {
-            //to fliud ounces
-            $convert = $x / 1.137;
-            return $convert;
-         } else if ($z == 'ml') {
-            //to milli litre
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'gal') {
-            //to gallons
-            $convert = $x / 4.546;
-            return $convert;
-         } else if ($z == 'ft3') {
-            //to cubic ft
-            $convert = $x * 61.024;
-            return $convert;
-         } else if ($z == 'in3') {
-            //to cubic inch
-            $convert = $x / 10000;
-            return $convert;
-         } else if ($z == 'm3') {
-            //to cubic meters
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'cm3') {
-            //to  cubic centimetre
-            $convert = $x * 1000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
+            break;
 
-         break;
+        case 'm3': //from cubic meters
+            if ($toUnit === 'oz') {
+                //to fluid ounces
+                return $value * 33814;
+            } elseif ($toUnit === 'ml') {
+                //to milli litre
+                return $value * 1000000;
+            } elseif ($toUnit === 'gal') {
+                //to gallons
+                return $value * 254;
+            } elseif ($toUnit === 'ft3') {
+                //to cubic ft
+                return $value * 35.315;
+            } elseif ($toUnit === 'in3') {
+                //to cubic inch
+                return $value * 61024;
+            } elseif ($toUnit === 'l') {
+                //to  litres
+                return $value * 1000;
+            } elseif ($toUnit === 'cm3') {
+                //to  cubic centimetre
+                return $value * 1000000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'm3': //from cubic meters
-         if ($z == 'oz') {
-            //to fliud ounces
-            $convert = $x * 33814;
-            return $convert;
-         } else if ($z == 'ml') {
-            //to milli litre
-            $convert = $x * 1000000;
-            return $convert;
-         } else if ($z == 'gal') {
-            //to gallons
-            $convert = $x * 254;
-            return $convert;
-         } else if ($z == 'ft3') {
-            //to cubic ft
-            $convert = $x * 35.315;
-            return $convert;
-         } else if ($z == 'in3') {
-            //to cubic inch
-            $convert = $x * 61024;
-            return $convert;
-         } else if ($z == 'l') {
-            //to  litres
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'cm3') {
-            //to  cubic centimetre
-            $convert = $x * 1000000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'ml': //from milli litres
+            if ($toUnit === 'oz') {
+                //to fluid ounces
+                return $value / 29.574;
+            } elseif ($toUnit === 'ml') {
+                //to milli litre
+                return $value / 1000000;
+            } elseif ($toUnit === 'gal') {
+                //to gallons
+                return $value / 4546;
+            } elseif ($toUnit === 'ft3') {
+                //to cubic ft
+                return $value / 28317;
+            } elseif ($toUnit === 'in3') {
+                //to cubic inch
+                return $value / 16.387;
+            } elseif ($toUnit === 'l') {
+                //to  litres
+                return $value / 1000;
+            } elseif ($toUnit === 'cm3') {
+                //to  cubic centimetre
+                return $value * 1;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'ml': //from milli litres
-         if ($z == 'oz') {
-            //to fliud ounces
-            $convert = $x / 29.574;
-            return $convert;
-         } else if ($z == 'ml') {
-            //to milli litre
-            $convert = $x / 1000000;
-            return $convert;
-         } else if ($z == 'gal') {
-            //to gallons
-            $convert = $x / 4546;
-            return $convert;
-         } else if ($z == 'ft3') {
-            //to cubic ft
-            $convert = $x / 28317;
-            return $convert;
-         } else if ($z == 'in3') {
-            //to cubic inch
-            $convert = $x / 16.387;
-            return $convert;
-         } else if ($z == 'l') {
-            //to  litres
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'cm3') {
-            //to  cubic centimetre
-            $convert = $x * 1;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'gal': //from gallons
+            if ($toUnit === 'oz') {
+                //to fluid ounces
+                return $value * 154;
+            } elseif ($toUnit === 'ml') {
+                //to milli litre
+                return $value * 4546;
+            } elseif ($toUnit === 'm3') {
+                //to cubic metre
+                return $value / 220;
+            } elseif ($toUnit === 'ft3') {
+                //to cubic ft
+                return $value / 6.229;
+            } elseif ($toUnit === 'in3') {
+                //to cubic inch
+                return $value * 277;
+            } elseif ($toUnit === 'l') {
+                //to  litres
+                return $value * 4.546;
+            } elseif ($toUnit === 'cm3') {
+                //to  cubic centimetre
+                return $value * 4546;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'gal': //from gallons
-         if ($z == 'oz') {
-            //to fliud ounces
-            $convert = $x * 154;
-            return $convert;
-         } else if ($z == 'ml') {
-            //to milli litre
-            $convert = $x * 4546;
-            return $convert;
-         } else if ($z == 'm3') {
-            //to cubic metre
-            $convert = $x / 220;
-            return $convert;
-         } else if ($z == 'ft3') {
-            //to cubic ft
-            $convert = $x / 6.229;
-            return $convert;
-         } else if ($z == 'in3') {
-            //to cubic inch
-            $convert = $x * 277;
-            return $convert;
-         } else if ($z == 'l') {
-            //to  litres
-            $convert = $x * 4.546;
-            return $convert;
-         } else if ($z == 'cm3') {
-            //to  cubic centimetre
-            $convert = $x * 4546;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'oz': //from fluid ounces
+            if ($toUnit === 'm3') {
+                //to cubic meters
+                return $value / 33814;
+            } elseif ($toUnit === 'ml') {
+                //to milli litre
+                return $value * 29.574;
+            } elseif ($toUnit === 'gal') {
+                //to gallons
+                return $value / 154;
+            } elseif ($toUnit === 'ft3') {
+                //to cubic ft
+                return $value / 958;
+            } elseif ($toUnit === 'in3') {
+                //to cubic inch
+                return $value * 1.805;
+            } elseif ($toUnit === 'l') {
+                //to  litres
+                return $value / 33.814;
+            } elseif ($toUnit === 'cm3') {
+                //to  cubic centimetre
+                return $value * 29.574;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'oz': //from fliud ounces
-         if ($z == 'm3') {
-            //to cubic meters
-            $convert = $x / 33814;
-            return $convert;
-         } else if ($z == 'ml') {
-            //to milli litre
-            $convert = $x * 29.574;
-            return $convert;
-         } else if ($z == 'gal') {
-            //to gallons
-            $convert = $x / 154;
-            return $convert;
-         } else if ($z == 'ft3') {
-            //to cubic ft
-            $convert = $x / 958;
-            return $convert;
-         } else if ($z == 'in3') {
-            //to cubic inch
-            $convert = $x * 1.805;
-            return $convert;
-         } else if ($z == 'l') {
-            //to  litres
-            $convert = $x / 33.814;
-            return $convert;
-         } else if ($z == 'cm3') {
-            //to  cubic centimetre
-            $convert = $x * 29.574;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'in3': //from cubic inch
+            if ($toUnit === 'oz') {
+                //to fluid ounces
+                return $value / 1.805;
+            } elseif ($toUnit === 'ml') {
+                //to milli litre
+                return $value * 16.387;
+            } elseif ($toUnit === 'gal') {
+                //to gallons
+                return $value / 277;
+            } elseif ($toUnit === 'ft3') {
+                //to cubic ft
+                return $value / 1728;
+            } elseif ($toUnit === 'm3') {
+                //to cubic metre
+                return $value / 61024;
+            } elseif ($toUnit === 'l') {
+                //to  litres
+                return $value / 61.024;
+            } elseif ($toUnit === 'cm3') {
+                //to  cubic centimetre
+                return $value * 16.387;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'in3': //from cubic inch
-         if ($z == 'oz') {
-            //to fliud ounces
-            $convert = $x / 1.805;
-            return $convert;
-         } else if ($z == 'ml') {
-            //to milli litre
-            $convert = $x * 16.387;
-            return $convert;
-         } else if ($z == 'gal') {
-            //to gallons
-            $convert = $x / 277;
-            return $convert;
-         } else if ($z == 'ft3') {
-            //to cubic ft
-            $convert = $x / 1728;
-            return $convert;
-         } else if ($z == 'm3') {
-            //to cubic metre
-            $convert = $x / 61024;
-            return $convert;
-         } else if ($z == 'l') {
-            //to  litres
-            $convert = $x / 61.024;
-            return $convert;
-         } else if ($z == 'cm3') {
-            //to  cubic centimetre
-            $convert = $x * 16.387;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'ft3': //from cubic foot
+            if ($toUnit === 'oz') {
+                //to fluid ounces
+                return $value * 958;
+            } elseif ($toUnit === 'ml') {
+                //to milli litre
+                return $value * 28317;
+            } elseif ($toUnit === 'gal') {
+                //to gallons
+                return $value * 6.229;
+            } elseif ($toUnit === 'm3') {
+                //to cubic metre
+                return $value / 35.315;
+            } elseif ($toUnit === 'in3') {
+                //to cubic inch
+                return $value * 1728;
+            } elseif ($toUnit === 'l') {
+                //to  litres
+                return $value * 28.317;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'ft3': //from cubic foot
-         if ($z == 'oz') {
-            //to fliud ounces
-            $convert = $x * 958;
-            return $convert;
-         } else if ($z == 'ml') {
-            //to milli litre
-            $convert = $x * 28317;
-            return $convert;
-         } else if ($z == 'gal') {
-            //to gallons
-            $convert = $x * 6.229;
-            return $convert;
-         } else if ($z == 'm3') {
-            //to cubic metre
-            $convert = $x / 35.315;
-            return $convert;
-         } else if ($z == 'in3') {
-            //to cubic inch
-            $convert = $x * 1728;
-            return $convert;
-         } else if ($z == 'l') {
-            //to  litres
-            $convert = $x * 28.317;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'cm3': //from cubic centimetres
+            if ($toUnit === 'oz') {
+                //to fluid ounces
+                return $value / 29.574;
+            } elseif ($toUnit === 'ml') {
+                //to milli litre
+                return $value * 1;
+            } elseif ($toUnit === 'gal') {
+                //to gallons
+                return $value * 4546;
+            } elseif ($toUnit === 'm3') {
+                //to cubic metre
+                return $value * 1000000;
+            } elseif ($toUnit === 'in3') {
+                //to cubic inch
+                return $value * 16.387;
+            } elseif ($toUnit === 'l') {
+                //to  litres
+                return $value / 1000;
+            } elseif ($toUnit === 'ft') {
+                //to  ft
+                return $value / 283317;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'cm3': //from cubic centimetres
-         if ($z == 'oz') {
-            //to fliud ounces
-            $convert = $x / 29.574;
-            return $convert;
-         } else if ($z == 'ml') {
-            //to milli litre
-            $convert = $x * 1;
-            return $convert;
-         } else if ($z == 'gal') {
-            //to gallons
-            $convert = $x * 4546;
-            return $convert;
-         } else if ($z == 'm3') {
-            //to cubic metre
-            $convert = $x * 1000000;
-            return $convert;
-         } else if ($z == 'in3') {
-            //to cubic inch
-            $convert = $x * 16.387;
-            return $convert;
-         } else if ($z == 'l') {
-            //to  litres
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'ft') {
-            //to  ft
-            $convert = $x / 283317;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
-
-      default:
-         return 'Arguement Error';
-         break;
-   }
+        default:
+            return 'Argument Error';
+            break;
+    }
 }
 
 /* SPEED CONVERTER */
 
-function speed_converter($x, $y, $z)
+function speed_converter($value, $fromUnit, $toUnit)
 {
+    switch ($fromUnit) {
+        case 'mps': //from metres per seconds
+            if ($toUnit === 'kph') {
+                //to km per hr
+                return $value * 3.6;
+            } elseif ($toUnit === 'knots') {
+                //to knots
+                return $value * 1.944;
+            } elseif ($toUnit === 'mph') {
+                //to miles per hr
+                return $value * 2.237;
+            } else {
+                return 'Argument Error';
+            }
 
-   switch ($y) {
-      case 'mps': //from metres per seconds
-         if ($z == 'kph') {
-            //to km per hr
-            $convert = $x * 3.6;
-            return $convert;
-         } else if ($z == 'knots') {
-            //to knots
-            $convert = $x * 1.944;
-            return $convert;
-         } else if ($z == 'mph') {
-            //to miles per hr
-            $convert = $x * 2.237;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
+            break;
 
-         break;
+        case 'kph': //from km per hr
+            if ($toUnit === 'mps') {
+                //to metre per sec
+                return $value / 3.6;
+            } elseif ($toUnit === 'knots') {
+                //to knots
+                return $value * 1.852;
+            } elseif ($toUnit === 'mph') {
+                //to miles per hr
+                return $value / 1.609;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'kph': //from km per hr
-         if ($z == 'mps') {
-            //to metre per sec
-            $convert = $x / 3.6;
-            return $convert;
-         } else if ($z == 'knots') {
-            //to knots
-            $convert = $x * 1.852;
-            return $convert;
-         } else if ($z == 'mph') {
-            //to miles per hr
-            $convert = $x / 1.609;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'mph': //from miles per hr
+            if ($toUnit === 'kph') {
+                //to km per hr
+                return $value * 1.609;
+            } elseif ($toUnit === 'knots') {
+                //to knots
+                return $value / 1.151;
+            } elseif ($toUnit === 'mps') {
+                //to metres per sec
+                return $value / 2.237;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'mph': //from miles per hr
-         if ($z == 'kph') {
-            //to km per hr
-            $convert = $x * 1.609;
-            return $convert;
-         } else if ($z == 'knots') {
-            //to knots
-            $convert = $x / 1.151;
-            return $convert;
-         } else if ($z == 'mps') {
-            //to metres per sec
-            $convert = $x / 2.237;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'knots': //from knots
+            if ($toUnit === 'kph') {
+                //to km per hr
+                return $value * 1.852;
+            } elseif ($toUnit === 'mps') {
+                //to metre per sec
+                return $value / 1.944;
+            } elseif ($toUnit === 'mph') {
+                //to miles per hr
+                return $value * 1.151;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'knots': //from knots
-         if ($z == 'kph') {
-            //to km per hr
-            $convert = $x * 1.852;
-            return $convert;
-         } else if ($z == 'mps') {
-            //to metre per sec
-            $convert = $x / 1.944;
-            return $convert;
-         } else if ($z == 'mph') {
-            //to miles per hr
-            $convert = $x * 1.151;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
-
-      default:
-         # code...
-         break;
-   }
-
+        default:
+            # code...
+            break;
+    }
 }
 
-function length_converter($x, $y, $z)
+function length_converter($value, $fromUnit, $toUnit)
 {
-   switch ($y) {
-      case 'km': //from kili metre
-         if ($z == 'm') {
-            //to metres
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'cm') {
-            //to centi metres
-            $convert = $x * 100000;
-            return $convert;
-         } else if ($z == 'mm') {
-            //to mili metres
-            $convert = $x * 1000000;
-            return $convert;
-         } else if ($z == 'um') {
-            //to micro metre
-            $convert = $x * 1000000000;
-            return $convert;
-         } else if ($z == 'nm') {
-            //to nano meter
-            $convert = $x * 1000000000000;
-            return $convert;
-         } else if ($z == 'mi') {
-            //to miles
-            $convert = $x / 1.609;
-            return $convert;
-         } else if ($z == 'yd') {
-            //to yards
-            $convert = $x * 1094;
-            return $convert;
-         } else if ($z == 'ft') {
-            //to foot
-            $convert = $x * 3281;
-            return $convert;
-         } else if ($z == 'in') {
-            //to inch
-            $convert = $x * 39370;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
+    switch ($fromUnit) {
+        case 'km': //from kilometre
+            if ($toUnit === 'm') {
+                //to metres
+                return $value * 1000;
+            } elseif ($toUnit === 'cm') {
+                //to centi metres
+                return $value * 100000;
+            } elseif ($toUnit === 'mm') {
+                //to millimetres
+                return $value * 1000000;
+            } elseif ($toUnit === 'um') {
+                //to micro metre
+                return $value * 1000000000;
+            } elseif ($toUnit === 'nm') {
+                //to nano meter
+                return $value * 1000000000000;
+            } elseif ($toUnit === 'mi') {
+                //to miles
+                return $value / 1.609;
+            } elseif ($toUnit === 'yd') {
+                //to yards
+                return $value * 1094;
+            } elseif ($toUnit === 'ft') {
+                //to foot
+                return $value * 3281;
+            } elseif ($toUnit === 'in') {
+                //to inch
+                return $value * 39370;
+            } else {
+                return 'Argument Error';
+            }
 
-         break;
+            break;
 
-      case 'm': //from metres
-         if ($z == 'km') {
-            //to kilo metres
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'cm') {
-            //to centi metres
-            $convert = $x * 100;
-            return $convert;
-         } else if ($z == 'mm') {
-            //to mili metres
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'um') {
-            //to micro metre
-            $convert = $x * 1000000;
-            return $convert;
-         } else if ($z == 'nm') {
-            //to nano meter
-            $convert = $x * 1000000000;
-            return $convert;
-         } else if ($z == 'mi') {
-            //to miles
-            $convert = $x / 1609;
-            return $convert;
-         } else if ($z == 'yd') {
-            //to yards
-            $convert = $x * 1.094;
-            return $convert;
-         } else if ($z == 'ft') {
-            //to foot
-            $convert = $x * 3.281;
-            return $convert;
-         } else if ($z == 'in') {
-            //to inch
-            $convert = $x * 39.37;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'm': //from metres
+            if ($toUnit === 'km') {
+                //to kilo metres
+                return $value / 1000;
+            } elseif ($toUnit === 'cm') {
+                //to centi metres
+                return $value * 100;
+            } elseif ($toUnit === 'mm') {
+                //to millimetres
+                return $value * 1000;
+            } elseif ($toUnit === 'um') {
+                //to micro metre
+                return $value * 1000000;
+            } elseif ($toUnit === 'nm') {
+                //to nano meter
+                return $value * 1000000000;
+            } elseif ($toUnit === 'mi') {
+                //to miles
+                return $value / 1609;
+            } elseif ($toUnit === 'yd') {
+                //to yards
+                return $value * 1.094;
+            } elseif ($toUnit === 'ft') {
+                //to foot
+                return $value * 3.281;
+            } elseif ($toUnit === 'in') {
+                //to inch
+                return $value * 39.37;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'cm': //from centi metres
-         if ($z == 'm') {
-            //to metres
-            $convert = $x / 100;
-            return $convert;
-         } else if ($z == 'km') {
-            //to kilo metres
-            $convert = $x / 100000;
-            return $convert;
-         } else if ($z == 'mm') {
-            //to mili metres
-            $convert = $x / 10;
-            return $convert;
-         } else if ($z == 'um') {
-            //to micro metre
-            $convert = $x * 10000;
-            return $convert;
-         } else if ($z == 'nm') {
-            //to nano meter
-            $convert = $x * 10000000;
-            return $convert;
-         } else if ($z == 'mi') {
-            //to miles
-            $convert = $x / 160934;
-            return $convert;
-         } else if ($z == 'yd') {
-            //to yards
-            $convert = $x / 91.44;
-            return $convert;
-         } else if ($z == 'ft') {
-            //to foot
-            $convert = $x / 30.48;
-            return $convert;
-         } else if ($z == 'in') {
-            //to inch
-            $convert = $x / 2.54;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'cm': //from centi metres
+            if ($toUnit === 'm') {
+                //to metres
+                return $value / 100;
+            } elseif ($toUnit === 'km') {
+                //to kilo metres
+                return $value / 100000;
+            } elseif ($toUnit === 'mm') {
+                //to millimetres
+                return $value / 10;
+            } elseif ($toUnit === 'um') {
+                //to micro metre
+                return $value * 10000;
+            } elseif ($toUnit === 'nm') {
+                //to nano meter
+                return $value * 10000000;
+            } elseif ($toUnit === 'mi') {
+                //to miles
+                return $value / 160934;
+            } elseif ($toUnit === 'yd') {
+                //to yards
+                return $value / 91.44;
+            } elseif ($toUnit === 'ft') {
+                //to foot
+                return $value / 30.48;
+            } elseif ($toUnit === 'in') {
+                //to inch
+                return $value / 2.54;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'mm': //from milli metres
-         if ($z == 'm') {
-            //to metres
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'cm') {
-            //to centi metres
-            $convert = $x / 10;
-            return $convert;
-         } else if ($z == 'km') {
-            //to kilo metres
-            $convert = $x / 1000000;
-            return $convert;
-         } else if ($z == 'um') {
-            //to micro metre
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'nm') {
-            //to nano meter
-            $convert = $x * 1000000;
-            return $convert;
-         } else if ($z == 'mi') {
-            //to miles
-            $convert = $x / 1609000;
-            return $convert;
-         } else if ($z == 'yd') {
-            //to yards
-            $convert = $x / 194;
-            return $convert;
-         } else if ($z == 'ft') {
-            //to foot
-            $convert = $x / 305;
-            return $convert;
-         } else if ($z == 'in') {
-            //to inch
-            $convert = $x / 25.4;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'mm': //from milli metres
+            if ($toUnit === 'm') {
+                //to metres
+                return $value / 1000;
+            } elseif ($toUnit === 'cm') {
+                //to centi metres
+                return $value / 10;
+            } elseif ($toUnit === 'km') {
+                //to kilo metres
+                return $value / 1000000;
+            } elseif ($toUnit === 'um') {
+                //to micro metre
+                return $value * 1000;
+            } elseif ($toUnit === 'nm') {
+                //to nano meter
+                return $value * 1000000;
+            } elseif ($toUnit === 'mi') {
+                //to miles
+                return $value / 1609000;
+            } elseif ($toUnit === 'yd') {
+                //to yards
+                return $value / 194;
+            } elseif ($toUnit === 'ft') {
+                //to foot
+                return $value / 305;
+            } elseif ($toUnit === 'in') {
+                //to inch
+                return $value / 25.4;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'um': //from micro metre
-         if ($z == 'm') {
-            //to metres
-            $convert = $x / 1000000;
-            return $convert;
-         } else if ($z == 'cm') {
-            //to centi metres
-            $convert = $x / 10000;
-            return $convert;
-         } else if ($z == 'mm') {
-            //to mili metres
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'km') {
-            //to kilo metre
-            $convert = $x / 1000000000;
-            return $convert;
-         } else if ($z == 'nm') {
-            //to nano meter
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'mi') {
-            //to miles
-            $convert = $x / 1609000000;
-            return $convert;
-         } else if ($z == 'yd') {
-            //to yards
-            $convert = $x / 914400;
-            return $convert;
-         } else if ($z == 'ft') {
-            //to foot
-            $convert = $x / 304800;
-            return $convert;
-         } else if ($z == 'in') {
-            //to inch
-            $convert = $x / 25400;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'um': //from micro metre
+            if ($toUnit === 'm') {
+                //to metres
+                return $value / 1000000;
+            } elseif ($toUnit === 'cm') {
+                //to centi metres
+                return $value / 10000;
+            } elseif ($toUnit === 'mm') {
+                //to millimetres
+                return $value / 1000;
+            } elseif ($toUnit === 'km') {
+                //to kilo metre
+                return $value / 1000000000;
+            } elseif ($toUnit === 'nm') {
+                //to nano meter
+                return $value * 1000;
+            } elseif ($toUnit === 'mi') {
+                //to miles
+                return $value / 1609000000;
+            } elseif ($toUnit === 'yd') {
+                //to yards
+                return $value / 914400;
+            } elseif ($toUnit === 'ft') {
+                //to foot
+                return $value / 304800;
+            } elseif ($toUnit === 'in') {
+                //to inch
+                return $value / 25400;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'nm': //from nano metre
-         if ($z == 'm') {
-            //to metres
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'cm') {
-            //to centi metres
-            $convert = $x / 10000000;
-            return $convert;
-         } else if ($z == 'mm') {
-            //to mili metres
-            $convert = $x / 1000000;
-            return $convert;
-         } else if ($z == 'um') {
-            //to micro metre
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'km') {
-            //to kilo meter
-            $convert = $x / 1000000000000;
-            return $convert;
-         } else if ($z == 'mi') {
-            //to miles
-            $convert = $x / 1609000000000;
-            return $convert;
-         } else if ($z == 'yd') {
-            //to yards
-            $convert = $x / 914400000;
-            return $convert;
-         } else if ($z == 'ft') {
-            //to foot
-            $convert = $x / 304800000;
-            return $convert;
-         } else if ($z == 'in') {
-            //to inch
-            $convert = $x / 25400000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'nm': //from nano metre
+            if ($toUnit === 'm') {
+                //to metres
+                return $value / 1000;
+            } elseif ($toUnit === 'cm') {
+                //to centi metres
+                return $value / 10000000;
+            } elseif ($toUnit === 'mm') {
+                //to millimetres
+                return $value / 1000000;
+            } elseif ($toUnit === 'um') {
+                //to micro metre
+                return $value / 1000;
+            } elseif ($toUnit === 'km') {
+                //to kilo meter
+                return $value / 1000000000000;
+            } elseif ($toUnit === 'mi') {
+                //to miles
+                return $value / 1609000000000;
+            } elseif ($toUnit === 'yd') {
+                //to yards
+                return $value / 914400000;
+            } elseif ($toUnit === 'ft') {
+                //to foot
+                return $value / 304800000;
+            } elseif ($toUnit === 'in') {
+                //to inch
+                return $value / 25400000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'mi': //from miles
-         if ($z == 'm') {
-            //to metres
-            $convert = $x * 1609;
-            return $convert;
-         } else if ($z == 'cm') {
-            //to centi metres
-            $convert = $x * 160934;
-            return $convert;
-         } else if ($z == 'mm') {
-            //to mili metres
-            $convert = $x * 1609000;
-            return $convert;
-         } else if ($z == 'um') {
-            //to micro metre
-            $convert = $x * 1609000000;
-            return $convert;
-         } else if ($z == 'nm') {
-            //to nano meter
-            $convert = $x * 1609000000000;
-            return $convert;
-         } else if ($z == 'km') {
-            //to km
-            $convert = $x * 1.609;
-            return $convert;
-         } else if ($z == 'yd') {
-            //to yards
-            $convert = $x * 1760;
-            return $convert;
-         } else if ($z == 'ft') {
-            //to foot
-            $convert = $x * 5280;
-            return $convert;
-         } else if ($z == 'in') {
-            //to inch
-            $convert = $x * 63360;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'mi': //from miles
+            if ($toUnit === 'm') {
+                //to metres
+                return $value * 1609;
+            } elseif ($toUnit === 'cm') {
+                //to centi metres
+                return $value * 160934;
+            } elseif ($toUnit === 'mm') {
+                //to millimetres
+                return $value * 1609000;
+            } elseif ($toUnit === 'um') {
+                //to micro metre
+                return $value * 1609000000;
+            } elseif ($toUnit === 'nm') {
+                //to nano meter
+                return $value * 1609000000000;
+            } elseif ($toUnit === 'km') {
+                //to km
+                return $value * 1.609;
+            } elseif ($toUnit === 'yd') {
+                //to yards
+                return $value * 1760;
+            } elseif ($toUnit === 'ft') {
+                //to foot
+                return $value * 5280;
+            } elseif ($toUnit === 'in') {
+                //to inch
+                return $value * 63360;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'yd':
-         if ($z == 'm') {
-            //to metres
-            $convert = $x / 1.094;
-            return $convert;
-         } else if ($z == 'cm') {
-            //to centi metres
-            $convert = $x * 91.44;
-            return $convert;
-         } else if ($z == 'mm') {
-            //to mili metres
-            $convert = $x * 914;
-            return $convert;
-         } else if ($z == 'um') {
-            //to micro metre
-            $convert = $x * 914400;
-            return $convert;
-         } else if ($z == 'nm') {
-            //to nano meter
-            $convert = $x * 914400000;
-            return $convert;
-         } else if ($z == 'mi') {
-            //to miles
-            $convert = $x / 1760;
-            return $convert;
-         } else if ($z == 'km') {
-            //to km
-            $convert = $x / 1094;
-            return $convert;
-         } else if ($z == 'ft') {
-            //to foot
-            $convert = $x * 3;
-            return $convert;
-         } else if ($z == 'in') {
-            //to inch
-            $convert = $x * 36;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'yd':
+            if ($toUnit === 'm') {
+                //to metres
+                return $value / 1.094;
+            } elseif ($toUnit === 'cm') {
+                //to centi metres
+                return $value * 91.44;
+            } elseif ($toUnit === 'mm') {
+                //to millimetres
+                return $value * 914;
+            } elseif ($toUnit === 'um') {
+                //to micro metre
+                return $value * 914400;
+            } elseif ($toUnit === 'nm') {
+                //to nano meter
+                return $value * 914400000;
+            } elseif ($toUnit === 'mi') {
+                //to miles
+                return $value / 1760;
+            } elseif ($toUnit === 'km') {
+                //to km
+                return $value / 1094;
+            } elseif ($toUnit === 'ft') {
+                //to foot
+                return $value * 3;
+            } elseif ($toUnit === 'in') {
+                //to inch
+                return $value * 36;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'ft': //from foot
-         if ($z == 'm') {
-            //to metres
-            $convert = $x / 3.281;
-            return $convert;
-         } else if ($z == 'cm') {
-            //to centi metres
-            $convert = $x * 30.40;
-            return $convert;
-         } else if ($z == 'mm') {
-            //to mili metres
-            $convert = $x * 305;
-            return $convert;
-         } else if ($z == 'um') {
-            //to micro metre
-            $convert = $x * 304800;
-            return $convert;
-         } else if ($z == 'nm') {
-            //to nano meter
-            $convert = $x * 304800000;
-            return $convert;
-         } else if ($z == 'mi') {
-            //to miles
-            $convert = $x / 5280;
-            return $convert;
-         } else if ($z == 'yd') {
-            //to yards
-            $convert = $x / 3;
-            return $convert;
-         } else if ($z == 'km') {
-            //to kilo metre
-            $convert = $x / 3281;
-            return $convert;
-         } else if ($z == 'in') {
-            //to inch
-            $convert = $x * 12;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'ft': //from foot
+            if ($toUnit === 'm') {
+                //to metres
+                return $value / 3.281;
+            } elseif ($toUnit === 'cm') {
+                //to centi metres
+                return $value * 30.40;
+            } elseif ($toUnit === 'mm') {
+                //to millimetres
+                return $value * 305;
+            } elseif ($toUnit === 'um') {
+                //to micro metre
+                return $value * 304800;
+            } elseif ($toUnit === 'nm') {
+                //to nano meter
+                return $value * 304800000;
+            } elseif ($toUnit === 'mi') {
+                //to miles
+                return $value / 5280;
+            } elseif ($toUnit === 'yd') {
+                //to yards
+                return $value / 3;
+            } elseif ($toUnit === 'km') {
+                //to kilo metre
+                return $value / 3281;
+            } elseif ($toUnit === 'in') {
+                //to inch
+                return $value * 12;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'in':
-         if ($z == 'm') {
-            //to metres
-            $convert = $x / 39.37;
-            return $convert;
-         } else if ($z == 'cm') {
-            //to centi metres
-            $convert = $x * 2.54;
-            return $convert;
-         } else if ($z == 'mm') {
-            //to mili metres
-            $convert = $x * 25.4;
-            return $convert;
-         } else if ($z == 'um') {
-            //to micro metre
-            $convert = $x * 25400;
-            return $convert;
-         } else if ($z == 'nm') {
-            //to nano meter
-            $convert = $x * 25400000;
-            return $convert;
-         } else if ($z == 'mi') {
-            //to miles
-            $convert = $x / 63360;
-            return $convert;
-         } else if ($z == 'yd') {
-            //to yards
-            $convert = $x / 36;
-            return $convert;
-         } else if ($z == 'ft') {
-            //to foot
-            $convert = $x * 12;
-            return $convert;
-         } else if ($z == 'km') {
-            //to kilo metre
-            $convert = $x / 39370;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'in':
+            if ($toUnit === 'm') {
+                //to metres
+                return $value / 39.37;
+            } elseif ($toUnit === 'cm') {
+                //to centi metres
+                return $value * 2.54;
+            } elseif ($toUnit === 'mm') {
+                //to millimetres
+                return $value * 25.4;
+            } elseif ($toUnit === 'um') {
+                //to micro metre
+                return $value * 25400;
+            } elseif ($toUnit === 'nm') {
+                //to nano meter
+                return $value * 25400000;
+            } elseif ($toUnit === 'mi') {
+                //to miles
+                return $value / 63360;
+            } elseif ($toUnit === 'yd') {
+                //to yards
+                return $value / 36;
+            } elseif ($toUnit === 'ft') {
+                //to foot
+                return $value * 12;
+            } elseif ($toUnit === 'km') {
+                //to kilo metre
+                return $value / 39370;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      default:
-         return 'Arguement Error';
-         break;
-   }
-
+        default:
+            return 'Argument Error';
+            break;
+    }
 }
 
-function pressure_converter($x, $y, $z)
+function pressure_converter($value, $fromUnit, $toUnit)
 {
-   switch ($y) {
-      case 'pa': //from pascal
-         if ($z == 'kpa') {
-            //to kilo pa
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'mpa') {
-            //to milli pa
-            $convert = $x / 1000000;
-            return $convert;
-         } else if ($z == 'bar') {
-            //to bar
-            $convert = $x / 100000;
-            return $convert;
-         } else if ($z == 'mbar') {
-            //to milli bar
-            $convert = $x / 100;
-            return $convert;
-         } else if ($z == 'psi') {
-            //to pounds per square inch
-            $convert = $x / 6895;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
+    switch ($fromUnit) {
+        case 'pa': //from pascal
+            if ($toUnit === 'kpa') {
+                //to kilo pa
+                return $value / 1000;
+            } elseif ($toUnit === 'mpa') {
+                //to milli pa
+                return $value / 1000000;
+            } elseif ($toUnit === 'bar') {
+                //to bar
+                return $value / 100000;
+            } elseif ($toUnit === 'mbar') {
+                //to milli bar
+                return $value / 100;
+            } elseif ($toUnit === 'psi') {
+                //to pounds per square inch
+                return $value / 6895;
+            } else {
+                return 'Argument Error';
+            }
 
-         break;
+            break;
 
-      case 'kpa':
-         if ($z == 'pa') {
-            //to pascal
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'mpa') {
-            //to milli pa
-            $convert = $x / 1000000;
-            return $convert;
-         } else if ($z == 'bar') {
-            //to bar
-            $convert = $x / 100;
-            return $convert;
-         } else if ($z == 'mbar') {
-            //to milli bar
-            $convert = $x * 10;
-            return $convert;
-         } else if ($z == 'psi') {
-            //to pounds per square inch
-            $convert = $x / 6.895;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
+        case 'kpa':
+            if ($toUnit === 'pa') {
+                //to pascal
+                return $value * 1000;
+            } elseif ($toUnit === 'mpa') {
+                //to milli pa
+                return $value / 1000000;
+            } elseif ($toUnit === 'bar') {
+                //to bar
+                return $value / 100;
+            } elseif ($toUnit === 'mbar') {
+                //to milli bar
+                return $value * 10;
+            } elseif ($toUnit === 'psi') {
+                //to pounds per square inch
+                return $value / 6.895;
+            } else {
+                return 'Argument Error';
+            }
 
-         break;
+            break;
 
-      case 'mpa': //milli pascal
-         if ($z == 'pa') {
-            //to pascal
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'kpa') {
-            //to killo paacal
-            $convert = $x / 1000000;
-            return $convert;
-         } else if ($z == 'bar') {
-            //to bar
-            $convert = $x / 100000000;
-            return $convert;
-         } else if ($z == 'mbar') {
-            //to milli bar
-            $convert = $x * 100000;
-            return $convert;
-         } else if ($z == 'psi') {
-            //to pounds per square inch
-            $convert = $x * 145.0377;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'mpa': //milli pascal
+            if ($toUnit === 'pa') {
+                //to pascal
+                return $value / 1000;
+            } elseif ($toUnit === 'kpa') {
+                //to kilopascal
+                return $value / 1000000;
+            } elseif ($toUnit === 'bar') {
+                //to bar
+                return $value / 100000000;
+            } elseif ($toUnit === 'mbar') {
+                //to milli bar
+                return $value * 100000;
+            } elseif ($toUnit === 'psi') {
+                //to pounds per square inch
+                return $value * 145.0377;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'bar':
-         if ($z == 'pa') {
-            //to pascal
-            $convert = $x * 100000;
-            return $convert;
-         } else if ($z == 'kpa') {
-            //to killo paacal
-            $convert = $x * 100;
-            return $convert;
-         } else if ($z == 'mpa') {
-            //to mega pascal
-            $convert = $x / 10;
-            return $convert;
-         } else if ($z == 'mbar') {
-            //to milli bar
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'psi') {
-            //to pounds per square inch
-            $convert = $x * 14.504;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'bar':
+            if ($toUnit === 'pa') {
+                //to pascal
+                return $value * 100000;
+            } elseif ($toUnit === 'kpa') {
+                //to kilopascal
+                return $value * 100;
+            } elseif ($toUnit === 'mpa') {
+                //to mega pascal
+                return $value / 10;
+            } elseif ($toUnit === 'mbar') {
+                //to milli bar
+                return $value * 1000;
+            } elseif ($toUnit === 'psi') {
+                //to pounds per square inch
+                return $value * 14.504;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'mbar':
-         if ($z == 'pa') {
-            //to pascal
-            $convert = $x * 100;
-            return $convert;
-         } else if ($z == 'kpa') {
-            //to killo paacal
-            $convert = $x / 10;
-            return $convert;
-         } else if ($z == 'mpa') {
-            //to mega pascal
-            $convert = $x / 10;
-            return $convert;
-         } else if ($z == 'bar') {
-            //to  bar
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'psi') {
-            //to pounds per square inch
-            $convert = $x / 68.948;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'mbar':
+            if ($toUnit === 'pa') {
+                //to pascal
+                return $value * 100;
+            } elseif ($toUnit === 'kpa') {
+                //to kilopascal
+                return $value / 10;
+            } elseif ($toUnit === 'mpa') {
+                //to mega pascal
+                return $value / 10;
+            } elseif ($toUnit === 'bar') {
+                //to  bar
+                return $value / 1000;
+            } elseif ($toUnit === 'psi') {
+                //to pounds per square inch
+                return $value / 68.948;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'psi':
-         if ($z == 'pa') {
-            //to pascal
-            $convert = $x * 6.895;
-            return $convert;
-         } else if ($z == 'kpa') {
-            //to killo paacal
-            $convert = $x / 6.895;
-            return $convert;
-         } else if ($z == 'mpa') {
-            //to mega pascal
-            $convert = $x / 10000;
-            return $convert;
-         } else if ($z == 'mbar') {
-            //to milli bar
-            $convert = $x * 68.948;
-            return $convert;
-         } else if ($z == 'bar') {
-            //to  bar
-            $convert = $x / 14.504;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'psi':
+            if ($toUnit === 'pa') {
+                //to pascal
+                return $value * 6.895;
+            } elseif ($toUnit === 'kpa') {
+                //to kilopascal
+                return $value / 6.895;
+            } elseif ($toUnit === 'mpa') {
+                //to mega pascal
+                return $value / 10000;
+            } elseif ($toUnit === 'mbar') {
+                //to milli bar
+                return $value * 68.948;
+            } elseif ($toUnit === 'bar') {
+                //to  bar
+                return $value / 14.504;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      default:
-         return 'Arguement Error';
-         break;
-   }
-
+        default:
+            return 'Argument Error';
+            break;
+    }
 }
 
-function mass_converter($x, $y, $z)
+function mass_converter($value, $fromUnit, $toUnit)
 {
-   switch ($y) {
-      case 'kg': //from kilo gram
-         if ($z == 'g') {
-            //to gram
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'lb') {
-            //to pounds
-            $convert = $x * 2.205;
-            return $convert;
-         } else if ($z == 'mg') {
-            //to millli grams
-            $convert = $x * 1000000;
-            return $convert;
-         } else if ($z == 't') {
-            //to tonnes
-            $convert = $x / 1000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+    switch ($fromUnit) {
+        case 'kg': //from kilo gram
+            if ($toUnit === 'g') {
+                //to gram
+                return $value * 1000;
+            } elseif ($toUnit === 'lb') {
+                //to pounds
+                return $value * 2.205;
+            } elseif ($toUnit === 'mg') {
+                //to milligrams
+                return $value * 1000000;
+            } elseif ($toUnit === 't') {
+                //to tonnes
+                return $value / 1000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'g': //from grams
-         if ($z == 'kg') {
-            //to killo gram
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'lb') {
-            //to pounds
-            $convert = $x / 454;
-            return $convert;
-         } else if ($z == 'mg') {
-            //to millli grams
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 't') {
-            //to tonnes
-            $convert = $x / 1000000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'g': //from grams
+            if ($toUnit === 'kg') {
+                //to kilogram
+                return $value / 1000;
+            } elseif ($toUnit === 'lb') {
+                //to pounds
+                return $value / 454;
+            } elseif ($toUnit === 'mg') {
+                //to milligrams
+                return $value * 1000;
+            } elseif ($toUnit === 't') {
+                //to tonnes
+                return $value / 1000000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'lb': //from pounds
-         if ($z == 'g') {
-            //to gram
-            $convert = $x * 454;
-            return $convert;
-         } else if ($z == 'kg') {
-            //to killo gram
-            $convert = $x / 2.205;
-            return $convert;
-         } else if ($z == 'mg') {
-            //to millli grams
-            $convert = $x * 453592;
-            return $convert;
-         } else if ($z == 't') {
-            //to tonnes
-            $convert = $x / 2205;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'lb': //from pounds
+            if ($toUnit === 'g') {
+                //to gram
+                return $value * 454;
+            } elseif ($toUnit === 'kg') {
+                //to kilogram
+                return $value / 2.205;
+            } elseif ($toUnit === 'mg') {
+                //to milligrams
+                return $value * 453592;
+            } elseif ($toUnit === 't') {
+                //to tonnes
+                return $value / 2205;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'mg': //from milli gram
-         if ($z == 'g') {
-            //to gram
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'lb') {
-            //to pounds
-            $convert = $x / 453592;
-            return $convert;
-         } else if ($z == 'kg') {
-            //to killo grams
-            $convert = $x / 1000000;
-            return $convert;
-         } else if ($z == 't') {
-            //to tonnes
-            $convert = $x / 1000000000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'mg': //from milli gram
+            if ($toUnit === 'g') {
+                //to gram
+                return $value / 1000;
+            } elseif ($toUnit === 'lb') {
+                //to pounds
+                return $value / 453592;
+            } elseif ($toUnit === 'kg') {
+                //to kilograms
+                return $value / 1000000;
+            } elseif ($toUnit === 't') {
+                //to tonnes
+                return $value / 1000000000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 't':
-         if ($z == 'g') {
-            //to gram
-            $convert = $x / 1000000000;
-            return $convert;
-         } else if ($z == 'lb') {
-            //to pounds
-            $convert = $x * 2205;
-            return $convert;
-         } else if ($z == 'mg') {
-            //to millli grams
-            $convert = $x * 1000000000;
-            return $convert;
-         } else if ($z == 'kg') {
-            //to kilo gram
-            $convert = $x * 1000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 't':
+            if ($toUnit === 'g') {
+                //to gram
+                return $value / 1000000000;
+            } elseif ($toUnit === 'lb') {
+                //to pounds
+                return $value * 2205;
+            } elseif ($toUnit === 'mg') {
+                //to milligrams
+                return $value * 1000000000;
+            } elseif ($toUnit === 'kg') {
+                //to kilo gram
+                return $value * 1000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      default:
-         return 'Arguement Error';
-         break;
-   }
-
+        default:
+            return 'Argument Error';
+            break;
+    }
 }
 
 /* FREQUENCY CONVERTER*/
 
-function frequency_converter($x, $y, $z)
+function frequency_converter($value, $fromUnit, $toUnit)
 {
-   switch ($y) {
-      case 'hz': // from hertz
-         if ($z == 'khz') {
-            //to kilo hertz
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'mhz') {
-            //to mega hertz
-            $convert = $x / 1000000;
-            return $convert;
-         } else if ($z == 'ghz') {
-            //to giga hertz
-            $convert = $x / 1000000000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+    switch ($fromUnit) {
+        case 'hz': // from hertz
+            if ($toUnit === 'khz') {
+                //to kilo hertz
+                return $value / 1000;
+            } elseif ($toUnit === 'mhz') {
+                //to mega hertz
+                return $value / 1000000;
+            } elseif ($toUnit === 'ghz') {
+                //to giga hertz
+                return $value / 1000000000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'khz': // from kilo hertz
-         if ($z == 'hz') {
-            //to hertz
-            $convert = $x / 1000000;
-            return $convert;
-         } else if ($z == 'mhz') {
-            //to mega hertz
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'ghz') {
-            //to giga hertz
-            $convert = $x / 100000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'khz': // from kilo hertz
+            if ($toUnit === 'hz') {
+                //to hertz
+                return $value / 1000000;
+            } elseif ($toUnit === 'mhz') {
+                //to mega hertz
+                return $value * 1000;
+            } elseif ($toUnit === 'ghz') {
+                //to giga hertz
+                return $value / 100000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'mhz':
-         if ($z == 'khz') {
-            //to kilo hertz
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'hz') {
-            //to  hertz
-            $convert = $x * 1000000;
-            return $convert;
-         } else if ($z == 'ghz') {
-            //to giga hertz
-            $convert = $x / 1000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'mhz':
+            if ($toUnit === 'khz') {
+                //to kilo hertz
+                return $value * 1000;
+            } elseif ($toUnit === 'hz') {
+                //to  hertz
+                return $value * 1000000;
+            } elseif ($toUnit === 'ghz') {
+                //to giga hertz
+                return $value / 1000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'ghz':
-         if ($z == 'khz') {
-            //to kilo hertz
-            $convert = $x * 1000000;
-            return $convert;
-         } else if ($z == 'mhz') {
-            //to mega hertz
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'hz') {
-            //to  hertz
-            $convert = $x * 1000000000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'ghz':
+            if ($toUnit === 'khz') {
+                //to kilo hertz
+                return $value * 1000000;
+            } elseif ($toUnit === 'mhz') {
+                //to mega hertz
+                return $value / 1000;
+            } elseif ($toUnit === 'hz') {
+                //to  hertz
+                return $value * 1000000000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      default:
-         return 'Arguement Error';
-         break;
-   }
+        default:
+            return 'Argument Error';
+            break;
+    }
 }
 
 /* ENERGY CONVERTER */
 
-function energy_converter($x, $y, $z)
+function energy_converter($value, $fromUnit, $toUnit)
 {
-   switch ($y) {
-      case 'j': //from joules
-         if ($z == 'kj') {
-            //to kilo joules
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'gcal') {
-            //to gram calorie
-            $convert = $x / 4.184;
-            return $convert;
-         } else if ($z == 'whr') {
-            //to watt hr
-            $convert = $x / 3600;
-            return $convert;
-         } else if ($z == 'kwhr') {
-            //to kilo watt hr
-            $convert = $x / 36000000;
-            return $convert;
-         } else if ($z == 'ev') {
-            //to electronvolt
-            $convert = $x * 6242000000000000000;
-            return $convert;
-         } else if ($z == 'kcal') {
-            //to killo calorie
-            $convert = $x / 4184;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+    switch ($fromUnit) {
+        case 'j': //from joules
+            if ($toUnit === 'kj') {
+                //to kilo joules
+                return $value / 1000;
+            } elseif ($toUnit === 'gcal') {
+                //to gram calorie
+                return $value / 4.184;
+            } elseif ($toUnit === 'whr') {
+                //to watt hr
+                return $value / 3600;
+            } elseif ($toUnit === 'kwhr') {
+                //to kilo watt hr
+                return $value / 36000000;
+            } elseif ($toUnit === 'ev') {
+                //to electronvolt
+                return $value * 6242000000000000000;
+            } elseif ($toUnit === 'kcal') {
+                //to kilo calorie
+                return $value / 4184;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'kj': // from kilo joules
-         if ($z == 'j') {
-            //to  joules
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'gcal') {
-            //to gram calorie
-            $convert = $x * 239;
-            return $convert;
-         } else if ($z == 'whr') {
-            //to watt hr
-            $convert = $x / 3.6;
-            return $convert;
-         } else if ($z == 'kwhr') {
-            //to kilo watt hr
-            $convert = $x / 3600;
-            return $convert;
-         } else if ($z == 'ev') {
-            //to electronvolt
-            $convert = $x * 6241500000000000000000;
-            return $convert;
-         } else if ($z == 'kcal') {
-            //to killo calorie
-            $convert = $x / 4.184;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'kj': // from kilo joules
+            if ($toUnit === 'j') {
+                //to  joules
+                return $value * 1000;
+            } elseif ($toUnit === 'gcal') {
+                //to gram calorie
+                return $value * 239;
+            } elseif ($toUnit === 'whr') {
+                //to watt hr
+                return $value / 3.6;
+            } elseif ($toUnit === 'kwhr') {
+                //to kilo watt hr
+                return $value / 3600;
+            } elseif ($toUnit === 'ev') {
+                //to electronvolt
+                return $value * 6241500000000000000000;
+            } elseif ($toUnit === 'kcal') {
+                //to kilo calorie
+                return $value / 4.184;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'gcal': //from gram calorie
-         if ($z == 'kj') {
-            //to kilo joules
-            $convert = $x / 239;
-            return $convert;
-         } else if ($z == 'j') {
-            //to  joules
-            $convert = $x * 4.184;
-            return $convert;
-         } else if ($z == 'whr') {
-            //to watt hr
-            $convert = $x / 860;
-            return $convert;
-         } else if ($z == 'kwhr') {
-            //to kilo watt hr
-            $convert = $x / 860421;
-            return $convert;
-         } else if ($z == 'ev') {
-            //to electronvolt
-            $convert = $x * 26130000000000000000;
-            return $convert;
-         } else if ($z == 'kcal') {
-            //to killo calorie
-            $convert = $x / 1000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'gcal': //from gram calorie
+            if ($toUnit === 'kj') {
+                //to kilo joules
+                return $value / 239;
+            } elseif ($toUnit === 'j') {
+                //to  joules
+                return $value * 4.184;
+            } elseif ($toUnit === 'whr') {
+                //to watt hr
+                return $value / 860;
+            } elseif ($toUnit === 'kwhr') {
+                //to kilo watt hr
+                return $value / 860421;
+            } elseif ($toUnit === 'ev') {
+                //to electronvolt
+                return $value * 26130000000000000000;
+            } elseif ($toUnit === 'kcal') {
+                //to kilo calorie
+                return $value / 1000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'whr': //from watt hr
-         if ($z == 'kj') {
-            //to kilo joules
-            $convert = $x * 3.6;
-            return $convert;
-         } else if ($z == 'gcal') {
-            //to gram calorie
-            $convert = $x * 860;
-            return $convert;
-         } else if ($z == 'j') {
-            //to joules
-            $convert = $x * 3600;
-            return $convert;
-         } else if ($z == 'kwhr') {
-            //to kilo watt hr
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'ev') {
-            //to electronvolt
-            $convert = $x * 22469000000000000000000;
-            return $convert;
-         } else if ($z == 'kcal') {
-            //to killo calorie
-            $convert = $x / 1.162;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'whr': //from watt hr
+            if ($toUnit === 'kj') {
+                //to kilo joules
+                return $value * 3.6;
+            } elseif ($toUnit === 'gcal') {
+                //to gram calorie
+                return $value * 860;
+            } elseif ($toUnit === 'j') {
+                //to joules
+                return $value * 3600;
+            } elseif ($toUnit === 'kwhr') {
+                //to kilo watt hr
+                return $value / 1000;
+            } elseif ($toUnit === 'ev') {
+                //to electronvolt
+                return $value * 22469000000000000000000;
+            } elseif ($toUnit === 'kcal') {
+                //to kilo calorie
+                return $value / 1.162;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'kwhr':
-         if ($z == 'kj') {
-            //to kilo joules
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'gcal') {
-            //to gram calorie
-            $convert = $x * 860421;
-            return $convert;
-         } else if ($z == 'whr') {
-            //to watt hr
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'j') {
-            //to joules
-            $convert = $x * 3600000;
-            return $convert;
-         } else if ($z == 'ev') {
-            //to electronvolt
-            $convert = $x * 22469000000000000000000000;
-            return $convert;
-         } else if ($z == 'kcal') {
-            //to killo calorie
-            $convert = $x * 860;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'kwhr':
+            if ($toUnit === 'kj') {
+                //to kilo joules
+                return $value * 1000;
+            } elseif ($toUnit === 'gcal') {
+                //to gram calorie
+                return $value * 860421;
+            } elseif ($toUnit === 'whr') {
+                //to watt hr
+                return $value * 1000;
+            } elseif ($toUnit === 'j') {
+                //to joules
+                return $value * 3600000;
+            } elseif ($toUnit === 'ev') {
+                //to electronvolt
+                return $value * 22469000000000000000000000;
+            } elseif ($toUnit === 'kcal') {
+                //to kilo calorie
+                return $value * 860;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'ev':
-         if ($z == 'kj') {
-            //to kilo joules
-            $convert = $x * 0.000000000000000000000160218;
-            return $convert;
-         } else if ($z == 'gcal') {
-            //to gram calorie
-            $convert = $x * 0.0000000000000000000382765;
-            return $convert;
-         } else if ($z == 'whr') {
-            //to watt hr
-            $convert = $x * 0.0000000000000000000000044505;
-            return $convert;
-         } else if ($z == 'kwhr') {
-            //to kilo watt hr
-            $convert = $x * 0.000000000000000000000000044505;
-            return $convert;
-         } else if ($z == 'j') {
-            //to joules
-            $convert = $x / 0.0000000000000000062415;
-            return $convert;
-         } else if ($z == 'kcal') {
-            //to killo calorie
-            $convert = $x * 0.000000000000000000000038293;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'ev':
+            if ($toUnit === 'kj') {
+                //to kilo joules
+                return $value * 0.000000000000000000000160218;
+            } elseif ($toUnit === 'gcal') {
+                //to gram calorie
+                return $value * 0.0000000000000000000382765;
+            } elseif ($toUnit === 'whr') {
+                //to watt hr
+                return $value * 0.0000000000000000000000044505;
+            } elseif ($toUnit === 'kwhr') {
+                //to kilo watt hr
+                return $value * 0.000000000000000000000000044505;
+            } elseif ($toUnit === 'j') {
+                //to joules
+                return $value / 0.0000000000000000062415;
+            } elseif ($toUnit === 'kcal') {
+                //to kilo calorie
+                return $value * 0.000000000000000000000038293;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'kcal':
-         if ($z == 'kj') {
-            //to kilo joules
-            $convert = $x * 4.184;
-            return $convert;
-         } else if ($z == 'gcal') {
-            //to gram calorie
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'whr') {
-            //to watt hr
-            $convert = $x * 1.162;
-            return $convert;
-         } else if ($z == 'kwhr') {
-            //to kilo watt hr
-            $convert = $x / 860;
-            return $convert;
-         } else if ($z == 'ev') {
-            //to electronvolt
-            $convert = $x * 2.6114000000000000000000;
-            return $convert;
-         } else if ($z == 'j') {
-            //to joules
-            $convert = $x * 4184;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'kcal':
+            if ($toUnit === 'kj') {
+                //to kilo joules
+                return $value * 4.184;
+            } elseif ($toUnit === 'gcal') {
+                //to gram calorie
+                return $value * 1000;
+            } elseif ($toUnit === 'whr') {
+                //to watt hr
+                return $value * 1.162;
+            } elseif ($toUnit === 'kwhr') {
+                //to kilo watt hr
+                return $value / 860;
+            } elseif ($toUnit === 'ev') {
+                //to electronvolt
+                return $value * 2.6114000000000000000000;
+            } elseif ($toUnit === 'j') {
+                //to joules
+                return $value * 4184;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      default:
-         return 'Arguement Error';
-         break;
-   }
+        default:
+            return 'Argument Error';
+            break;
+    }
 }
 
 /*  DIGITAL STORAGE */
 
-function disk_storage($x, $y, $z)
+function disk_storage($value, $fromUnit, $toUnit)
 {
-   switch ($y) {
-      case 'bit': // from bit
-         if ($z == 'byte') {
-            //to byte
-            $convert = $x / 8;
-            return $convert;
-         } else if ($z == 'kb') {
-            //to kilobyte
-            $convert = $x / 8000;
-            return $convert;
-         } else if ($z == 'mb') {
-            //to megabyte
-            $convert = $x / 8000000;
-            return $convert;
-         } else if ($z == 'gb') {
-            //to gigabyte
-            $convert = $x / 8000000000;
-            return $convert;
-         } else if ($z == 'tb') {
-            //to terabyte
-            $convert = $x / 8000000000000;
-            return $convert;
-         } else if ($z == 'pb') {
-            //to petabyte
-            $convert = $x / 8000000000000000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
+    switch ($fromUnit) {
+        case 'bit': // from bit
+            if ($toUnit === 'byte') {
+                //to byte
+                return $value / 8;
+            } elseif ($toUnit === 'kb') {
+                //to kilobyte
+                return $value / 8000;
+            } elseif ($toUnit === 'mb') {
+                //to megabyte
+                return $value / 8000000;
+            } elseif ($toUnit === 'gb') {
+                //to gigabyte
+                return $value / 8000000000;
+            } elseif ($toUnit === 'tb') {
+                //to terabyte
+                return $value / 8000000000000;
+            } elseif ($toUnit === 'pb') {
+                //to petabyte
+                return $value / 8000000000000000;
+            } else {
+                return 'Argument Error';
+            }
 
-         break;
+            break;
 
-      case 'byte': //from byte
-         if ($z == 'bit') {
-            //to bit
-            $convert = $x * 8;
-            return $convert;
-         } else if ($z == 'kb') {
-            //to kilobyte
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'mb') {
-            //to megabyte
-            $convert = $x / 1000000;
-            return $convert;
-         } else if ($z == 'gb') {
-            //to gigabyte
-            $convert = $x / 1000000000;
-            return $convert;
-         } else if ($z == 'tb') {
-            //to terabyte
-            $convert = $x / 1000000000000;
-            return $convert;
-         } else if ($z == 'pb') {
-            //to petabyte
-            $convert = $x / 1000000000000000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'byte': //from byte
+            if ($toUnit === 'bit') {
+                //to bit
+                return $value * 8;
+            } elseif ($toUnit === 'kb') {
+                //to kilobyte
+                return $value / 1000;
+            } elseif ($toUnit === 'mb') {
+                //to megabyte
+                return $value / 1000000;
+            } elseif ($toUnit === 'gb') {
+                //to gigabyte
+                return $value / 1000000000;
+            } elseif ($toUnit === 'tb') {
+                //to terabyte
+                return $value / 1000000000000;
+            } elseif ($toUnit === 'pb') {
+                //to petabyte
+                return $value / 1000000000000000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'kb': //from kilo byte
-         if ($z == 'byte') {
-            //to byte
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'bit') {
-            //to bit
-            $convert = $x * 8000;
-            return $convert;
-         } else if ($z == 'mb') {
-            //to megabyte
-            $convert = $x / 125;
-            return $convert;
-         } else if ($z == 'gb') {
-            //to gigabyte
-            $convert = $x / 125000;
-            return $convert;
-         } else if ($z == 'tb') {
-            //to terabyte
-            $convert = $x / 1000000000;
-            return $convert;
-         } else if ($z == 'pb') {
-            //to petabyte
-            $convert = $x / 1000000000000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'kb': //from kilo byte
+            if ($toUnit === 'byte') {
+                //to byte
+                return $value * 1000;
+            } elseif ($toUnit === 'bit') {
+                //to bit
+                return $value * 8000;
+            } elseif ($toUnit === 'mb') {
+                //to megabyte
+                return $value / 125;
+            } elseif ($toUnit === 'gb') {
+                //to gigabyte
+                return $value / 125000;
+            } elseif ($toUnit === 'tb') {
+                //to terabyte
+                return $value / 1000000000;
+            } elseif ($toUnit === 'pb') {
+                //to petabyte
+                return $value / 1000000000000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'mb':
-         if ($z == 'byte') {
-            //to byte
-            $convert = $x * 1000000;
-            return $convert;
-         } else if ($z == 'kb') {
-            //to kilobyte
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'bit') {
-            //to bit
-            $convert = $x * 8000000;
-            return $convert;
-         } else if ($z == 'gb') {
-            //to gigabyte
-            $convert = $x / 1074;
-            return $convert;
-         } else if ($z == 'tb') {
-            //to terabyte
-            $convert = $x / 1000000;
-            return $convert;
-         } else if ($z == 'pb') {
-            //to petabyte
-            $convert = $x / 1000000000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'mb':
+            if ($toUnit === 'byte') {
+                //to byte
+                return $value * 1000000;
+            } elseif ($toUnit === 'kb') {
+                //to kilobyte
+                return $value * 1000;
+            } elseif ($toUnit === 'bit') {
+                //to bit
+                return $value * 8000000;
+            } elseif ($toUnit === 'gb') {
+                //to gigabyte
+                return $value / 1074;
+            } elseif ($toUnit === 'tb') {
+                //to terabyte
+                return $value / 1000000;
+            } elseif ($toUnit === 'pb') {
+                //to petabyte
+                return $value / 1000000000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'gb':
-         if ($z == 'byte') {
-            //to byte
-            $convert = $x * 1000000000;
-            return $convert;
-         } else if ($z == 'kb') {
-            //to kilobyte
-            $convert = $x * 1000000;
-            return $convert;
-         } else if ($z == 'mb') {
-            //to megabyte
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'bit') {
-            //to bit
-            $convert = $x * 8000000000;
-            return $convert;
-         } else if ($z == 'tb') {
-            //to terabyte
-            $convert = $x / 1000;
-            return $convert;
-         } else if ($z == 'pb') {
-            //to petabyte
-            $convert = $x / 1000000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'gb':
+            if ($toUnit === 'byte') {
+                //to byte
+                return $value * 1000000000;
+            } elseif ($toUnit === 'kb') {
+                //to kilobyte
+                return $value * 1000000;
+            } elseif ($toUnit === 'mb') {
+                //to megabyte
+                return $value * 1000;
+            } elseif ($toUnit === 'bit') {
+                //to bit
+                return $value * 8000000000;
+            } elseif ($toUnit === 'tb') {
+                //to terabyte
+                return $value / 1000;
+            } elseif ($toUnit === 'pb') {
+                //to petabyte
+                return $value / 1000000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'tb':
-         if ($z == 'byte') {
-            //to byte
-            $convert = $x * 1000000000000;
-            return $convert;
-         } else if ($z == 'kb') {
-            //to kilobyte
-            $convert = $x * 1000000000;
-            return $convert;
-         } else if ($z == 'mb') {
-            //to megabyte
-            $convert = $x * 1000000;
-            return $convert;
-         } else if ($z == 'gb') {
-            //to gigabyte
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'bit') {
-            //to bit
-            $convert = $x * 8000000000000;
-            return $convert;
-         } else if ($z == 'pb') {
-            //to petabyte
-            $convert = $x / 1000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'tb':
+            if ($toUnit === 'byte') {
+                //to byte
+                return $value * 1000000000000;
+            } elseif ($toUnit === 'kb') {
+                //to kilobyte
+                return $value * 1000000000;
+            } elseif ($toUnit === 'mb') {
+                //to megabyte
+                return $value * 1000000;
+            } elseif ($toUnit === 'gb') {
+                //to gigabyte
+                return $value * 1000;
+            } elseif ($toUnit === 'bit') {
+                //to bit
+                return $value * 8000000000000;
+            } elseif ($toUnit === 'pb') {
+                //to petabyte
+                return $value / 1000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      case 'pb':
-         if ($z == 'byte') {
-            //to byte
-            $convert = $x * 1000000000000000;
-            return $convert;
-         } else if ($z == 'kb') {
-            //to kilobyte
-            $convert = $x * 1000000000000;
-            return $convert;
-         } else if ($z == 'mb') {
-            //to megabyte
-            $convert = $x * 1000000000;
-            return $convert;
-         } else if ($z == 'gb') {
-            //to gigabyte
-            $convert = $x * 1000000;
-            return $convert;
-         } else if ($z == 'tb') {
-            //to terabyte
-            $convert = $x * 1000;
-            return $convert;
-         } else if ($z == 'bit') {
-            //to bit
-            $convert = $x * 8000000000000000;
-            return $convert;
-         } else {
-            return 'Arguement Error';
-         }
-         break;
+        case 'pb':
+            if ($toUnit === 'byte') {
+                //to byte
+                return $value * 1000000000000000;
+            } elseif ($toUnit === 'kb') {
+                //to kilobyte
+                return $value * 1000000000000;
+            } elseif ($toUnit === 'mb') {
+                //to megabyte
+                return $value * 1000000000;
+            } elseif ($toUnit === 'gb') {
+                //to gigabyte
+                return $value * 1000000;
+            } elseif ($toUnit === 'tb') {
+                //to terabyte
+                return $value * 1000;
+            } elseif ($toUnit === 'bit') {
+                //to bit
+                return $value * 8000000000000000;
+            } else {
+                return 'Argument Error';
+            }
+            break;
 
-      default:
-         return 'Arguement Error';
-         break;
-   }
-
+        default:
+            return 'Argument Error';
+            break;
+    }
 }

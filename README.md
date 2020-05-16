@@ -1,12 +1,12 @@
 # pu-converter
-pu-converter also known as PHP-unit-converter is a simple and an easy to use PHP  library for converting mathematical, engineering and scientific units .
+pu-converter also known as PHP-unit-converter is a simple and easy to use PHP  library for converting mathematical, engineering and scientific units .
 
 # Coverage
 pu-converter allows you to convert any unit to any other compatible unit type.
 
 It has no external dependencies, simply include the library in your project and you're set
 
-pu-convertor can handle a wide range of unit types including: 
+pu-converter can handle a wide range of unit types including: 
 
 * Length
 * Area
@@ -24,14 +24,14 @@ pu-convertor can handle a wide range of unit types including:
 ## Installing
 Using pu-converter is as simple as including the library in your project
 
-```
+```php
 include '/path/to/puconverter.php';
 ```
 
-## Guildlines: How to use
+## Guidelines: How to use
 1. Call a conversion function 
 2. The called conversion function requires three arguements to be passed
-3. Arguement 1 is the value to be converted, Arguement 2 is the unit to convert, Argument 3 is the unit to be converted to
+3. Argument 1 is the value to be converted, Arguement 2 is the unit to convert, Argument 3 is the unit to be converted to
 4. All units are to be passed in their SI units/abbreviations, example: kilogram is kg, seconds is s, e.t.c.
      
     
@@ -56,19 +56,19 @@ The following functions are to be called when converting from any of the below S
 12. Disk Storage => `disk_storage();`
 
 **Simple Examples**
-```
-teperature_converter(30,'c','k'); //this converts 30 degree celcuius to its equivalent kelvin temperature
+```php
+teperature_converter(30, 'c', 'k'); //this converts 30 degree celsius to its equivalent kelvin temperature
 ```
 //Returns 303.15 kelvin
-```
-time_converter(360,'s','min'); // this converts 360 seconds to it equivalent minutes
+```php
+time_converter(360, 's', 'min'); // this converts 360 seconds to it equivalent minutes
 ```
 //returns 6 minutes
 
 **More Examples**
 
 This example looks into working with forms and web apps
-```
+```php
 <form method="POST" action="file.php">
 <!-- converting cm to other length units -->
 <input type="text" name="val">
@@ -76,19 +76,19 @@ This example looks into working with forms and web apps
 </form>
 
 <?php
-if(isset($_POST["submit"])){
-$x = $_POST["val"];
-$y = "cm";
-//$x is the value to convert, $y is the unit of the value to convert.
- echo length_converter($x,$y,"m");
- echo length_converter($x,$y,"mm");
- echo length_converter($x,$y,"km");
-  }
+if(isset($_POST["submit"])) {
+    $value = $_POST["val"];
+    $fromUnit = "cm";
+    //$value is the value to convert, $fromUnit is the unit of the value to convert.
+    echo length_converter($value, $fromUnit, "m");
+    echo length_converter($value, $fromUnit, "mm");
+    echo length_converter($value, $fromUnit, "km");
+}
 
 ?>
 ```
 
-```
+```php
 <form method="POST" action="file.php">
 <!-- converting length unit (user specified) -->
 Convert :<input type="text" name="val">
@@ -98,15 +98,15 @@ convert to:<input type="text" name="unit2>
 </form>
 
 <?php
-if(isset($_POST["submit"])){
-$x = $_POST["val"];
-$y = $_POST["unit1"];
-$z = $_POST["unit2"];
-//$x is the value to convert, $y is the unit of the value to convert, $z is the unit to convert to
- echo length_converter($x,$y,$z);
- echo length_converter($x,$y,$z);
- echo length_converter($x,$y,$z);
-  }
+if(isset($_POST["submit"])) {
+    $value = $_POST["val"];
+    $fromUnit = $_POST["unit1"];
+    $toUnit = $_POST["unit2"];
+    //$value is the value to convert, $fromUnit is the unit of the value to convert, $toUnit is the unit to convert to
+    echo length_converter($value, $fromUnit, $toUnit);
+    echo length_converter($value, $fromUnit, $toUnit);
+    echo length_converter($value, $fromUnit, $toUnit);
+}
 
 ?>
 ```
@@ -115,14 +115,14 @@ $z = $_POST["unit2"];
 
  **Temperature** 
  k => Kelvin
- c => celcius
+ c => celsius
  f => fahrenheit
  
  **Area**
  m2 => Square Meter
  km2 => Square Kilometer
  cm2 => Square Centimeter
- mm2 => Square Milimeter
+ mm2 => Square Millimeter
  ft2 => Square Foot
  mi2 => Square Mile
  ac => Acre
@@ -130,9 +130,9 @@ $z = $_POST["unit2"];
  
  **Volume**
  l => Litre
- ml => Mililitre
+ ml => Millilitre
  m3 => Cubic Meter
- gal => Galon
+ gal => Gallon
  oz => fluid ounces
  ft3 => cubic feet
  cm3 => cubic centi meter
@@ -140,7 +140,7 @@ $z = $_POST["unit2"];
  **Mass**
  kg => Kilogram
  g => Gram
- mg => Miligram
+ mg => Milligram
  lb => Pound
  t =>  Tonne
  
@@ -160,7 +160,7 @@ $z = $_POST["unit2"];
  kpa => kilopascal
  mpa => MegaPascal
  bar => Bar
- mbar => Milibar
+ mbar => Millibar
  psi => Pound-force per square inch
  
  **Time**
@@ -171,7 +171,7 @@ $z = $_POST["unit2"];
  day => Day
  hr => Hour
  min => Minute
- ms => Milisecond
+ ms => Millisecond
  dec => decade
  cen => century
  
@@ -204,7 +204,7 @@ $z = $_POST["unit2"];
 m - Meter
 km - Kilometer
 cm - Centimeter
-mm - Milimeter
+mm - Millimeter
 um - Micrometer
 nm - Nanometer
 in - Inch
@@ -216,12 +216,4 @@ mi - Mile
 *Initial work- Gracious Emmanuel
 
 ## Contributing
-Please Read the **contributing.md** to see contributing process, code of conduct and pull request process
-
-
-
-     
-
-
-
-
+Please, read the **contributing.md** to see contributing process, code of conduct and pull request process.
