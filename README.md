@@ -1,5 +1,5 @@
 # pu-converter
-pu-converter also known as PHP-unit-converter is a simple and an easy to use PHP  library for converting mathematical, engineering and scientific units .
+pu-converter also known as PHP-unit-converter is a simple and easy to use PHP  library for converting mathematical, engineering and scientific units .
 
 # Coverage
 pu-converter allows you to convert any unit to any other compatible unit type.
@@ -24,7 +24,7 @@ pu-converter can handle a wide range of unit types including:
 ## Installing
 Using pu-converter is as simple as including the library in your project
 
-```
+```php
 include '/path/to/puconverter.php';
 ```
 
@@ -56,19 +56,19 @@ The following functions are to be called when converting from any of the below S
 12. Disk Storage => `disk_storage();`
 
 **Simple Examples**
-```
-teperature_converter(30,'c','k'); //this converts 30 degree celcuius to its equivalent kelvin temperature
+```php
+teperature_converter(30, 'c', 'k'); //this converts 30 degree celsius to its equivalent kelvin temperature
 ```
 //Returns 303.15 kelvin
-```
-time_converter(360,'s','min'); // this converts 360 seconds to it equivalent minutes
+```php
+time_converter(360, 's', 'min'); // this converts 360 seconds to it equivalent minutes
 ```
 //returns 6 minutes
 
 **More Examples**
 
 This example looks into working with forms and web apps
-```
+```php
 <form method="POST" action="file.php">
 <!-- converting cm to other length units -->
 <input type="text" name="val">
@@ -76,19 +76,19 @@ This example looks into working with forms and web apps
 </form>
 
 <?php
-if(isset($_POST["submit"])){
-$x = $_POST["val"];
-$y = "cm";
-//$x is the value to convert, $y is the unit of the value to convert.
- echo length_converter($x,$y,"m");
- echo length_converter($x,$y,"mm");
- echo length_converter($x,$y,"km");
-  }
+if(isset($_POST["submit"])) {
+    $x = $_POST["val"];
+    $y = "cm";
+    //$x is the value to convert, $y is the unit of the value to convert.
+    echo length_converter($x, $y, "m");
+    echo length_converter($x, $y, "mm");
+    echo length_converter($x, $y, "km");
+}
 
 ?>
 ```
 
-```
+```php
 <form method="POST" action="file.php">
 <!-- converting length unit (user specified) -->
 Convert :<input type="text" name="val">
@@ -98,15 +98,15 @@ convert to:<input type="text" name="unit2>
 </form>
 
 <?php
-if(isset($_POST["submit"])){
-$x = $_POST["val"];
-$y = $_POST["unit1"];
-$z = $_POST["unit2"];
-//$x is the value to convert, $y is the unit of the value to convert, $z is the unit to convert to
- echo length_converter($x,$y,$z);
- echo length_converter($x,$y,$z);
- echo length_converter($x,$y,$z);
-  }
+if(isset($_POST["submit"])) {
+    $x = $_POST["val"];
+    $y = $_POST["unit1"];
+    $z = $_POST["unit2"];
+    //$x is the value to convert, $y is the unit of the value to convert, $z is the unit to convert to
+    echo length_converter($x, $y, $z);
+    echo length_converter($x, $y, $z);
+    echo length_converter($x, $y, $z);
+}
 
 ?>
 ```
@@ -216,12 +216,4 @@ mi - Mile
 *Initial work- Gracious Emmanuel
 
 ## Contributing
-Please, read the **contributing.md** to see contributing process, code of conduct and pull request process
-
-
-
-     
-
-
-
-
+Please, read the **contributing.md** to see contributing process, code of conduct and pull request process.
