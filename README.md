@@ -6,7 +6,7 @@ pu-converter allows you to convert any unit to any other compatible unit type.
 
 It has no external dependencies, simply include the library in your project and you're set
 
-pu-convertor can handle a wide range of unit types including: 
+pu-converter can handle a wide range of unit types including: 
 
 * Length
 * Area
@@ -28,10 +28,10 @@ Using pu-converter is as simple as including the library in your project
 include '/path/to/puconverter.php';
 ```
 
-## Guildlines: How to use
+## Guidelines: How to use
 1. Call a conversion function 
 2. The called conversion function requires three arguements to be passed
-3. Arguement 1 is the value to be converted, Arguement 2 is the unit to convert, Argument 3 is the unit to be converted to
+3. Argument 1 is the value to be converted, Arguement 2 is the unit to convert, Argument 3 is the unit to be converted to
 4. All units are to be passed in their SI units/abbreviations, example: kilogram is kg, seconds is s, e.t.c.
      
     
@@ -115,14 +115,14 @@ $z = $_POST["unit2"];
 
  **Temperature** 
  k => Kelvin
- c => celcius
+ c => celsius
  f => fahrenheit
  
  **Area**
  m2 => Square Meter
  km2 => Square Kilometer
  cm2 => Square Centimeter
- mm2 => Square Milimeter
+ mm2 => Square Millimeter
  ft2 => Square Foot
  mi2 => Square Mile
  ac => Acre
@@ -130,9 +130,9 @@ $z = $_POST["unit2"];
  
  **Volume**
  l => Litre
- ml => Mililitre
+ ml => Millilitre
  m3 => Cubic Meter
- gal => Galon
+ gal => Gallon
  oz => fluid ounces
  ft3 => cubic feet
  cm3 => cubic centi meter
@@ -140,7 +140,7 @@ $z = $_POST["unit2"];
  **Mass**
  kg => Kilogram
  g => Gram
- mg => Miligram
+ mg => Milligram
  lb => Pound
  t =>  Tonne
  
@@ -160,7 +160,7 @@ $z = $_POST["unit2"];
  kpa => kilopascal
  mpa => MegaPascal
  bar => Bar
- mbar => Milibar
+ mbar => Millibar
  psi => Pound-force per square inch
  
  **Time**
@@ -171,7 +171,7 @@ $z = $_POST["unit2"];
  day => Day
  hr => Hour
  min => Minute
- ms => Milisecond
+ ms => Millisecond
  dec => decade
  cen => century
  
@@ -204,7 +204,7 @@ $z = $_POST["unit2"];
 m - Meter
 km - Kilometer
 cm - Centimeter
-mm - Milimeter
+mm - Millimeter
 um - Micrometer
 nm - Nanometer
 in - Inch
@@ -216,7 +216,7 @@ mi - Mile
 *Initial work- Gracious Emmanuel
 
 ## Contributing
-Please Read the **contributing.md** to see contributing process, code of conduct and pull request process
+Please, read the **contributing.md** to see contributing process, code of conduct and pull request process
 
 
 
