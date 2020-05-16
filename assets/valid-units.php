@@ -3,7 +3,7 @@
 
  $Temperature =array(
  'k' => 'Kelvin',
- 'c' => 'celcius',
+ 'c' => 'celsius',
  'f' => 'fahrenheit'
 );
  
@@ -11,7 +11,7 @@
   'm2' => 'Square Meter',
  'km2' => 'Square Kilometer',
  'cm2' => 'Square Centimeter',
- 'mm2' => 'Square Milimeter',
+ 'mm2' => 'Square Millimeter',
  'ft2' => 'Square Foot',
  'mi2' => 'Square Mile',
  'ac' => 'Acre',
@@ -21,9 +21,9 @@
  
  $Volume = array(
   'l' => 'Litre',
- 'ml' => 'Mililitre',
+ 'ml' => 'Millilitre',
  'm3' => 'Cubic Meter',
- 'gal' => 'Galon',
+ 'gal' => 'Gallon',
  'oz' => 'fluid ounces',
  'ft3' => 'cubic feet',
  'cm3' => 'cubic centi meter'
@@ -33,7 +33,7 @@
  $Mass= array(
   'kg' => 'Kilogram',
  'g' => 'Gram',
- 'mg' => 'Miligram,',
+ 'mg' => 'Milligram',
  'lb' => 'Pound,',
  't' =>  'Tonne'
  );
