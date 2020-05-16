@@ -17,7 +17,7 @@ function temperature_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'k') {
             //to kelvin
              return ($value - 32) * 5 / 9 + 273;
-         } else if ($toUnit == 'c') {
+         } elseif ($toUnit == 'c') {
             //to celsius
              return ($value - 32) * 5 / 9;
          } else {
@@ -29,7 +29,7 @@ function temperature_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'c') {
             //to celsius
              return $value - 273;
-         } else if ($toUnit == 'f') {
+         } elseif ($toUnit == 'f') {
             //to fahrenheit
              return ($value - 273) * 9 / 5 + 32;
          } else {
@@ -41,7 +41,7 @@ function temperature_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'f') {
             //to fahrenheit
              return ($value * 9 / 5) + 32;
-         } else if ($toUnit == 'k') {
+         } elseif ($toUnit == 'k') {
 //to kelvin
              return $value + 273;
          } else {
@@ -65,22 +65,22 @@ function area_converter($value, $fromUnit, $toUnit)
             //to sqr km
              return $value / 1000000;
 
-         } else if ($toUnit == 'mi2') {
+         } elseif ($toUnit == 'mi2') {
             //to sqr miles
              return $value / 2590000;
-         } else if ($toUnit == 'yd2') {
+         } elseif ($toUnit == 'yd2') {
             //to sqr yard
              return $value * 1.196;
-         } else if ($toUnit == 'ft2') {
+         } elseif ($toUnit == 'ft2') {
             //to sqr ft
              return $value * 10.764;
-         } else if ($toUnit == 'in2') {
+         } elseif ($toUnit == 'in2') {
             //to sqr inch
              return $value * 1550;
-         } else if ($toUnit == 'ha') {
+         } elseif ($toUnit == 'ha') {
             //to sqr hectare
              return $value * 10000;
-         } else if ($toUnit == 'ac') {
+         } elseif ($toUnit == 'ac') {
             //to sqr acre
              return $value / 4047;
          } else {
@@ -93,22 +93,22 @@ function area_converter($value, $fromUnit, $toUnit)
             //to sqr m
              return $value * 1000000;
 
-         } else if ($toUnit == 'mi2') {
+         } elseif ($toUnit == 'mi2') {
             //to sqr miles
              return $value / 2.59;
-         } else if ($toUnit == 'yd2') {
+         } elseif ($toUnit == 'yd2') {
             //to sqr yard
              return $value * 1.196000;
-         } else if ($toUnit == 'ft2') {
+         } elseif ($toUnit == 'ft2') {
             //to sqr ft
              return $value * 1.0760000;
-         } else if ($toUnit == 'in2') {
+         } elseif ($toUnit == 'in2') {
             //to sqr inch
              return $value * 1.550000000;
-         } else if ($toUnit == 'ha') {
+         } elseif ($toUnit == 'ha') {
             // to hectare
              return $value * 100;
-         } else if ($toUnit == 'ac') {
+         } elseif ($toUnit == 'ac') {
             // to acre
              return $value * 247;
          } else {
@@ -120,10 +120,10 @@ function area_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'ha') {
             //to hectare
              return $value / 2.471;
-         } else if ($toUnit == 'm2') {
+         } elseif ($toUnit == 'm2') {
             //to sqr m
              return $value * 4047;
-         } else if ($toUnit == 'km2') {
+         } elseif ($toUnit == 'km2') {
             //to sqr km
              return $value / 247;
          } else {
@@ -135,10 +135,10 @@ function area_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'ac') {
             //to acre
              return $value * 2.471;
-         } else if ($toUnit == 'm2') {
+         } elseif ($toUnit == 'm2') {
             //to sqr m
              return $value * 10000;
-         } else if ($toUnit == 'km2') {
+         } elseif ($toUnit == 'km2') {
             //to sqr km
              return $value / 100;
          } else {
@@ -162,7 +162,7 @@ function angles_converter($value, $fromUnit, $toUnit)
             //to radian
              return $value * (3.142 / 180);
 
-         } else if ($toUnit == 'grad') {
+         } elseif ($toUnit == 'grad') {
             //to gradian
              return $value * (200 / 180);
 
@@ -176,7 +176,7 @@ function angles_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'deg') {
 //to degree
              return $value * (180 / 3.142);
-         } else if ($toUnit == 'grad') {
+         } elseif ($toUnit == 'grad') {
             //gradian
              return $value * (200 / 3.142);
 
@@ -190,7 +190,7 @@ function angles_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'deg') {
 //to degree
              return $value * (180 / 200);
-         } else if ($toUnit == 'rad') {
+         } elseif ($toUnit == 'rad') {
             //to rad
              return $value * (3.142 / 200);
 
@@ -216,28 +216,28 @@ function time_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 's') {
             //to seconds
              return $value / 1000;
-         } else if ($toUnit == 'min') {
+         } elseif ($toUnit == 'min') {
             //to minutes
              return $value / 60000;
-         } else if ($toUnit == 'hr') {
+         } elseif ($toUnit == 'hr') {
             //to hours
              return $value / 3600000;
-         } else if ($toUnit == 'day') {
+         } elseif ($toUnit == 'day') {
 //to days
              return $value / 86400000;
-         } else if ($toUnit == 'week') {
+         } elseif ($toUnit == 'week') {
 //to weeks
              return $value / 604800000;
-         } else if ($toUnit == 'month') {
+         } elseif ($toUnit == 'month') {
 //to month
              return $value / 2628000000;
-         } else if ($toUnit == 'yr') {
+         } elseif ($toUnit == 'yr') {
 //to year
              return $value / 31540000000;
-         } else if ($toUnit == 'dec') {
+         } elseif ($toUnit == 'dec') {
 //to decade
              return $value / 315400000000;
-         } else if ($toUnit == 'cen') {
+         } elseif ($toUnit == 'cen') {
 //to century
              return $value / 3154000000000;
          } else {
@@ -254,25 +254,25 @@ function time_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'week') {
             //to weeks
              return $value / 604800;
-         } else if ($toUnit == 'm') {
+         } elseif ($toUnit == 'm') {
             //to minutes
              return $value / 60;
-         } else if ($toUnit == 'hr') {
+         } elseif ($toUnit == 'hr') {
             //to hours
              return $value / 3600;
-         } else if ($toUnit == 'month') {
+         } elseif ($toUnit == 'month') {
             //to months
              return $value / 2628000;
-         } else if ($toUnit == 'day') {
+         } elseif ($toUnit == 'day') {
             //to days
              return $value / 86400;
-         } else if ($toUnit == 'yr') {
+         } elseif ($toUnit == 'yr') {
             //to years
              return $value / 31540000;
-         } else if ($toUnit == 'dec') {
+         } elseif ($toUnit == 'dec') {
             //to decade
              return $value / 315400000;
-         } else if ($toUnit == 'cen') {
+         } elseif ($toUnit == 'cen') {
             //to century
              return $value / 315400000;
          } else {
@@ -290,25 +290,25 @@ function time_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'week') {
             //to weeks
              return $value / 10080;
-         } else if ($toUnit == 's') {
+         } elseif ($toUnit == 's') {
             //to seconds
              return $value * 60;
-         } else if ($toUnit == 'hr') {
+         } elseif ($toUnit == 'hr') {
             //to hours
              return $value / 60;
-         } else if ($toUnit == 'month') {
+         } elseif ($toUnit == 'month') {
             //to months
              return $value / 43800;
-         } else if ($toUnit == 'day') {
+         } elseif ($toUnit == 'day') {
             //to days
              return $value / 1440;
-         } else if ($toUnit == 'yr') {
+         } elseif ($toUnit == 'yr') {
             //years
              return $value / 525600;
-         } else if ($toUnit == 'dec') {
+         } elseif ($toUnit == 'dec') {
             //to decade
              return $value / 5256000;
-         } else if ($toUnit == 'cen') {
+         } elseif ($toUnit == 'cen') {
             //to century
              return $value / 5256000;
          } else {
@@ -321,28 +321,28 @@ function time_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 's') {
             //to seconds
              return $value / 3600;
-         } else if ($toUnit == 'month') {
+         } elseif ($toUnit == 'month') {
             //to minutes
              return $value / 60;
-         } else if ($toUnit == 'ms') {
+         } elseif ($toUnit == 'ms') {
             //to milli sec
              return $value / 3600000;
-         } else if ($toUnit == 'day') {
+         } elseif ($toUnit == 'day') {
 //days
              return $value / 24;
-         } else if ($toUnit == 'w') {
+         } elseif ($toUnit == 'w') {
 //to weeks
              return $value / 168;
-         } else if ($toUnit == 'month') {
+         } elseif ($toUnit == 'month') {
 //to month
              return $value / 730;
-         } else if ($toUnit == 'yr') {
+         } elseif ($toUnit == 'yr') {
 //to year
              return $value / 8760;
-         } else if ($toUnit == 'dec') {
+         } elseif ($toUnit == 'dec') {
 //to decade
              return $value / 87600;
-         } else if ($toUnit == 'cen') {
+         } elseif ($toUnit == 'cen') {
 //to century
              return $value / 876000;
          } else {
@@ -354,28 +354,28 @@ function time_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 's') {
             //to seconds
              return $value * 86400;
-         } else if ($toUnit == 'min') {
+         } elseif ($toUnit == 'min') {
             //to minutes
              return $value * 1440;
-         } else if ($toUnit == 'ms') {
+         } elseif ($toUnit == 'ms') {
             //to milli sec
              return $value * 86400000;
-         } else if ($toUnit == 'hr') {
+         } elseif ($toUnit == 'hr') {
 //to hour
              return $value / 24;
-         } else if ($toUnit == 'week') {
+         } elseif ($toUnit == 'week') {
 //to weeks
              return $value / 7;
-         } else if ($toUnit == 'month') {
+         } elseif ($toUnit == 'month') {
 //to month
              return $value / 30.417;
-         } else if ($toUnit == 'yr') {
+         } elseif ($toUnit == 'yr') {
 //to year
              return $value / 365;
-         } else if ($toUnit == 'dec') {
+         } elseif ($toUnit == 'dec') {
 //to decade
              return $value / 3650;
-         } else if ($fromUnit == 'cen') {
+         } elseif ($fromUnit == 'cen') {
 //to century
              return $value / 36500;
          } else {
@@ -387,28 +387,28 @@ function time_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 's') {
             // to seconds
              return $value * 604800;
-         } else if ($toUnit == 'min') {
+         } elseif ($toUnit == 'min') {
             //to minutes
              return $value * 10080;
-         } else if ($toUnit == 'hr') {
+         } elseif ($toUnit == 'hr') {
             //to hours
              return $value * 168;
-         } else if ($toUnit == 'day') {
+         } elseif ($toUnit == 'day') {
 //to days
              return $value * 7;
-         } else if ($toUnit == 'ms') {
+         } elseif ($toUnit == 'ms') {
 //to milli sec
              return $value * 604800000;
-         } else if ($toUnit == 'month') {
+         } elseif ($toUnit == 'month') {
 //to month
              return $value / 4.345;
-         } else if ($toUnit == 'yr') {
+         } elseif ($toUnit == 'yr') {
 //to year
              return $value / 52.143;
-         } else if ($toUnit == 'dec') {
+         } elseif ($toUnit == 'dec') {
 //to decade
              return $value / 521;
-         } else if ($toUnit == 'cen') {
+         } elseif ($toUnit == 'cen') {
 //to century
              return $value / 5214;
          } else {
@@ -420,29 +420,29 @@ function time_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 's') {
             //to seconds
              return $value * 2628000;
-         } else if ($toUnit == 'min') {
+         } elseif ($toUnit == 'min') {
             //to minutes
              return $value * 43800;
-         } else if ($toUnit == 'hr') {
+         } elseif ($toUnit == 'hr') {
             //to hours
              return $value * 730;
 
-         } else if ($toUnit == 'day') {
+         } elseif ($toUnit == 'day') {
 //to days
              return $value * 30.417;
-         } else if ($toUnit == 'week') {
+         } elseif ($toUnit == 'week') {
 //to weeks
              return $value * 4.345;
-         } else if ($toUnit == 'ms') {
+         } elseif ($toUnit == 'ms') {
 //to milli sec
              return $value * 2628000000;
-         } else if ($toUnit == 'yr') {
+         } elseif ($toUnit == 'yr') {
 //to yr
              return $value / 12;
-         } else if ($toUnit == 'dec') {
+         } elseif ($toUnit == 'dec') {
 // to decade
              return $value / 120;
-         } else if ($toUnit == 'cen') {
+         } elseif ($toUnit == 'cen') {
 //to century
              return $value / 1200;
          } else {
@@ -454,28 +454,28 @@ function time_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 's') {
             //seconds
              return $value * 31540000;
-         } else if ($toUnit == 'min') {
+         } elseif ($toUnit == 'min') {
             //to minutes
              return $value * 525600;
-         } else if ($toUnit == 'hr') {
+         } elseif ($toUnit == 'hr') {
             //to hours
              return $value * 8760;
-         } else if ($toUnit == 'day') {
+         } elseif ($toUnit == 'day') {
 //to days
              return $value * 365;
-         } else if ($toUnit == 'week') {
+         } elseif ($toUnit == 'week') {
 //to weeks
              return $value * 52.143;
-         } else if ($toUnit == 'month') {
+         } elseif ($toUnit == 'month') {
 //to month
              return $value * 12;
-         } else if ($toUnit == 'ms') {
+         } elseif ($toUnit == 'ms') {
 //to milli sec
              return $value * 31540000000;
-         } else if ($toUnit == 'dec') {
+         } elseif ($toUnit == 'dec') {
 //to decade
              return $value / 10;
-         } else if ($toUnit == 'c') {
+         } elseif ($toUnit == 'c') {
 //to century
              return $value / 100;
          } else {
@@ -487,28 +487,28 @@ function time_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 's') {
             //to seconds
              return $value * 315400000;
-         } else if ($toUnit == 'min') {
+         } elseif ($toUnit == 'min') {
             //to minutes
              return $value * 5256000;
-         } else if ($toUnit == 'hr') {
+         } elseif ($toUnit == 'hr') {
             //to hours
              return $value * 87600;
-         } else if ($toUnit == 'day') {
+         } elseif ($toUnit == 'day') {
 //to days
              return $value * 3650;
-         } else if ($toUnit == 'week') {
+         } elseif ($toUnit == 'week') {
 //to weeks
              return $value * 521;
-         } else if ($toUnit == 'month') {
+         } elseif ($toUnit == 'month') {
 //to month
              return $value * 120;
-         } else if ($toUnit == 'ms') {
+         } elseif ($toUnit == 'ms') {
 //to milli sec
              return $value * 315400000000;
-         } else if ($toUnit == 'yr') {
+         } elseif ($toUnit == 'yr') {
 //to yr
              return $value * 10;
-         } else if ($toUnit == 'c') {
+         } elseif ($toUnit == 'c') {
 //to century
              return $value / 10;
          } else {
@@ -520,28 +520,28 @@ function time_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 's') {
             //to seconds
              return $value * 3154000000;
-         } else if ($toUnit == 'min') {
+         } elseif ($toUnit == 'min') {
             //to minutes
              return $value * 52560000;
-         } else if ($toUnit == 'hr') {
+         } elseif ($toUnit == 'hr') {
             //to hours
              return $value * 876000;
-         } else if ($toUnit == 'day') {
+         } elseif ($toUnit == 'day') {
 //to days
              return $value * 36500;
-         } else if ($toUnit == 'week') {
+         } elseif ($toUnit == 'week') {
 //to weeks
              return $value * 5214;
-         } else if ($toUnit == 'month') {
+         } elseif ($toUnit == 'month') {
 //to month
              return $value * 1200;
-         } else if ($toUnit == 'ms') {
+         } elseif ($toUnit == 'ms') {
 //to milli sec
              return $value * 3154000000000;
-         } else if ($toUnit == 'yr') {
+         } elseif ($toUnit == 'yr') {
 //to yr
              return $value * 1200;
-         } else if ($toUnit == 'dec') {
+         } elseif ($toUnit == 'dec') {
 //to decade
              return $value * 100;
          } else {
@@ -564,22 +564,22 @@ function volume_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'oz') {
             //to fluid ounces
              return $value / 1.137;
-         } else if ($toUnit == 'ml') {
+         } elseif ($toUnit == 'ml') {
             //to milli litre
              return $value * 1000;
-         } else if ($toUnit == 'gal') {
+         } elseif ($toUnit == 'gal') {
             //to gallons
              return $value / 4.546;
-         } else if ($toUnit == 'ft3') {
+         } elseif ($toUnit == 'ft3') {
             //to cubic ft
              return $value * 61.024;
-         } else if ($toUnit == 'in3') {
+         } elseif ($toUnit == 'in3') {
             //to cubic inch
              return $value / 10000;
-         } else if ($toUnit == 'm3') {
+         } elseif ($toUnit == 'm3') {
             //to cubic meters
              return $value / 1000;
-         } else if ($toUnit == 'cm3') {
+         } elseif ($toUnit == 'cm3') {
             //to  cubic centimetre
              return $value * 1000;
          } else {
@@ -592,22 +592,22 @@ function volume_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'oz') {
             //to fluid ounces
              return $value * 33814;
-         } else if ($toUnit == 'ml') {
+         } elseif ($toUnit == 'ml') {
             //to milli litre
              return $value * 1000000;
-         } else if ($toUnit == 'gal') {
+         } elseif ($toUnit == 'gal') {
             //to gallons
              return $value * 254;
-         } else if ($toUnit == 'ft3') {
+         } elseif ($toUnit == 'ft3') {
             //to cubic ft
              return $value * 35.315;
-         } else if ($toUnit == 'in3') {
+         } elseif ($toUnit == 'in3') {
             //to cubic inch
              return $value * 61024;
-         } else if ($toUnit == 'l') {
+         } elseif ($toUnit == 'l') {
             //to  litres
              return $value * 1000;
-         } else if ($toUnit == 'cm3') {
+         } elseif ($toUnit == 'cm3') {
             //to  cubic centimetre
              return $value * 1000000;
          } else {
@@ -619,22 +619,22 @@ function volume_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'oz') {
             //to fluid ounces
              return $value / 29.574;
-         } else if ($toUnit == 'ml') {
+         } elseif ($toUnit == 'ml') {
             //to milli litre
              return $value / 1000000;
-         } else if ($toUnit == 'gal') {
+         } elseif ($toUnit == 'gal') {
             //to gallons
              return $value / 4546;
-         } else if ($toUnit == 'ft3') {
+         } elseif ($toUnit == 'ft3') {
             //to cubic ft
              return $value / 28317;
-         } else if ($toUnit == 'in3') {
+         } elseif ($toUnit == 'in3') {
             //to cubic inch
              return $value / 16.387;
-         } else if ($toUnit == 'l') {
+         } elseif ($toUnit == 'l') {
             //to  litres
              return $value / 1000;
-         } else if ($toUnit == 'cm3') {
+         } elseif ($toUnit == 'cm3') {
             //to  cubic centimetre
              return $value * 1;
          } else {
@@ -646,22 +646,22 @@ function volume_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'oz') {
             //to fluid ounces
              return $value * 154;
-         } else if ($toUnit == 'ml') {
+         } elseif ($toUnit == 'ml') {
             //to milli litre
              return $value * 4546;
-         } else if ($toUnit == 'm3') {
+         } elseif ($toUnit == 'm3') {
             //to cubic metre
              return $value / 220;
-         } else if ($toUnit == 'ft3') {
+         } elseif ($toUnit == 'ft3') {
             //to cubic ft
              return $value / 6.229;
-         } else if ($toUnit == 'in3') {
+         } elseif ($toUnit == 'in3') {
             //to cubic inch
              return $value * 277;
-         } else if ($toUnit == 'l') {
+         } elseif ($toUnit == 'l') {
             //to  litres
              return $value * 4.546;
-         } else if ($toUnit == 'cm3') {
+         } elseif ($toUnit == 'cm3') {
             //to  cubic centimetre
              return $value * 4546;
          } else {
@@ -673,22 +673,22 @@ function volume_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'm3') {
             //to cubic meters
              return $value / 33814;
-         } else if ($toUnit == 'ml') {
+         } elseif ($toUnit == 'ml') {
             //to milli litre
              return $value * 29.574;
-         } else if ($toUnit == 'gal') {
+         } elseif ($toUnit == 'gal') {
             //to gallons
              return $value / 154;
-         } else if ($toUnit == 'ft3') {
+         } elseif ($toUnit == 'ft3') {
             //to cubic ft
              return $value / 958;
-         } else if ($toUnit == 'in3') {
+         } elseif ($toUnit == 'in3') {
             //to cubic inch
              return $value * 1.805;
-         } else if ($toUnit == 'l') {
+         } elseif ($toUnit == 'l') {
             //to  litres
              return $value / 33.814;
-         } else if ($toUnit == 'cm3') {
+         } elseif ($toUnit == 'cm3') {
             //to  cubic centimetre
              return $value * 29.574;
          } else {
@@ -700,22 +700,22 @@ function volume_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'oz') {
             //to fluid ounces
              return $value / 1.805;
-         } else if ($toUnit == 'ml') {
+         } elseif ($toUnit == 'ml') {
             //to milli litre
              return $value * 16.387;
-         } else if ($toUnit == 'gal') {
+         } elseif ($toUnit == 'gal') {
             //to gallons
              return $value / 277;
-         } else if ($toUnit == 'ft3') {
+         } elseif ($toUnit == 'ft3') {
             //to cubic ft
              return $value / 1728;
-         } else if ($toUnit == 'm3') {
+         } elseif ($toUnit == 'm3') {
             //to cubic metre
              return $value / 61024;
-         } else if ($toUnit == 'l') {
+         } elseif ($toUnit == 'l') {
             //to  litres
              return $value / 61.024;
-         } else if ($toUnit == 'cm3') {
+         } elseif ($toUnit == 'cm3') {
             //to  cubic centimetre
              return $value * 16.387;
          } else {
@@ -727,19 +727,19 @@ function volume_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'oz') {
             //to fluid ounces
              return $value * 958;
-         } else if ($toUnit == 'ml') {
+         } elseif ($toUnit == 'ml') {
             //to milli litre
              return $value * 28317;
-         } else if ($toUnit == 'gal') {
+         } elseif ($toUnit == 'gal') {
             //to gallons
              return $value * 6.229;
-         } else if ($toUnit == 'm3') {
+         } elseif ($toUnit == 'm3') {
             //to cubic metre
              return $value / 35.315;
-         } else if ($toUnit == 'in3') {
+         } elseif ($toUnit == 'in3') {
             //to cubic inch
              return $value * 1728;
-         } else if ($toUnit == 'l') {
+         } elseif ($toUnit == 'l') {
             //to  litres
              return $value * 28.317;
          } else {
@@ -751,22 +751,22 @@ function volume_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'oz') {
             //to fluid ounces
              return $value / 29.574;
-         } else if ($toUnit == 'ml') {
+         } elseif ($toUnit == 'ml') {
             //to milli litre
              return $value * 1;
-         } else if ($toUnit == 'gal') {
+         } elseif ($toUnit == 'gal') {
             //to gallons
              return $value * 4546;
-         } else if ($toUnit == 'm3') {
+         } elseif ($toUnit == 'm3') {
             //to cubic metre
              return $value * 1000000;
-         } else if ($toUnit == 'in3') {
+         } elseif ($toUnit == 'in3') {
             //to cubic inch
              return $value * 16.387;
-         } else if ($toUnit == 'l') {
+         } elseif ($toUnit == 'l') {
             //to  litres
              return $value / 1000;
-         } else if ($toUnit == 'ft') {
+         } elseif ($toUnit == 'ft') {
             //to  ft
              return $value / 283317;
          } else {
@@ -790,10 +790,10 @@ function speed_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'kph') {
             //to km per hr
              return $value * 3.6;
-         } else if ($toUnit == 'knots') {
+         } elseif ($toUnit == 'knots') {
             //to knots
              return $value * 1.944;
-         } else if ($toUnit == 'mph') {
+         } elseif ($toUnit == 'mph') {
             //to miles per hr
              return $value * 2.237;
          } else {
@@ -806,10 +806,10 @@ function speed_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'mps') {
             //to metre per sec
              return $value / 3.6;
-         } else if ($toUnit == 'knots') {
+         } elseif ($toUnit == 'knots') {
             //to knots
              return $value * 1.852;
-         } else if ($toUnit == 'mph') {
+         } elseif ($toUnit == 'mph') {
             //to miles per hr
              return $value / 1.609;
          } else {
@@ -821,10 +821,10 @@ function speed_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'kph') {
             //to km per hr
              return $value * 1.609;
-         } else if ($toUnit == 'knots') {
+         } elseif ($toUnit == 'knots') {
             //to knots
              return $value / 1.151;
-         } else if ($toUnit == 'mps') {
+         } elseif ($toUnit == 'mps') {
             //to metres per sec
              return $value / 2.237;
          } else {
@@ -836,10 +836,10 @@ function speed_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'kph') {
             //to km per hr
              return $value * 1.852;
-         } else if ($toUnit == 'mps') {
+         } elseif ($toUnit == 'mps') {
             //to metre per sec
              return $value / 1.944;
-         } else if ($toUnit == 'mph') {
+         } elseif ($toUnit == 'mph') {
             //to miles per hr
              return $value * 1.151;
          } else {
@@ -861,28 +861,28 @@ function length_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'm') {
             //to metres
              return $value * 1000;
-         } else if ($toUnit == 'cm') {
+         } elseif ($toUnit == 'cm') {
             //to centi metres
              return $value * 100000;
-         } else if ($toUnit == 'mm') {
+         } elseif ($toUnit == 'mm') {
             //to millimetres
              return $value * 1000000;
-         } else if ($toUnit == 'um') {
+         } elseif ($toUnit == 'um') {
             //to micro metre
              return $value * 1000000000;
-         } else if ($toUnit == 'nm') {
+         } elseif ($toUnit == 'nm') {
             //to nano meter
              return $value * 1000000000000;
-         } else if ($toUnit == 'mi') {
+         } elseif ($toUnit == 'mi') {
             //to miles
              return $value / 1.609;
-         } else if ($toUnit == 'yd') {
+         } elseif ($toUnit == 'yd') {
             //to yards
              return $value * 1094;
-         } else if ($toUnit == 'ft') {
+         } elseif ($toUnit == 'ft') {
             //to foot
              return $value * 3281;
-         } else if ($toUnit == 'in') {
+         } elseif ($toUnit == 'in') {
             //to inch
              return $value * 39370;
          } else {
@@ -895,28 +895,28 @@ function length_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'km') {
             //to kilo metres
              return $value / 1000;
-         } else if ($toUnit == 'cm') {
+         } elseif ($toUnit == 'cm') {
             //to centi metres
              return $value * 100;
-         } else if ($toUnit == 'mm') {
+         } elseif ($toUnit == 'mm') {
             //to millimetres
              return $value * 1000;
-         } else if ($toUnit == 'um') {
+         } elseif ($toUnit == 'um') {
             //to micro metre
              return $value * 1000000;
-         } else if ($toUnit == 'nm') {
+         } elseif ($toUnit == 'nm') {
             //to nano meter
              return $value * 1000000000;
-         } else if ($toUnit == 'mi') {
+         } elseif ($toUnit == 'mi') {
             //to miles
              return $value / 1609;
-         } else if ($toUnit == 'yd') {
+         } elseif ($toUnit == 'yd') {
             //to yards
              return $value * 1.094;
-         } else if ($toUnit == 'ft') {
+         } elseif ($toUnit == 'ft') {
             //to foot
              return $value * 3.281;
-         } else if ($toUnit == 'in') {
+         } elseif ($toUnit == 'in') {
             //to inch
              return $value * 39.37;
          } else {
@@ -928,28 +928,28 @@ function length_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'm') {
             //to metres
              return $value / 100;
-         } else if ($toUnit == 'km') {
+         } elseif ($toUnit == 'km') {
             //to kilo metres
              return $value / 100000;
-         } else if ($toUnit == 'mm') {
+         } elseif ($toUnit == 'mm') {
             //to millimetres
              return $value / 10;
-         } else if ($toUnit == 'um') {
+         } elseif ($toUnit == 'um') {
             //to micro metre
              return $value * 10000;
-         } else if ($toUnit == 'nm') {
+         } elseif ($toUnit == 'nm') {
             //to nano meter
              return $value * 10000000;
-         } else if ($toUnit == 'mi') {
+         } elseif ($toUnit == 'mi') {
             //to miles
              return $value / 160934;
-         } else if ($toUnit == 'yd') {
+         } elseif ($toUnit == 'yd') {
             //to yards
              return $value / 91.44;
-         } else if ($toUnit == 'ft') {
+         } elseif ($toUnit == 'ft') {
             //to foot
              return $value / 30.48;
-         } else if ($toUnit == 'in') {
+         } elseif ($toUnit == 'in') {
             //to inch
              return $value / 2.54;
          } else {
@@ -961,28 +961,28 @@ function length_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'm') {
             //to metres
              return $value / 1000;
-         } else if ($toUnit == 'cm') {
+         } elseif ($toUnit == 'cm') {
             //to centi metres
              return $value / 10;
-         } else if ($toUnit == 'km') {
+         } elseif ($toUnit == 'km') {
             //to kilo metres
              return $value / 1000000;
-         } else if ($toUnit == 'um') {
+         } elseif ($toUnit == 'um') {
             //to micro metre
              return $value * 1000;
-         } else if ($toUnit == 'nm') {
+         } elseif ($toUnit == 'nm') {
             //to nano meter
              return $value * 1000000;
-         } else if ($toUnit == 'mi') {
+         } elseif ($toUnit == 'mi') {
             //to miles
              return $value / 1609000;
-         } else if ($toUnit == 'yd') {
+         } elseif ($toUnit == 'yd') {
             //to yards
              return $value / 194;
-         } else if ($toUnit == 'ft') {
+         } elseif ($toUnit == 'ft') {
             //to foot
              return $value / 305;
-         } else if ($toUnit == 'in') {
+         } elseif ($toUnit == 'in') {
             //to inch
              return $value / 25.4;
          } else {
@@ -994,28 +994,28 @@ function length_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'm') {
             //to metres
              return $value / 1000000;
-         } else if ($toUnit == 'cm') {
+         } elseif ($toUnit == 'cm') {
             //to centi metres
              return $value / 10000;
-         } else if ($toUnit == 'mm') {
+         } elseif ($toUnit == 'mm') {
             //to millimetres
              return $value / 1000;
-         } else if ($toUnit == 'km') {
+         } elseif ($toUnit == 'km') {
             //to kilo metre
              return $value / 1000000000;
-         } else if ($toUnit == 'nm') {
+         } elseif ($toUnit == 'nm') {
             //to nano meter
              return $value * 1000;
-         } else if ($toUnit == 'mi') {
+         } elseif ($toUnit == 'mi') {
             //to miles
              return $value / 1609000000;
-         } else if ($toUnit == 'yd') {
+         } elseif ($toUnit == 'yd') {
             //to yards
              return $value / 914400;
-         } else if ($toUnit == 'ft') {
+         } elseif ($toUnit == 'ft') {
             //to foot
              return $value / 304800;
-         } else if ($toUnit == 'in') {
+         } elseif ($toUnit == 'in') {
             //to inch
              return $value / 25400;
          } else {
@@ -1027,28 +1027,28 @@ function length_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'm') {
             //to metres
              return $value / 1000;
-         } else if ($toUnit == 'cm') {
+         } elseif ($toUnit == 'cm') {
             //to centi metres
              return $value / 10000000;
-         } else if ($toUnit == 'mm') {
+         } elseif ($toUnit == 'mm') {
             //to millimetres
              return $value / 1000000;
-         } else if ($toUnit == 'um') {
+         } elseif ($toUnit == 'um') {
             //to micro metre
              return $value / 1000;
-         } else if ($toUnit == 'km') {
+         } elseif ($toUnit == 'km') {
             //to kilo meter
              return $value / 1000000000000;
-         } else if ($toUnit == 'mi') {
+         } elseif ($toUnit == 'mi') {
             //to miles
              return $value / 1609000000000;
-         } else if ($toUnit == 'yd') {
+         } elseif ($toUnit == 'yd') {
             //to yards
              return $value / 914400000;
-         } else if ($toUnit == 'ft') {
+         } elseif ($toUnit == 'ft') {
             //to foot
              return $value / 304800000;
-         } else if ($toUnit == 'in') {
+         } elseif ($toUnit == 'in') {
             //to inch
              return $value / 25400000;
          } else {
@@ -1060,28 +1060,28 @@ function length_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'm') {
             //to metres
              return $value * 1609;
-         } else if ($toUnit == 'cm') {
+         } elseif ($toUnit == 'cm') {
             //to centi metres
              return $value * 160934;
-         } else if ($toUnit == 'mm') {
+         } elseif ($toUnit == 'mm') {
             //to millimetres
              return $value * 1609000;
-         } else if ($toUnit == 'um') {
+         } elseif ($toUnit == 'um') {
             //to micro metre
              return $value * 1609000000;
-         } else if ($toUnit == 'nm') {
+         } elseif ($toUnit == 'nm') {
             //to nano meter
              return $value * 1609000000000;
-         } else if ($toUnit == 'km') {
+         } elseif ($toUnit == 'km') {
             //to km
              return $value * 1.609;
-         } else if ($toUnit == 'yd') {
+         } elseif ($toUnit == 'yd') {
             //to yards
              return $value * 1760;
-         } else if ($toUnit == 'ft') {
+         } elseif ($toUnit == 'ft') {
             //to foot
              return $value * 5280;
-         } else if ($toUnit == 'in') {
+         } elseif ($toUnit == 'in') {
             //to inch
              return $value * 63360;
          } else {
@@ -1093,28 +1093,28 @@ function length_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'm') {
             //to metres
              return $value / 1.094;
-         } else if ($toUnit == 'cm') {
+         } elseif ($toUnit == 'cm') {
             //to centi metres
              return $value * 91.44;
-         } else if ($toUnit == 'mm') {
+         } elseif ($toUnit == 'mm') {
             //to millimetres
              return $value * 914;
-         } else if ($toUnit == 'um') {
+         } elseif ($toUnit == 'um') {
             //to micro metre
              return $value * 914400;
-         } else if ($toUnit == 'nm') {
+         } elseif ($toUnit == 'nm') {
             //to nano meter
              return $value * 914400000;
-         } else if ($toUnit == 'mi') {
+         } elseif ($toUnit == 'mi') {
             //to miles
              return $value / 1760;
-         } else if ($toUnit == 'km') {
+         } elseif ($toUnit == 'km') {
             //to km
              return $value / 1094;
-         } else if ($toUnit == 'ft') {
+         } elseif ($toUnit == 'ft') {
             //to foot
              return $value * 3;
-         } else if ($toUnit == 'in') {
+         } elseif ($toUnit == 'in') {
             //to inch
              return $value * 36;
          } else {
@@ -1126,28 +1126,28 @@ function length_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'm') {
             //to metres
              return $value / 3.281;
-         } else if ($toUnit == 'cm') {
+         } elseif ($toUnit == 'cm') {
             //to centi metres
              return $value * 30.40;
-         } else if ($toUnit == 'mm') {
+         } elseif ($toUnit == 'mm') {
             //to millimetres
              return $value * 305;
-         } else if ($toUnit == 'um') {
+         } elseif ($toUnit == 'um') {
             //to micro metre
              return $value * 304800;
-         } else if ($toUnit == 'nm') {
+         } elseif ($toUnit == 'nm') {
             //to nano meter
              return $value * 304800000;
-         } else if ($toUnit == 'mi') {
+         } elseif ($toUnit == 'mi') {
             //to miles
              return $value / 5280;
-         } else if ($toUnit == 'yd') {
+         } elseif ($toUnit == 'yd') {
             //to yards
              return $value / 3;
-         } else if ($toUnit == 'km') {
+         } elseif ($toUnit == 'km') {
             //to kilo metre
              return $value / 3281;
-         } else if ($toUnit == 'in') {
+         } elseif ($toUnit == 'in') {
             //to inch
              return $value * 12;
          } else {
@@ -1159,28 +1159,28 @@ function length_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'm') {
             //to metres
              return $value / 39.37;
-         } else if ($toUnit == 'cm') {
+         } elseif ($toUnit == 'cm') {
             //to centi metres
              return $value * 2.54;
-         } else if ($toUnit == 'mm') {
+         } elseif ($toUnit == 'mm') {
             //to millimetres
              return $value * 25.4;
-         } else if ($toUnit == 'um') {
+         } elseif ($toUnit == 'um') {
             //to micro metre
              return $value * 25400;
-         } else if ($toUnit == 'nm') {
+         } elseif ($toUnit == 'nm') {
             //to nano meter
              return $value * 25400000;
-         } else if ($toUnit == 'mi') {
+         } elseif ($toUnit == 'mi') {
             //to miles
              return $value / 63360;
-         } else if ($toUnit == 'yd') {
+         } elseif ($toUnit == 'yd') {
             //to yards
              return $value / 36;
-         } else if ($toUnit == 'ft') {
+         } elseif ($toUnit == 'ft') {
             //to foot
              return $value * 12;
-         } else if ($toUnit == 'km') {
+         } elseif ($toUnit == 'km') {
             //to kilo metre
              return $value / 39370;
          } else {
@@ -1202,16 +1202,16 @@ function pressure_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'kpa') {
             //to kilo pa
              return $value / 1000;
-         } else if ($toUnit == 'mpa') {
+         } elseif ($toUnit == 'mpa') {
             //to milli pa
              return $value / 1000000;
-         } else if ($toUnit == 'bar') {
+         } elseif ($toUnit == 'bar') {
             //to bar
              return $value / 100000;
-         } else if ($toUnit == 'mbar') {
+         } elseif ($toUnit == 'mbar') {
             //to milli bar
              return $value / 100;
-         } else if ($toUnit == 'psi') {
+         } elseif ($toUnit == 'psi') {
             //to pounds per square inch
              return $value / 6895;
          } else {
@@ -1224,16 +1224,16 @@ function pressure_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'pa') {
             //to pascal
              return $value * 1000;
-         } else if ($toUnit == 'mpa') {
+         } elseif ($toUnit == 'mpa') {
             //to milli pa
              return $value / 1000000;
-         } else if ($toUnit == 'bar') {
+         } elseif ($toUnit == 'bar') {
             //to bar
              return $value / 100;
-         } else if ($toUnit == 'mbar') {
+         } elseif ($toUnit == 'mbar') {
             //to milli bar
              return $value * 10;
-         } else if ($toUnit == 'psi') {
+         } elseif ($toUnit == 'psi') {
             //to pounds per square inch
              return $value / 6.895;
          } else {
@@ -1246,16 +1246,16 @@ function pressure_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'pa') {
             //to pascal
              return $value / 1000;
-         } else if ($toUnit == 'kpa') {
+         } elseif ($toUnit == 'kpa') {
             //to kilopascal
              return $value / 1000000;
-         } else if ($toUnit == 'bar') {
+         } elseif ($toUnit == 'bar') {
             //to bar
              return $value / 100000000;
-         } else if ($toUnit == 'mbar') {
+         } elseif ($toUnit == 'mbar') {
             //to milli bar
              return $value * 100000;
-         } else if ($toUnit == 'psi') {
+         } elseif ($toUnit == 'psi') {
             //to pounds per square inch
              return $value * 145.0377;
          } else {
@@ -1267,16 +1267,16 @@ function pressure_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'pa') {
             //to pascal
              return $value * 100000;
-         } else if ($toUnit == 'kpa') {
+         } elseif ($toUnit == 'kpa') {
             //to kilopascal
              return $value * 100;
-         } else if ($toUnit == 'mpa') {
+         } elseif ($toUnit == 'mpa') {
             //to mega pascal
              return $value / 10;
-         } else if ($toUnit == 'mbar') {
+         } elseif ($toUnit == 'mbar') {
             //to milli bar
              return $value * 1000;
-         } else if ($toUnit == 'psi') {
+         } elseif ($toUnit == 'psi') {
             //to pounds per square inch
              return $value * 14.504;
          } else {
@@ -1288,16 +1288,16 @@ function pressure_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'pa') {
             //to pascal
              return $value * 100;
-         } else if ($toUnit == 'kpa') {
+         } elseif ($toUnit == 'kpa') {
             //to kilopascal
              return $value / 10;
-         } else if ($toUnit == 'mpa') {
+         } elseif ($toUnit == 'mpa') {
             //to mega pascal
              return $value / 10;
-         } else if ($toUnit == 'bar') {
+         } elseif ($toUnit == 'bar') {
             //to  bar
              return $value / 1000;
-         } else if ($toUnit == 'psi') {
+         } elseif ($toUnit == 'psi') {
             //to pounds per square inch
              return $value / 68.948;
          } else {
@@ -1309,16 +1309,16 @@ function pressure_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'pa') {
             //to pascal
              return $value * 6.895;
-         } else if ($toUnit == 'kpa') {
+         } elseif ($toUnit == 'kpa') {
             //to kilopascal
              return $value / 6.895;
-         } else if ($toUnit == 'mpa') {
+         } elseif ($toUnit == 'mpa') {
             //to mega pascal
              return $value / 10000;
-         } else if ($toUnit == 'mbar') {
+         } elseif ($toUnit == 'mbar') {
             //to milli bar
              return $value * 68.948;
-         } else if ($toUnit == 'bar') {
+         } elseif ($toUnit == 'bar') {
             //to  bar
              return $value / 14.504;
          } else {
@@ -1340,13 +1340,13 @@ function mass_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'g') {
             //to gram
              return $value * 1000;
-         } else if ($toUnit == 'lb') {
+         } elseif ($toUnit == 'lb') {
             //to pounds
              return $value * 2.205;
-         } else if ($toUnit == 'mg') {
+         } elseif ($toUnit == 'mg') {
             //to milligrams
              return $value * 1000000;
-         } else if ($toUnit == 't') {
+         } elseif ($toUnit == 't') {
             //to tonnes
              return $value / 1000;
          } else {
@@ -1358,13 +1358,13 @@ function mass_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'kg') {
             //to kilogram
              return $value / 1000;
-         } else if ($toUnit == 'lb') {
+         } elseif ($toUnit == 'lb') {
             //to pounds
              return $value / 454;
-         } else if ($toUnit == 'mg') {
+         } elseif ($toUnit == 'mg') {
             //to milligrams
              return $value * 1000;
-         } else if ($toUnit == 't') {
+         } elseif ($toUnit == 't') {
             //to tonnes
              return $value / 1000000;
          } else {
@@ -1376,13 +1376,13 @@ function mass_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'g') {
             //to gram
              return $value * 454;
-         } else if ($toUnit == 'kg') {
+         } elseif ($toUnit == 'kg') {
             //to kilogram
              return $value / 2.205;
-         } else if ($toUnit == 'mg') {
+         } elseif ($toUnit == 'mg') {
             //to milligrams
              return $value * 453592;
-         } else if ($toUnit == 't') {
+         } elseif ($toUnit == 't') {
             //to tonnes
              return $value / 2205;
          } else {
@@ -1394,13 +1394,13 @@ function mass_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'g') {
             //to gram
              return $value / 1000;
-         } else if ($toUnit == 'lb') {
+         } elseif ($toUnit == 'lb') {
             //to pounds
              return $value / 453592;
-         } else if ($toUnit == 'kg') {
+         } elseif ($toUnit == 'kg') {
             //to kilograms
              return $value / 1000000;
-         } else if ($toUnit == 't') {
+         } elseif ($toUnit == 't') {
             //to tonnes
              return $value / 1000000000;
          } else {
@@ -1412,13 +1412,13 @@ function mass_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'g') {
             //to gram
              return $value / 1000000000;
-         } else if ($toUnit == 'lb') {
+         } elseif ($toUnit == 'lb') {
             //to pounds
              return $value * 2205;
-         } else if ($toUnit == 'mg') {
+         } elseif ($toUnit == 'mg') {
             //to milligrams
              return $value * 1000000000;
-         } else if ($toUnit == 'kg') {
+         } elseif ($toUnit == 'kg') {
             //to kilo gram
              return $value * 1000;
          } else {
@@ -1442,10 +1442,10 @@ function frequency_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'khz') {
             //to kilo hertz
              return $value / 1000;
-         } else if ($toUnit == 'mhz') {
+         } elseif ($toUnit == 'mhz') {
             //to mega hertz
              return $value / 1000000;
-         } else if ($toUnit == 'ghz') {
+         } elseif ($toUnit == 'ghz') {
             //to giga hertz
              return $value / 1000000000;
          } else {
@@ -1457,10 +1457,10 @@ function frequency_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'hz') {
             //to hertz
              return $value / 1000000;
-         } else if ($toUnit == 'mhz') {
+         } elseif ($toUnit == 'mhz') {
             //to mega hertz
              return $value * 1000;
-         } else if ($toUnit == 'ghz') {
+         } elseif ($toUnit == 'ghz') {
             //to giga hertz
              return $value / 100000;
          } else {
@@ -1472,10 +1472,10 @@ function frequency_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'khz') {
             //to kilo hertz
              return $value * 1000;
-         } else if ($toUnit == 'hz') {
+         } elseif ($toUnit == 'hz') {
             //to  hertz
              return $value * 1000000;
-         } else if ($toUnit == 'ghz') {
+         } elseif ($toUnit == 'ghz') {
             //to giga hertz
              return $value / 1000;
          } else {
@@ -1487,10 +1487,10 @@ function frequency_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'khz') {
             //to kilo hertz
              return $value * 1000000;
-         } else if ($toUnit == 'mhz') {
+         } elseif ($toUnit == 'mhz') {
             //to mega hertz
              return $value / 1000;
-         } else if ($toUnit == 'hz') {
+         } elseif ($toUnit == 'hz') {
             //to  hertz
              return $value * 1000000000;
          } else {
@@ -1513,19 +1513,19 @@ function energy_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'kj') {
             //to kilo joules
              return $value / 1000;
-         } else if ($toUnit == 'gcal') {
+         } elseif ($toUnit == 'gcal') {
             //to gram calorie
              return $value / 4.184;
-         } else if ($toUnit == 'whr') {
+         } elseif ($toUnit == 'whr') {
             //to watt hr
              return $value / 3600;
-         } else if ($toUnit == 'kwhr') {
+         } elseif ($toUnit == 'kwhr') {
             //to kilo watt hr
              return $value / 36000000;
-         } else if ($toUnit == 'ev') {
+         } elseif ($toUnit == 'ev') {
             //to electronvolt
              return $value * 6242000000000000000;
-         } else if ($toUnit == 'kcal') {
+         } elseif ($toUnit == 'kcal') {
             //to kilo calorie
              return $value / 4184;
          } else {
@@ -1537,19 +1537,19 @@ function energy_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'j') {
             //to  joules
              return $value * 1000;
-         } else if ($toUnit == 'gcal') {
+         } elseif ($toUnit == 'gcal') {
             //to gram calorie
              return $value * 239;
-         } else if ($toUnit == 'whr') {
+         } elseif ($toUnit == 'whr') {
             //to watt hr
              return $value / 3.6;
-         } else if ($toUnit == 'kwhr') {
+         } elseif ($toUnit == 'kwhr') {
             //to kilo watt hr
              return $value / 3600;
-         } else if ($toUnit == 'ev') {
+         } elseif ($toUnit == 'ev') {
             //to electronvolt
              return $value * 6241500000000000000000;
-         } else if ($toUnit == 'kcal') {
+         } elseif ($toUnit == 'kcal') {
             //to kilo calorie
              return $value / 4.184;
          } else {
@@ -1561,19 +1561,19 @@ function energy_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'kj') {
             //to kilo joules
              return $value / 239;
-         } else if ($toUnit == 'j') {
+         } elseif ($toUnit == 'j') {
             //to  joules
              return $value * 4.184;
-         } else if ($toUnit == 'whr') {
+         } elseif ($toUnit == 'whr') {
             //to watt hr
              return $value / 860;
-         } else if ($toUnit == 'kwhr') {
+         } elseif ($toUnit == 'kwhr') {
             //to kilo watt hr
              return $value / 860421;
-         } else if ($toUnit == 'ev') {
+         } elseif ($toUnit == 'ev') {
             //to electronvolt
              return $value * 26130000000000000000;
-         } else if ($toUnit == 'kcal') {
+         } elseif ($toUnit == 'kcal') {
             //to kilo calorie
              return $value / 1000;
          } else {
@@ -1585,19 +1585,19 @@ function energy_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'kj') {
             //to kilo joules
              return $value * 3.6;
-         } else if ($toUnit == 'gcal') {
+         } elseif ($toUnit == 'gcal') {
             //to gram calorie
              return $value * 860;
-         } else if ($toUnit == 'j') {
+         } elseif ($toUnit == 'j') {
             //to joules
              return $value * 3600;
-         } else if ($toUnit == 'kwhr') {
+         } elseif ($toUnit == 'kwhr') {
             //to kilo watt hr
              return $value / 1000;
-         } else if ($toUnit == 'ev') {
+         } elseif ($toUnit == 'ev') {
             //to electronvolt
              return $value * 22469000000000000000000;
-         } else if ($toUnit == 'kcal') {
+         } elseif ($toUnit == 'kcal') {
             //to kilo calorie
              return $value / 1.162;
          } else {
@@ -1609,19 +1609,19 @@ function energy_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'kj') {
             //to kilo joules
              return $value * 1000;
-         } else if ($toUnit == 'gcal') {
+         } elseif ($toUnit == 'gcal') {
             //to gram calorie
              return $value * 860421;
-         } else if ($toUnit == 'whr') {
+         } elseif ($toUnit == 'whr') {
             //to watt hr
              return $value * 1000;
-         } else if ($toUnit == 'j') {
+         } elseif ($toUnit == 'j') {
             //to joules
              return $value * 3600000;
-         } else if ($toUnit == 'ev') {
+         } elseif ($toUnit == 'ev') {
             //to electronvolt
              return $value * 22469000000000000000000000;
-         } else if ($toUnit == 'kcal') {
+         } elseif ($toUnit == 'kcal') {
             //to kilo calorie
              return $value * 860;
          } else {
@@ -1633,19 +1633,19 @@ function energy_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'kj') {
             //to kilo joules
              return $value * 0.000000000000000000000160218;
-         } else if ($toUnit == 'gcal') {
+         } elseif ($toUnit == 'gcal') {
             //to gram calorie
              return $value * 0.0000000000000000000382765;
-         } else if ($toUnit == 'whr') {
+         } elseif ($toUnit == 'whr') {
             //to watt hr
              return $value * 0.0000000000000000000000044505;
-         } else if ($toUnit == 'kwhr') {
+         } elseif ($toUnit == 'kwhr') {
             //to kilo watt hr
              return $value * 0.000000000000000000000000044505;
-         } else if ($toUnit == 'j') {
+         } elseif ($toUnit == 'j') {
             //to joules
              return $value / 0.0000000000000000062415;
-         } else if ($toUnit == 'kcal') {
+         } elseif ($toUnit == 'kcal') {
             //to kilo calorie
              return $value * 0.000000000000000000000038293;
          } else {
@@ -1657,19 +1657,19 @@ function energy_converter($value, $fromUnit, $toUnit)
          if ($toUnit == 'kj') {
             //to kilo joules
              return $value * 4.184;
-         } else if ($toUnit == 'gcal') {
+         } elseif ($toUnit == 'gcal') {
             //to gram calorie
              return $value * 1000;
-         } else if ($toUnit == 'whr') {
+         } elseif ($toUnit == 'whr') {
             //to watt hr
              return $value * 1.162;
-         } else if ($toUnit == 'kwhr') {
+         } elseif ($toUnit == 'kwhr') {
             //to kilo watt hr
              return $value / 860;
-         } else if ($toUnit == 'ev') {
+         } elseif ($toUnit == 'ev') {
             //to electronvolt
              return $value * 2.6114000000000000000000;
-         } else if ($toUnit == 'j') {
+         } elseif ($toUnit == 'j') {
             //to joules
              return $value * 4184;
          } else {
@@ -1692,19 +1692,19 @@ function disk_storage($value, $fromUnit, $toUnit)
          if ($toUnit == 'byte') {
             //to byte
              return $value / 8;
-         } else if ($toUnit == 'kb') {
+         } elseif ($toUnit == 'kb') {
             //to kilobyte
              return $value / 8000;
-         } else if ($toUnit == 'mb') {
+         } elseif ($toUnit == 'mb') {
             //to megabyte
              return $value / 8000000;
-         } else if ($toUnit == 'gb') {
+         } elseif ($toUnit == 'gb') {
             //to gigabyte
              return $value / 8000000000;
-         } else if ($toUnit == 'tb') {
+         } elseif ($toUnit == 'tb') {
             //to terabyte
              return $value / 8000000000000;
-         } else if ($toUnit == 'pb') {
+         } elseif ($toUnit == 'pb') {
             //to petabyte
              return $value / 8000000000000000;
          } else {
@@ -1717,19 +1717,19 @@ function disk_storage($value, $fromUnit, $toUnit)
          if ($toUnit == 'bit') {
             //to bit
              return $value * 8;
-         } else if ($toUnit == 'kb') {
+         } elseif ($toUnit == 'kb') {
             //to kilobyte
              return $value / 1000;
-         } else if ($toUnit == 'mb') {
+         } elseif ($toUnit == 'mb') {
             //to megabyte
              return $value / 1000000;
-         } else if ($toUnit == 'gb') {
+         } elseif ($toUnit == 'gb') {
             //to gigabyte
              return $value / 1000000000;
-         } else if ($toUnit == 'tb') {
+         } elseif ($toUnit == 'tb') {
             //to terabyte
              return $value / 1000000000000;
-         } else if ($toUnit == 'pb') {
+         } elseif ($toUnit == 'pb') {
             //to petabyte
              return $value / 1000000000000000;
          } else {
@@ -1741,19 +1741,19 @@ function disk_storage($value, $fromUnit, $toUnit)
          if ($toUnit == 'byte') {
             //to byte
              return $value * 1000;
-         } else if ($toUnit == 'bit') {
+         } elseif ($toUnit == 'bit') {
             //to bit
              return $value * 8000;
-         } else if ($toUnit == 'mb') {
+         } elseif ($toUnit == 'mb') {
             //to megabyte
              return $value / 125;
-         } else if ($toUnit == 'gb') {
+         } elseif ($toUnit == 'gb') {
             //to gigabyte
              return $value / 125000;
-         } else if ($toUnit == 'tb') {
+         } elseif ($toUnit == 'tb') {
             //to terabyte
              return $value / 1000000000;
-         } else if ($toUnit == 'pb') {
+         } elseif ($toUnit == 'pb') {
             //to petabyte
              return $value / 1000000000000;
          } else {
@@ -1765,19 +1765,19 @@ function disk_storage($value, $fromUnit, $toUnit)
          if ($toUnit == 'byte') {
             //to byte
              return $value * 1000000;
-         } else if ($toUnit == 'kb') {
+         } elseif ($toUnit == 'kb') {
             //to kilobyte
              return $value * 1000;
-         } else if ($toUnit == 'bit') {
+         } elseif ($toUnit == 'bit') {
             //to bit
              return $value * 8000000;
-         } else if ($toUnit == 'gb') {
+         } elseif ($toUnit == 'gb') {
             //to gigabyte
              return $value / 1074;
-         } else if ($toUnit == 'tb') {
+         } elseif ($toUnit == 'tb') {
             //to terabyte
              return $value / 1000000;
-         } else if ($toUnit == 'pb') {
+         } elseif ($toUnit == 'pb') {
             //to petabyte
              return $value / 1000000000;
          } else {
@@ -1789,19 +1789,19 @@ function disk_storage($value, $fromUnit, $toUnit)
          if ($toUnit == 'byte') {
             //to byte
              return $value * 1000000000;
-         } else if ($toUnit == 'kb') {
+         } elseif ($toUnit == 'kb') {
             //to kilobyte
              return $value * 1000000;
-         } else if ($toUnit == 'mb') {
+         } elseif ($toUnit == 'mb') {
             //to megabyte
              return $value * 1000;
-         } else if ($toUnit == 'bit') {
+         } elseif ($toUnit == 'bit') {
             //to bit
              return $value * 8000000000;
-         } else if ($toUnit == 'tb') {
+         } elseif ($toUnit == 'tb') {
             //to terabyte
              return $value / 1000;
-         } else if ($toUnit == 'pb') {
+         } elseif ($toUnit == 'pb') {
             //to petabyte
              return $value / 1000000;
          } else {
@@ -1813,19 +1813,19 @@ function disk_storage($value, $fromUnit, $toUnit)
          if ($toUnit == 'byte') {
             //to byte
              return $value * 1000000000000;
-         } else if ($toUnit == 'kb') {
+         } elseif ($toUnit == 'kb') {
             //to kilobyte
              return $value * 1000000000;
-         } else if ($toUnit == 'mb') {
+         } elseif ($toUnit == 'mb') {
             //to megabyte
              return $value * 1000000;
-         } else if ($toUnit == 'gb') {
+         } elseif ($toUnit == 'gb') {
             //to gigabyte
              return $value * 1000;
-         } else if ($toUnit == 'bit') {
+         } elseif ($toUnit == 'bit') {
             //to bit
              return $value * 8000000000000;
-         } else if ($toUnit == 'pb') {
+         } elseif ($toUnit == 'pb') {
             //to petabyte
              return $value / 1000;
          } else {
@@ -1837,19 +1837,19 @@ function disk_storage($value, $fromUnit, $toUnit)
          if ($toUnit == 'byte') {
             //to byte
              return $value * 1000000000000000;
-         } else if ($toUnit == 'kb') {
+         } elseif ($toUnit == 'kb') {
             //to kilobyte
              return $value * 1000000000000;
-         } else if ($toUnit == 'mb') {
+         } elseif ($toUnit == 'mb') {
             //to megabyte
              return $value * 1000000000;
-         } else if ($toUnit == 'gb') {
+         } elseif ($toUnit == 'gb') {
             //to gigabyte
              return $value * 1000000;
-         } else if ($toUnit == 'tb') {
+         } elseif ($toUnit == 'tb') {
             //to terabyte
              return $value * 1000;
-         } else if ($toUnit == 'bit') {
+         } elseif ($toUnit == 'bit') {
             //to bit
              return $value * 8000000000000000;
          } else {
