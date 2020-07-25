@@ -213,7 +213,7 @@ yd - Yard
 mi - Mile
 
 ## Author
-*Initial work- Gracious Emmanuel
+*Initial work- Gracious Emmanuel*
 
 ## Contributors
 Ordago: https://github.com/ordago
