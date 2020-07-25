@@ -1,12 +1,12 @@
-# pu-converter
+# PU-converter
 pu-converter also known as PHP-unit-converter is a simple and easy to use PHP  library for converting mathematical, engineering and scientific units .
 
 # Coverage
-pu-converter allows you to convert any unit to any other compatible unit type.
+PU-converter allows you to convert any unit to any other compatible unit type.
 
 It has no external dependencies, simply include the library in your project and you're set
 
-pu-converter can handle a wide range of unit types including: 
+PU-converter can handle a wide range of unit types including: 
 
 * Length
 * Area
@@ -22,7 +22,7 @@ pu-converter can handle a wide range of unit types including:
 * Plane Angles
 
 ## Installing
-Using pu-converter is as simple as including the library in your project
+Using PU-converter is as simple as including the library in your project
 
 ```php
 include '/path/to/puconverter.php';
@@ -214,6 +214,9 @@ mi - Mile
 
 ## Author
 *Initial work- Gracious Emmanuel
+
+## Contributors
+Ordago: https://github.com/ordago
 
 ## Contributing
 Please, read the **contributing.md** to see contributing process, code of conduct and pull request process.
