@@ -1,5 +1,5 @@
 # PU-converter
-pu-converter also known as PHP-unit-converter is a simple and easy to use PHP  library for converting mathematical, engineering and scientific units .
+PU-converter also known as PHP-unit-converter is a simple and easy to use PHP  library for converting mathematical, engineering and scientific units .
 
 # Coverage
 PU-converter allows you to convert any unit to any other compatible unit type.
