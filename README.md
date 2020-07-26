@@ -1,5 +1,7 @@
 # PU-converter
-PU-converter also known as PHP-unit-converter is a simple and easy to use PHP  library for converting mathematical, engineering and scientific units .
+PU-converter is an easy to use PHP library for converting S.I units to other compatible unit types. 
+With PU-converter you can easily convert any engineering unit to its different unit types, for example, kilogram to grams, celsius to kelvin, e.t.c.
+Save your self the math stress and let the PU-converter library handle all conversions for you.
 
 # Coverage
 PU-converter allows you to convert any unit to any other compatible unit type.
