@@ -32,7 +32,7 @@ Using PU-converter is as simple as including the library in your project
 include '/path/to/puconverter.php';
 use  GeniusGeeek\puconverter\PUconverter;
 ```
-##Using Composer
+## Using Composer
 PU-converter can be insatlled using composer
 ```bash
 composer require geniusgeeek/pu-converter
