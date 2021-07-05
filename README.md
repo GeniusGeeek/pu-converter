@@ -28,6 +28,7 @@ Using PU-converter is as simple as including the library in your project
 
 ```php
 include '/path/to/puconverter.php';
+use  GeniusGeeek\puconverter\PUconverter;
 ```
 
 ## Guidelines: How to use
@@ -57,12 +58,16 @@ include '/path/to/puconverter.php';
 
 **Simple Examples**
 ```php
+include '/path/to/puconverter.php';
+use  GeniusGeeek\puconverter\PUconverter;
 $length = new PUconverter("length", 3000, 'km', 'm');
 echo $length->convert(); //this converts 3000 kilometers to its equivalent meter
 ```
 //Returns 3000000 meters
 
 ```php
+include '/path/to/puconverter.php';
+use  GeniusGeeek\puconverter\PUconverter;
 $time = new PUconverter("time", 1, 'yr', 'week');
 echo $time->convert(); // this converts 1 year to its equivalent time in weeks
 ```
