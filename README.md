@@ -27,17 +27,19 @@ PU-converter can handle a wide range of unit types including:
 * Frequency
 * Plane Angles
 
-## Installing
-Using PU-converter is as simple as including the library in your project
+## Installation
 
-```php
-include '/path/to/puconverter.php';
-use  GeniusGeeek\puconverter\PUconverter;
-```
+
 ## Using Composer
 PU-converter can be insatlled using composer
 ```bash
 composer require geniusgeeek/pu-converter
+```
+## without composer
+To utilize this class, first import puconverter.php into your project, and instantiate it.
+```php
+include '/path/to/puconverter.php';
+use  GeniusGeeek\puconverter\PUconverter;
 ```
 
 ## Guidelines: How to use
@@ -68,7 +70,6 @@ composer require geniusgeeek/pu-converter
 
 **Simple Examples**
 ```php
-include '/path/to/puconverter.php';
 use  GeniusGeeek\puconverter\PUconverter;
 $length = new PUconverter("length", 3000, 'km', 'm');
 echo $length->convert(); //this converts 3000 kilometers to its equivalent meter
@@ -76,7 +77,6 @@ echo $length->convert(); //this converts 3000 kilometers to its equivalent meter
 //Returns 3000000 meters
 
 ```php
-include '/path/to/puconverter.php';
 use  GeniusGeeek\puconverter\PUconverter;
 $time = new PUconverter("time", 1, 'yr', 'week');
 echo $time->convert(); // this converts 1 year to its equivalent time in weeks
