@@ -2,7 +2,10 @@
 
 namespace GeniusGeeek\puconverter;
 
-include 'trait/PUCONVERTER.php';
+include 'TRAIT-PUCONVERTER.php';
+
+    
+
 class PUconverter
 {
     public $value;
@@ -21,8 +24,7 @@ class PUconverter
     
    
     use conversion;
-    
-     
+
     
 }
 
