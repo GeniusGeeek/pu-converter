@@ -1,5 +1,7 @@
 <?php
 
+namespace GeniusGeeek\puconverter;
+
 class Temperature
 {
   function temperature_converter($value, $fromUnit, $toUnit)

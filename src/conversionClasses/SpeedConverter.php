@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+namespace GeniusGeeek\puconverter;
+
 class Speed{
   public function speed_converter($value, $fromUnit, $toUnit)
   {

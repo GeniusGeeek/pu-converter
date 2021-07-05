@@ -1,5 +1,7 @@
 <?php
 
+namespace GeniusGeeek\puconverter;
+
 class Time
 {
   public function time_converter($value, $fromUnit, $toUnit)

@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+namespace GeniusGeeek\puconverter;
+
 class Storage{
   public function disk_storage($value, $fromUnit, $toUnit)
   {

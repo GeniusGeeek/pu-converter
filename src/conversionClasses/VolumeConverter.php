@@ -1,4 +1,7 @@
 <?php
+
+namespace GeniusGeeek\puconverter;
+
 class Volume{
   public function volume_converter($value, $fromUnit, $toUnit)
   {
