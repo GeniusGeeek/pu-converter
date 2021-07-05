@@ -30,6 +30,11 @@ Using PU-converter is as simple as including the library in your project
 include '/path/to/puconverter.php';
 use  GeniusGeeek\puconverter\PUconverter;
 ```
+##Using Composer
+PU-converter can be insatlled using composer
+```bash
+composer require geniusgeeek/pu-converter
+```
 
 ## Guidelines: How to use
 1. Create an object of the class for conversion 
@@ -55,6 +60,7 @@ use  GeniusGeeek\puconverter\PUconverter;
 10. Frequency => new PUconverter("frequency", $value, $fromUnit, $toUnit);
 11. Energy/Power => new PUconverter("energy", $value, $fromUnit, $toUnit);
 12. Disk Storage => new PUconverter("storage", $value, $fromUnit, $toUnit);
+
 
 **Simple Examples**
 ```php
