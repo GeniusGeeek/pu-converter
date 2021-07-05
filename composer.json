@@ -1,42 +1,32 @@
 {
-    "name": "geniusgeeek/PU-converter",
-    "description": "PUconverter is a simple and an easy to use PHP unit converter library for converting mathematical, engineering and scientific units.",
-    "keywords": [
-        "geniusgeeek",
-        "unitconverter"
-    ],
-    "homepage": "https://github.com/GeniusGeeek/pu-converter",
-    "license": "MIT",
-    "type": "library",
-    "authors": [
-        {
-            "name": "Gracious Emmanuel",
-            "email": "graciousemmanuel52@gmail.com",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": "^7.1"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^7.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "GeniusGeeek\\UnitConverter\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "GeniusGeeek\\UnitConverter\\Tests\\": "tests"
-        }
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
-    },
-    "config": {
-        "sort-packages": true
+  "name": "geniusgeeek/PU-converter",
+  "description": "PU-converter is a simple and an easy to use PHP unit converter library for converting mathematical, engineering and scientific units.",
+  "keywords": [
+    "geniusgeeek",
+    "unitconverter"
+  ],
+  "homepage": "https://github.com/GeniusGeeek/pu-converter",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Gracious Emmanuel",
+      "email": "graciousemmanuel52@gmail.com",
+      "role": "Developer"
     }
+  ],
+  "require": {
+    "php": "^7.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "GeniusGeeek\\puconverter\\": "src"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
 }
