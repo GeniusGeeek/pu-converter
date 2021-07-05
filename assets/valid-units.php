@@ -60,7 +60,7 @@ $Pressure = array(
 
 $Time = array(
     's'     => 'Second',
-    'year'  => 'Year',
+    'yr'  => 'Year',
     'month' => 'Month',
     'week'  => 'Week',
     'day'   => 'Day',
