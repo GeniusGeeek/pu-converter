@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+namespace GeniusGeeek\puconverter;
+
 class Length{
   public function length_converter($value, $fromUnit, $toUnit)
   {
