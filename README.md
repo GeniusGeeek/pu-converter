@@ -1,3 +1,5 @@
+[![Latest Stable Version](http://poser.pugx.org/geniusgeeek/pu-converter/v)](https://packagist.org/packages/geniusgeeek/pu-converter)
+ [![License](http://poser.pugx.org/geniusgeeek/pu-converter/license)](https://packagist.org/packages/geniusgeeek/pu-converter)
 # PU-converter
 PU-converter is an easy to use PHP unit converter library for converting S.I units to other compatible unit types. 
 With PU-converter you can easily convert any engineering unit to its different unit types, for example, kilogram to grams, celsius to kelvin, e.t.c.
