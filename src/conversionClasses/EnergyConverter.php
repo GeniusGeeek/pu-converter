@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+namespace GeniusGeeek\puconverter;
+
 class Energy{
  public function energy_converter($value, $fromUnit, $toUnit)
   {
