@@ -1,5 +1,5 @@
 # PU-converter
-PU-converter is an easy to use PHP library for converting S.I units to other compatible unit types. 
+PU-converter is an easy to use PHP unit converter library for converting S.I units to other compatible unit types. 
 With PU-converter you can easily convert any engineering unit to its different unit types, for example, kilogram to grams, celsius to kelvin, e.t.c.
 Save your self the math stress and let the PU-converter library handle all conversions for you.
 
@@ -31,188 +31,144 @@ include '/path/to/puconverter.php';
 ```
 
 ## Guidelines: How to use
-1. Call a conversion function 
-2. The called conversion function requires three arguements to be passed
-3. Argument 1 is the value to be converted, Arguement 2 is the unit to convert, Argument 3 is the unit to be converted to
-4. All units are to be passed in their SI units/abbreviations, example: kilogram is kg, seconds is s, e.t.c.
-     
-    
-      
+1. Create an object of the class for conversion 
+2. The object propeties should be initialised on object creation
+3. Parameter 1 is the class for conversion, Parameter 2 is the value to be converted, Parameter 3 is the unit to convert, Parameter 4 is the unit to be converted to
+4. To return the conversion call the method convert()
+5. All units are to be passed in their SI units/abbreviations, example: kilogram is kg, seconds is s, e.t.c.
+
+           
 # Documentation
 
-## Conversion functions
+## Create an object for different conversion class using the syntax below
 
-The following functions are to be called when converting from any of the below SI Units:
-
-1. Temperature => `temperature_converter();`
-2. Area => `area_converter();`
-3. Plane Angles => `angles_converter();`
-4. Time => `time_converter();`
-5. Volume => `volume_converter();`
-6. Speed => `speed_converter();`
-7. Length => `length_converter();`
-8. Pressure => `pressure_converter();`
-9. Mass => `mass_converter();`
-10. Frequency => `frequency_converter();`
-11. Energy/Power => `energy_converter();`
-12. Disk Storage => `disk_storage();`
+1. $temperature => new PUconverter("temperature", $value, $fromUnit, $toUnit);
+2. Area => new PUconverter("area", $value, $fromUnit, $toUnit);
+3. Plane Angles => new PUconverter("angle", $value, $fromUnit, $toUnit);
+4. Time => new PUconverter("time", $value, $fromUnit, $toUnit);
+5. Volume =>  new PUconverter("volume", $value, $fromUnit, $toUnit);
+6. Speed =>  new PUconverter("speed", $value, $fromUnit, $toUnit);
+7. Length => new PUconverter("length", $value, $fromUnit, $toUnit);
+8. Pressure => new PUconverter("pressure", $value, $fromUnit, $toUnit);
+9. Mass => new PUconverter("mass", $value, $fromUnit, $toUnit);
+10. Frequency => new PUconverter("frequency", $value, $fromUnit, $toUnit);
+11. Energy/Power => new PUconverter("energy", $value, $fromUnit, $toUnit);
+12. Disk Storage => new PUconverter("storage", $value, $fromUnit, $toUnit);
 
 **Simple Examples**
 ```php
-teperature_converter(30, 'c', 'k'); //this converts 30 degree celsius to its equivalent kelvin temperature
+$length = new PUconverter("length", 3000, 'km', 'm');
+echo $length->convert(); //this converts 3000 kilometers to its equivalent meter
 ```
-//Returns 303.15 kelvin
-```php
-time_converter(360, 's', 'min'); // this converts 360 seconds to it equivalent minutes
-```
-//returns 6 minutes
-
-**More Examples**
-
-This example looks into working with forms and web apps
-```php
-<form method="POST" action="file.php">
-<!-- converting cm to other length units -->
-<input type="text" name="val">
-<input type="submit" name="submit">
-</form>
-
-<?php
-if(isset($_POST["submit"])) {
-    $value = $_POST["val"];
-    $fromUnit = "cm";
-    //$value is the value to convert, $fromUnit is the unit of the value to convert.
-    echo length_converter($value, $fromUnit, "m");
-    echo length_converter($value, $fromUnit, "mm");
-    echo length_converter($value, $fromUnit, "km");
-}
-
-?>
-```
+//Returns 3000000 meters
 
 ```php
-<form method="POST" action="file.php">
-<!-- converting length unit (user specified) -->
-Convert :<input type="text" name="val">
-Convert from:<input type="text" name="unit1">
-convert to:<input type="text" name="unit2>
-<input type="submit" name="submit">
-</form>
-
-<?php
-if(isset($_POST["submit"])) {
-    $value = $_POST["val"];
-    $fromUnit = $_POST["unit1"];
-    $toUnit = $_POST["unit2"];
-    //$value is the value to convert, $fromUnit is the unit of the value to convert, $toUnit is the unit to convert to
-    echo length_converter($value, $fromUnit, $toUnit);
-    echo length_converter($value, $fromUnit, $toUnit);
-    echo length_converter($value, $fromUnit, $toUnit);
-}
-
-?>
+$time = new PUconverter("time", 1, 'yr', 'week');
+echo $time->convert(); // this converts 1 year to its equivalent time in weeks
 ```
+//returns 52.143 weeks
+
 
 ## Valid Units
 
- **Temperature** 
- k => Kelvin
- c => celsius
- f => fahrenheit
+ **Temperature** <br>
+ k => Kelvin<br>
+ c => celsius<br>
+ f => fahrenheit<br>
  
- **Area**
- m2 => Square Meter
- km2 => Square Kilometer
- cm2 => Square Centimeter
- mm2 => Square Millimeter
- ft2 => Square Foot
- mi2 => Square Mile
- ac => Acre
- ha => hectare
+ **Area**<br>
+ m2 => Square Meter<br>
+ km2 => Square Kilometer<br>
+ cm2 => Square Centimeter<br>
+ mm2 => Square Millimeter<br>
+ ft2 => Square Foot<br>
+ mi2 => Square Mile<br>
+ ac => Acre<br>
+ ha => hectare<br>
  
- **Volume**
- l => Litre
- ml => Millilitre
- m3 => Cubic Meter
- gal => Gallon
- oz => fluid ounces
- ft3 => cubic feet
- cm3 => cubic centi meter
+ **Volume**<br>
+ l => Litre<br>
+ ml => Millilitre<br>
+ m3 => Cubic Meter<br>
+ gal => Gallon<br>
+ oz => fluid ounces<br>
+ ft3 => cubic feet<br>
+ cm3 => cubic centi meter<br>
  
- **Mass**
- kg => Kilogram
- g => Gram
- mg => Milligram
- lb => Pound
- t =>  Tonne
+ **Mass**<br>
+ kg => Kilogram<br>
+ g => Gram<br>
+ mg => Milligram<br>
+ lb => Pound<br>
+ t =>  Tonne<br>
  
- **Speed**
- mps => Meters per Second
- kph => Kilometers Per Hour
- mph => Miles Per Hour
- knots => Knots
+ **Speed**<br>
+ mps => Meters per Second<br>
+ kph => Kilometers Per Hour<br>
+ mph => Miles Per Hour<br>
+ knots => Knots<br>
  
- **Planes Angles**
- deg => Degrees
- rad => Radian
- grad => gradian
+ **Planes Angles**<br>
+ deg => Degrees<br>
+ rad => Radian<br>
+ grad => gradian<br>
  
- **Pressure**
- pa => Pascal
- kpa => kilopascal
- mpa => MegaPascal
- bar => Bar
- mbar => Millibar
- psi => Pound-force per square inch
+ **Pressure**<br>
+ pa => Pascal<br>
+ kpa => kilopascal<br>
+ mpa => MegaPascal<br>
+ bar => Bar<br>
+ mbar => Millibar<br>
+ psi => Pound-force per square inch<br>
  
- **Time**
- s => Second
- year => Year 
- month => Month
- week => Week
- day => Day
- hr => Hour
- min => Minute
- ms => Millisecond
- dec => decade
- cen => century
+ **Time**<br>
+ s => Second<br>
+ yr => Year <br>
+ month => Month<br>
+ week => Week<br>
+ day => Day<br>
+ hr => Hour<br>
+ min => Minute<br>
+ ms => Millisecond<br>
+ dec => decade<br>
+ cen => century<br>
  
- **Energy/Power**
- j => Joule
- kj => Kilojoule
- gcal => Gram calorie
- whr => Watt Hour
- kwhr => Kilowatt Hour
- ev => Electronvolt
- kcal => kilocalorie
+ **Energy/Power**<br>
+ j => Joule<br>
+ kj => Kilojoule<br>
+ gcal => Gram calorie<br>
+ whr => Watt Hour<br>
+ kwhr => Kilowatt Hour<br>
+ ev => Electronvolt<br>
+ kcal => kilocalorie<br>
  
- **Disk Storage**
- bit => bit
- byte => byte
- kb => kilobyte
- mb => megabyte
- gb => gigabyte
- tb => terabyte
- pb => petabyte
+ **Disk Storage**<br>
+ bit => bit<br>
+ byte => byte<br>
+ kb => kilobyte<br>
+ mb => megabyte<br>
+ gb => gigabyte<br>
+ tb => terabyte<br>
+ pb => petabyte<br>
  
- **Frequency**
- hz => hertz
- khz => kilo hertz
- mhz => mega hertz
- ghz => giga hertz
+ **Frequency**<br>
+ hz => hertz<br>
+ khz => kilo hertz<br>
+ mhz => mega hertz<br>
+ ghz => giga hertz<br>
  
  
- **Length**
-m - Meter
-km - Kilometer
-cm - Centimeter
-mm - Millimeter
-um - Micrometer
-nm - Nanometer
-in - Inch
-ft - Foot
-yd - Yard
-mi - Mile
+ **Length**<br>
+m - Meter<br>
+km - Kilometer<br>
+cm - Centimeter<br>
+mm - Millimeter<br>
+um - Micrometer<br>
+nm - Nanometer<br>
+in - Inch<br>
+ft - Foot<br>
+yd - Yard<br>
+mi - Mile<br>
 
 ## Author
 *Initial work- Gracious Emmanuel*
