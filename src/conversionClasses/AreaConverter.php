@@ -1,5 +1,7 @@
 <?php
 
+namespace GeniusGeeek\puconverter;
+
 class Area
 {
   public function area_converter($value, $fromUnit, $toUnit)
