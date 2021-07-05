@@ -1,5 +1,7 @@
 <?php
 
+namespace GeniusGeeek\puconverter;
+
 class Angle
 {
   public function angles_converter($value, $fromUnit, $toUnit)
