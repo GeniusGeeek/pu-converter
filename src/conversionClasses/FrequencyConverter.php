@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+namespace GeniusGeeek\puconverter;
+
 class Frequency{
   public function frequency_converter($value, $fromUnit, $toUnit)
   {
