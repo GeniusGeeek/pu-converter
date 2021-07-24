@@ -1,6 +1,6 @@
 <?php
 
-namespace GeniusGeeek\puconverter;
+namespace unitConverter\puconverter;
 
 class Pressure{
   public function pressure_converter($value, $fromUnit, $toUnit)

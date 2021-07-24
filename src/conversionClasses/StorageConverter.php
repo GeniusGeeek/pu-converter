@@ -1,6 +1,6 @@
 <?php
 
-namespace GeniusGeeek\puconverter;
+namespace unitConverter\puconverter;
 
 class Storage{
   public function disk_storage($value, $fromUnit, $toUnit)

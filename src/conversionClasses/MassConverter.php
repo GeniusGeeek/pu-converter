@@ -1,6 +1,6 @@
 <?php
 
-namespace GeniusGeeek\puconverter;
+namespace unitConverter\puconverter;
 
 class Mass{
   public function mass_converter($value, $fromUnit, $toUnit)
