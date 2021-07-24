@@ -39,7 +39,7 @@ composer require geniusgeeek/pu-converter
 To utilize this class, first import puconverter.php into your project, and instantiate it.
 ```php
 include '/path/to/puconverter.php';
-use  GeniusGeeek\puconverter\PUconverter;
+use  unitConverter\puconverter\PUconverter;
 ```
 
 ## Guidelines: How to use
