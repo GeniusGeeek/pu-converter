@@ -1,6 +1,6 @@
 <?php
 
-namespace GeniusGeeek\puconverter;
+namespace unitConverter\puconverter;
 
 include 'conversionClasses/TemperatureConverter.php';
 include 'conversionClasses/AreaConverter.php';
