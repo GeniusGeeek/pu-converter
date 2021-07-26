@@ -70,14 +70,14 @@ use  unitConverter\puconverter\PUconverter;
 
 **Simple Examples**
 ```php
-use  GeniusGeeek\puconverter\PUconverter;
+use  unitConverter\puconverter\PUconverter;
 $length = new PUconverter("length", 3000, 'km', 'm');
 echo $length->convert(); //this converts 3000 kilometers to its equivalent meter
 ```
 //Returns 3000000 meters
 
 ```php
-use  GeniusGeeek\puconverter\PUconverter;
+use  unitConverter\puconverter\PUconverter;
 $time = new PUconverter("time", 1, 'yr', 'week');
 echo $time->convert(); // this converts 1 year to its equivalent time in weeks
 ```
